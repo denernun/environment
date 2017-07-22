@@ -55,5 +55,7 @@
 
     npm install -g npm-check-updates
     npm install -g minifier
+    npm install -g source-map-explorer
+    
     
     
