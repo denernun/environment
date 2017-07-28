@@ -57,5 +57,7 @@
     npm install -g minifier
     npm install -g source-map-explorer
     
+    npm install --global --production windows-build-tools
+    
     
     
