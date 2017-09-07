@@ -1,6 +1,5 @@
 # APPS
 
-----
 Free
 ---
 
@@ -23,7 +22,7 @@ Free
     Slack
     FoxIt Reader
 
-----
+---
 Pay
 ---
 
@@ -35,10 +34,12 @@ Pay
     ExamXMLPro
     IcoFX 3
 	
-----
+---
 Office
 ---
 
     Office 2016
     Adobe Photoshop
     Adobe Ilustrator
+
+---
