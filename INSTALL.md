@@ -12,6 +12,7 @@
 
     JAVA_HOME=C:\Program Files\Java
 
+----
 **Android SDK**
 ---
 
@@ -26,6 +27,7 @@
     D:\SDK\tools\bin
     D:\SDK\platform-tools
 
+----
 **Git 2.14.1**
 ---
 
@@ -36,6 +38,7 @@
     D:\GIT
     D:\GIT\cmd
 
+----
 **Python 2.7**
 ---
 
@@ -52,6 +55,7 @@
     D:\PYTHON
     D:\PYTHON\Scripts
 	
+----
 **Ruby 2.4.1-2**
 ---
 
@@ -63,6 +67,7 @@
 
     D:\RUBY\bin
 	
+----
 **Yarn 0.27.5**
 ---
 
@@ -74,7 +79,7 @@
 
     D:\YARN\bin
     
-    
+----
 **NodeJS 7.10.1**
 ---
 
@@ -109,7 +114,8 @@
     npm install -g source-map-explorer
     
     npm install --global --production windows-build-tools
-    
+
+----
 **Others**
 ---
 
@@ -125,4 +131,4 @@
     D:\SVN
     D:\SSH
 
----
+----
