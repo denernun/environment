@@ -1,7 +1,9 @@
-# Environment Install
+Environment Install
+----
 
 **Java SDK**
-    
+---
+
     JavaSDK 64 http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
     JavaJRE 32 http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html
 
@@ -12,6 +14,7 @@
     JAVA_HOME=C:\Program Files\Java
 
 **Android SDK**
+---
 
     Android Studio https://developer.android.com/studio/preview/index.html
 
