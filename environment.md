@@ -1,5 +1,38 @@
 # Environment Install
 
+**Java SDK**
+    
+    JavaSDK 64 http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+    JavaJRE 32 http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html
+
+    install em C:\program Files\Java
+
+    Environment
+
+    JAVA_HOME=C:\Program Files\Java
+
+**Android SDK**
+
+    Android Studio https://developer.android.com/studio/preview/index.html
+
+    Environment
+
+    ANDROID_HOME=D:\SDK
+
+    Path
+
+    D:\SDK\tools\bin
+    D:\SDK\platform-tools
+
+**Git 2.14.1**
+
+    https://git-scm.com/download/win (portable)
+
+    Path
+
+    D:\GIT
+    D:\GIT\cmd
+
 **Python 2.7**
 
     https://www.python.org/downloads/
@@ -25,7 +58,18 @@
 
     D:\RUBY\bin
 	
-**NodeJS**
+**Yarn 0.27.5**
+
+    https://yarnpkg.com/lang/en/docs/install/
+	
+    Install em D:\YARN
+
+    Path
+
+    D:\YARN\bin
+    
+    
+**NodeJS 7.10.1**
 	
     https://nodejs.org/en/
 
@@ -33,9 +77,14 @@
 
     NODE_ENV=development
 
+    Path
+    
+    D:\NODE
+
     Packages
 
     npm cache clean --force
+    
     npm install -g node-gyp@latest
     npm install -g coffee-script@latest
     npm install -g node-sass@latest
@@ -54,3 +103,22 @@
     
     npm install --global --production windows-build-tools
     
+**Firebird 2.5.7**
+
+    Path
+
+    C:\Program Files (x86)\Firebird\Firebird_2_5\bin
+    
+**Others**
+
+    Environment
+
+    OPENSSL_HOME=D:\OPENSSL
+    OPENSSL_CONF=D:\OPENSSL\BIN\OPENSSL.CFG
+
+    Path
+
+    D:\UTIL
+    D:\OPENSSL\BIN
+    D:\SVN
+    D:\SSH
