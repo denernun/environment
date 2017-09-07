@@ -1,4 +1,4 @@
-Environment Install
+##Environment Install
 ----
 
 **Java SDK**
@@ -28,6 +28,7 @@ Environment Install
     D:\SDK\platform-tools
 
 **Git 2.14.1**
+---
 
     https://git-scm.com/download/win (portable)
 
@@ -37,6 +38,7 @@ Environment Install
     D:\GIT\cmd
 
 **Python 2.7**
+---
 
     https://www.python.org/downloads/
 	
@@ -52,6 +54,7 @@ Environment Install
     D:\PYTHON\Scripts
 	
 **Ruby 2.4.1-2**
+---
 
     https://rubyinstaller.org/downloads/
 	
@@ -62,6 +65,7 @@ Environment Install
     D:\RUBY\bin
 	
 **Yarn 0.27.5**
+---
 
     https://yarnpkg.com/lang/en/docs/install/
 	
@@ -73,7 +77,8 @@ Environment Install
     
     
 **NodeJS 7.10.1**
-	
+---
+
     https://nodejs.org/en/
 
     Environment
@@ -106,13 +111,8 @@ Environment Install
     
     npm install --global --production windows-build-tools
     
-**Firebird 2.5.7**
-
-    Path
-
-    C:\Program Files (x86)\Firebird\Firebird_2_5\bin
-    
 **Others**
+---
 
     Environment
 
