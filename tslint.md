@@ -13,22 +13,9 @@ If you use angular-cli:
  For more info: https://palantir.github.io/tslint/usage/rule-flags/
 
 ## Install
-1. Install package
-```sh
-npm install -D tslint-config-valorsoft
-```
-- check install log for errors and warnings about wrong versions of required packages (tslint, codelyzer etc.)
-- if needed install or update required packages
-
-* Example. You can have this situation in the end of log after installing:
-```sh
-npm WARN tslint-config-valorsoft@2.0.0 requires a peer of codelyzer@^3.0.0 but none was installed.
-npm WARN tslint-config-valorsoft@2.0.0 requires a peer of tslint@^5.1.0 but none was installed.
-```
-It means that you have to update codelyzer and tslint to ^3.0.0 and ^5.1.0 versions (or higher).
 
 2. Edit your tslint.json:
- - add `"extends": "tslint-config-valorsoft"` at the beginning, before `rulesDirectory`
+ - add `"extends": "tslint-recommended"` at the beginning, before `rulesDirectory`
  - remove all rules inside "rules" object
  - add your custom rules
  - add rules with editable shortname of your project.
