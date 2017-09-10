@@ -33,6 +33,8 @@
 
     https://git-scm.com/download/win (portable)
 
+    install em D:\GIT
+
     Path
 
     D:\GIT
