@@ -111,7 +111,7 @@
     
     Path
 
-    D:\YARN\bin
+    D:\NVM
         
     Comands
     
