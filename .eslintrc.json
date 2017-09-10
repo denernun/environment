@@ -1,8 +1,18 @@
+// ***************************************************************************
+// https://eslint.org/docs/rules/
+//
+// 0 = turns the rule off
+// 1 = turns the rule a warning (doesn`t exit code)
+// 2 = turns the rule an error (exit code 1 when trigguered)
+// ***************************************************************************
 {
     "extends": "eslint:recommended",
     "env": {
         "es6": true,
         "node": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 2017
     },
     "rules": {
         // Possible Errors
@@ -182,7 +192,10 @@
         "func-names": 2,
         "func-style": [
             2,
-            "declaration"
+            "declaration",
+            {
+                "allowArrowFunctions": true
+            }
         ],
         "id-blacklist": 2,
         "id-length": [
@@ -320,10 +333,13 @@
         ],
         "wrap-regex": 0,
         // ECMAScript 6
-        "arrow-body-style": 2,
+        "arrow-body-style": [
+            2,
+            "always"
+        ],
         "arrow-parens": [
             2,
-            "as-needed"
+            "always"
         ],
         "arrow-spacing": 2,
         "constructor-super": 2,
@@ -359,4 +375,3 @@
         "yield-star-spacing": 2
     }
 }
-
