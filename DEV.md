@@ -82,10 +82,12 @@
     D:\YARN\bin
     
 ----
-**NodeJS 7.10.1**
+**NodeJS**
 ---
 
     https://nodejs.org/en/
+
+    Version 7.10.1
 
     Environment
 
@@ -118,23 +120,25 @@
     npm install --global --production windows-build-tools
 
 ----
-**OpenSSL**
+**SSL**
 ---
 
     https://sourceforge.net/projects/openssl/
 
     Environment
 
-    OPENSSL_HOME=D:\OPENSSL
-    OPENSSL_CONF=D:\OPENSSL\BIN\OPENSSL.CNF
+    OPENSSL_HOME=D:\SSL
+    OPENSSL_CONF=D:\SSL\BIN\OPENSSL.CNF
 
     Path
 
-    D:\OPENSSL\BIN
+    D:\SSL\BIN
 
 ----
 **SSH**
 ---
+
+    https://mremoteng.org/download
 
     Path
 
