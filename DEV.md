@@ -6,7 +6,9 @@
     JavaSDK 64 http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
     JavaJRE 32 http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html
 
-    install em C:\program Files\Java
+    Root
+    
+    C:\program Files\Java
 
     Environment
 
@@ -18,6 +20,10 @@
 
     Android Studio https://developer.android.com/studio/preview/index.html
 
+    Root
+    
+    D:\SDK
+
     Environment
 
     ANDROID_HOME=D:\SDK
@@ -28,12 +34,14 @@
     D:\SDK\platform-tools
 
 ----
-**Git 2.14.1**
+**GIT**
 ---
 
     https://git-scm.com/download/win (portable)
 
-    install em D:\GIT
+    root
+    
+    D:\GIT
 
     Path
 
@@ -41,12 +49,14 @@
     D:\GIT\cmd
 
 ----
-**Python 2.7**
+**Python**
 ---
 
     https://www.python.org/downloads/
 	
-    Install em D:\PYTHON
+    root
+    
+    D:\PYTHON
 
     Environment
 
@@ -58,36 +68,64 @@
     D:\PYTHON\Scripts
 	
 ----
-**Ruby 2.4.1-2**
+**Ruby**
 ---
 
     https://rubyinstaller.org/downloads/
 	
-    Install em D:\RUBY
+    root
+    
+    D:\RUBY
 
     Path
 
     D:\RUBY\bin
 	
 ----
-**Yarn 0.27.5**
+**Yarn**
 ---
 
     https://yarnpkg.com/lang/en/docs/install/
 	
-    Install em D:\YARN
+    root
+    
+    D:\YARN
 
     Path
 
     D:\YARN\bin
     
 ----
-**NodeJS**
+**NVM**
+---
+
+    https://github.com/coreybutler/nvm-windows
+
+    Instructions
+    
+    Remove all versions of node in %appdata% and C:\Program Files\nodejs
+
+    root
+    
+    D:\NVM
+    
+    Path
+
+    D:\YARN\bin
+        
+    Comands
+    
+    nvm root <path> [D:\NODE]
+    nvm install <version> arch [32|64]
+    nvm list
+    nvm use <version>
+    nvm uninstall <version>
+
+----
+**Node**
 ---
 
     https://nodejs.org/en/
-
-    Version 7.10.1
 
     Environment
 
