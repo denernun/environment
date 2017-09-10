@@ -39,7 +39,7 @@
 
     https://git-scm.com/download/win (portable)
 
-    root
+    Root
     
     D:\GIT
 
@@ -54,7 +54,7 @@
 
     https://www.python.org/downloads/
 	
-    root
+    Root
     
     D:\PYTHON
 
@@ -73,7 +73,7 @@
 
     https://rubyinstaller.org/downloads/
 	
-    root
+    Root
     
     D:\RUBY
 
@@ -87,7 +87,7 @@
 
     https://yarnpkg.com/lang/en/docs/install/
 	
-    root
+    Root
     
     D:\YARN
 
@@ -105,7 +105,7 @@
     
     Remove all versions of node in %appdata% and C:\Program Files\nodejs
 
-    root
+    Root
     
     D:\NVM
     
