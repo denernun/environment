@@ -133,10 +133,6 @@
 
     NODE_ENV=development
 
-    Path
-    
-    D:\NODE
-
     Packages
 
     npm cache clean --force
