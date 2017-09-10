@@ -104,6 +104,8 @@
     Instructions
     
     Remove all versions of node in %appdata% and C:\Program Files\nodejs
+    Install in D:\NVM
+    Install SymLynk NodeJS in D:\NODE
 
     Root
     
@@ -115,7 +117,7 @@
         
     Comands
     
-    nvm root <path> [D:\NODE]
+    nvm root <path> [D:\NVM]
     nvm install <version> arch [32|64]
     nvm list
     nvm use <version>
