@@ -1,53 +1,28 @@
 # Welcome to the most strict tslint config ever
 
 ## Philosophy
+
 - contains all rules explicitly
 - almost all rules enabled
 
 ## Before install
+
 Check version of your code editor, highly recommended to use latest version.
 
-If you use angular-cli:
- - check that you have latest version, at least 1.0.2, and local and global versions of cli are the same.
- - disable ts lint for polyfill.ts and test.ts(in `src` folder). Add `/* tslint:disable */` at the beginning.
- For more info: https://palantir.github.io/tslint/usage/rule-flags/
+- check that you have latest version, at least 1.0.2, and local and global versions of cli are the same.
+- disable ts lint for polyfill.ts and test.ts(in `src` folder). Add `/* tslint:disable */` at the beginning.
+
+  For more info: https://palantir.github.io/tslint/usage/rule-flags/
+
+## Rules
+
+  For complete list: https://palantir.github.io/tslint/rules/
 
 ## Install
 
-2. Edit your tslint.json:
- - add `"extends": "tslint-recommended"` at the beginning, before `rulesDirectory`
- - remove all rules inside "rules" object
- - add your custom rules
- - add rules with editable shortname of your project.
-```
-"component-selector": [true, "element", "MP", "kebab-case"],
-"directive-selector": [true, "attribute", "MP", "camelCase"],
-"pipe-naming": [true, "camelCase", "MP"]
-```
-**Note**: `MP` is a placeholder, it is your prefix for components. If you don't need it you should change MP to empty string - `[true, "camelCase", ""]`
-
-Example:
-```js
-// tslint.json
-{
-  "extends": "tslint-config-valorsoft",
-  "rulesDirectory": "node_modules/codelyzer",
-
-  "rules": {
-    // your customization
-    // THIS IS IMPORTANT
-    // ADD THIS RULES TO YOUR `tslint.json`
-    // AND CHANGE `MP` with short name of your project
-    "directive-selector": [true, "attribute", "MP", "camelCase"],
-    "component-selector": [true, "element", "MP", "kebab-case"],
-    "pipe-naming": [true, "camelCase", "MP"]
-  }
-}
-```
-
-## After install
 Setup lint command:
- - add `--type-check` parameter to lint command in `package.json`. Example: `"lint": "ng lint --type-check"`;
+
+- add `--type-check` parameter to lint command in `package.json`. Example: `"lint": "ng lint --type-check"`;
 
 **Note**: If you have warning `Warning: Cannot read property 'some' of undefined` after running tslint, update
 codelyzer and tslint to latest versions. For now they are codelyzer@^3.0.1 and tslint@^5.2.0
