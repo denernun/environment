@@ -45,7 +45,7 @@ TBD:
 - `promise-function-async` https://palantir.github.io/tslint/rules/promise-function-async/
 - `strict-boolean-expressions` https://palantir.github.io/tslint/rules/strict-boolean-expressions/
 - `no-boolean-literal-compare` https://palantir.github.io/tslint/rules/no-boolean-literal-compare/
-<!--
+
 ## What is disabled
 - `no-eq-null` - duplicates `eqeqeq:smart`
 - `no-restricted-imports`, `no-restricted-modules`, `no-restricted-globals` - dependant on project requirements
@@ -75,10 +75,3 @@ TBD:
 - `padded-blocks` - `never` add useless padding
 - `quote-props` - quote properties only `as-needed` and `keywords`
 - `no-magic-numbers` - `ignore` `-1,0,1` as most often used numbers and `ignoreArrayIndexes`, `enforceConst` are enabled
--->
-## Contribution
-- what I really appreciate is configs for IDEs
-- to change any rule you should have strong arguments and not only opinion
-
-## LICENSE
-MIT
