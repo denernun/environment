@@ -138,21 +138,22 @@
     npm cache clean --force
     
     npm install -g node-gyp@latest
-    npm install -g coffee-script@latest
     npm install -g node-sass@latest
+    npm install -g minifier
     npm install -g typings
     npm install -g typescript@next
-    npm install -g @angular/cli
-    npm install -g firebase-tools
-    npm install -g loopback-cli
+    
     npm install -g jslint
     npm install -g jshint
     npm install -g eslint
-
-    npm install -g npm-check-updates
-    npm install -g minifier
-    npm install -g source-map-explorer
+    npm install -g htmlhint
     
+    npm install -g @angular/cli
+    npm install -g loopback-cli
+    npm install -g firebase-tools
+        
+    npm install -g npm-check-updates
+    npm install -g source-map-explorer
     npm install -g --production windows-build-tools
 
 ----
