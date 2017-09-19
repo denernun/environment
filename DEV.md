@@ -143,6 +143,8 @@
     npm install -g typings
     npm install -g typescript@next
     
+    npm install -g mocha
+    
     npm install -g jslint
     npm install -g jshint
     npm install -g eslint
