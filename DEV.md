@@ -82,6 +82,12 @@
     D:\RUBY\bin
 	
 ----
+**Redis**
+---
+
+    https://github.com/MicrosoftArchive/redis/releases
+	
+----
 **Yarn**
 ---
 
