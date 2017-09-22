@@ -148,6 +148,7 @@
     npm install -g minifier
     npm install -g typings
     npm install -g typescript@next
+    npm install -g browser-sync
     
     npm install -g mocha
     
