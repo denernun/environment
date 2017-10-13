@@ -150,6 +150,10 @@
     npm install -g typescript@next
     npm install -g browser-sync
     
+    npm install -g bower
+    npm install -g gulp
+    npm install -g grunt
+    
     npm install -g mocha
     
     npm install -g jslint
