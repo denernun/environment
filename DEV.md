@@ -146,11 +146,9 @@
     npm install -g node-gyp@latest
     npm install -g node-sass@latest
     npm install -g minifier
-    npm install -g typings
+    npm install -g types
     npm install -g typescript@next
-    npm install -g browser-sync
     
-    npm install -g bower
     npm install -g gulp
     npm install -g grunt
     
