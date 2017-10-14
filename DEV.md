@@ -159,6 +159,8 @@
     npm install -g eslint
     npm install -g htmlhint
     
+    npm install stylelint-config-standard --save-dev
+    
     npm install -g @angular/cli
     npm install -g loopback-cli
     npm install -g firebase-tools
