@@ -157,6 +157,7 @@
     npm install -g jslint
     npm install -g jshint
     npm install -g eslint
+    npm install -g eslint-plugin-import
     npm install -g htmlhint
     
     npm install stylelint-config-standard --save-dev
