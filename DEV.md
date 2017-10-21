@@ -160,6 +160,9 @@
     npm install -g eslint-plugin-import
     npm install -g htmlhint
     
+    npm install -g install-peerdeps
+    install-peerdeps --dev xxx
+    
     npm install stylelint-config-standard --save-dev
     
     npm install -g @angular/cli
