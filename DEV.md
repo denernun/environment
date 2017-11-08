@@ -86,20 +86,6 @@
 ---
 
     https://github.com/MicrosoftArchive/redis/releases
-	
-----
-**Yarn**
----
-
-    https://yarnpkg.com/lang/en/docs/install/
-	
-    Root
-    
-    D:\YARN
-
-    Path
-
-    D:\YARN\bin
     
 ----
 **NVM**
@@ -146,13 +132,10 @@
     npm install -g node-gyp@latest
     npm install -g node-sass@latest
     npm install -g minifier
-    npm install -g types
-    npm install -g typescript@next
+    npm install -g typescript
     
     npm install -g gulp
     npm install -g grunt
-    
-    npm install -g mocha
     
     npm install -g jslint
     npm install -g jshint
@@ -161,9 +144,7 @@
     npm install -g htmlhint
     
     npm install -g install-peerdeps
-    install-peerdeps --dev xxx
-    
-    npm install stylelint-config-standard --save-dev
+    install-peerdeps --dev <package>
     
     npm install -g @angular/cli
     npm install -g loopback-cli
