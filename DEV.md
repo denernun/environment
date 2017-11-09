@@ -142,16 +142,15 @@
     npm install -g eslint
     npm install -g eslint-plugin-import
     npm install -g htmlhint
-    
-    npm install -g install-peerdeps
-    install-peerdeps --dev <package>
-    
+        
     npm install -g @angular/cli
     npm install -g loopback-cli
     npm install -g firebase-tools
         
     npm install -g npm-check-updates
     npm install -g source-map-explorer
+    npm install -g cross-env
+    
     npm install -g --production windows-build-tools
 
 ----
