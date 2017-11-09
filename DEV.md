@@ -151,6 +151,8 @@
     npm install -g source-map-explorer
     npm install -g cross-env
     
+    npm install -g webpack-dev-server
+    
     npm install -g --production windows-build-tools
 
 ----
