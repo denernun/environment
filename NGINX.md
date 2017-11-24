@@ -35,7 +35,7 @@
         gzip_buffers 16 8k;
         gzip_min_length 1000;
         gzip_proxied expired no-cache no-store private auth;
-        gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml text/javascript application/vnd.ms-fontobject application/x-font-ttf image/svg+xml;
+        gzip_types text/plain text/css application/json application/x-javascript text/javascript;
 
 ## html
 
