@@ -39,7 +39,6 @@
 
 ## html
 
-    # www
     server {
 
         listen 80;
