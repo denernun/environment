@@ -16,10 +16,20 @@ Firebird
 Postgresql
 ---
 
+    Windows
+
     https://www.postgresql.org/download/windows/
     https://www.pgadmin.org/download/pgadmin-4-windows/
 
     user=postgres
     password=postgres
-	
+
+    Linux
+    
+    sudo apt-get update && sudo apt-get upgrade
+    sudo apt-get install postgresql postgresql-contrib
+    sudo passwd xxx
+    su postgres
+    createdb xxx
+
 ----
