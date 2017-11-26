@@ -31,5 +31,14 @@ Postgresql
     sudo passwd xxx
     su postgres
     createdb xxx
+    
+    sudo nano /etc/postgresql/9.X/main/postgresql.conf
+    listen_addresses = '*'
+    sudo nano /etc/postgresql/9.X/main/pg_hba.conf
+    host all all 0.0.0.0/0 md5
+    
+    sudo systemctl restart postgres
+    
+    
 
 ----
