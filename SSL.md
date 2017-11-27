@@ -3,11 +3,39 @@
     ## remove a mensagem do chrome para certificados inválidos
     chrome://flags/#allow-insecure-localhost
 
-    ## cria um certificado sem senha para o localhost
-    openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout privkey.pem -out fullchain.pem -subj /CN=localhost
+    # sslgen.bat
+    @echo off
+    openssl genrsa -des3 -out rootCA.key 2048
+    openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1024 -out rootCA.pem
+    openssl req -new -sha256 -nodes -out server.csr -newkey rsa:2048 -keyout server.key -config sslgen.cnf
+    openssl x509 -req -in server.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out server.crt -days 500 -sha256 -extfile sslgen.ext
+    
+    # sslgen.ext
+    authorityKeyIdentifier=keyid,issuer
+    basicConstraints=CA:FALSE
+    keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
+    subjectAltName = @alt_names
 
-    ## adicionar o certificado no chrome
-    copy begin/end certificate, paste in server.crt and import on chrome manager certificates trust root
+    [alt_names]
+    DNS.1 = localhost
+    
+    # sslgen.cnf
+    [req]
+    default_bits = 2048
+    prompt = no
+    default_md = sha256
+    distinguished_name = dn
+
+    [dn]
+    C=BR
+    ST=Sao Paulo
+    L=Maua
+    O=Denernun
+    OU=Denernun
+    emailAddress=denernun@gmail.com
+    CN = localhost
+
+## Validation
 
     ## test
     https://www.ssllabs.com/index.html
