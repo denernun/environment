@@ -77,3 +77,4 @@
     sudo cp /etc/letsencrypt/live/domain/fullchain.pem /var/www/api/certs
     sudo cp /etc/letsencrypt/live/domain/privkey.pem /var/www/api/certs
     sudo pm2 start api
+
