@@ -54,7 +54,26 @@ Redis
 
     Windows
 
+    # chocolatey package install
+    https://chocolatey.org/install
+    
+    # chocolatey install
+    choco install redis-64
 
+    Windows Manual
+
+    # download
+    https://github.com/MicrosoftArchive/redis/releases
+
+    # path
+    C:\Program Files\Redis
+
+    # install
+    redis-server --service-install redis.windows.conf --loglevel verbose
+    
+    # uninstall
+    redis-server --service-uninstall
+    
     Linux
 
 ----
