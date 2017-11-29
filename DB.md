@@ -39,6 +39,22 @@ Postgresql
     
     sudo systemctl restart postgres
     
+----
+MySQL
+---
+
+    Windows
+
+
+    Linux
     
+----
+Redis
+---
+
+    Windows
+
+
+    Linux
 
 ----
