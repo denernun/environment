@@ -19,6 +19,7 @@ DB
     Firebird
     PostgreSQL
     MySQL
+    Redis
 
 
 ---
