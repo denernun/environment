@@ -4,32 +4,32 @@
     Default apps for Windows instalations
 
 ---
-## [DB](DB)
+## [DB](DB.md)
     Firebird
     PostgreSQL
     MySQL
     Redis
 
 ---
-## [DEV](DEV)
+## [DEV](DEV.md)
     Tools for Development
 
 ---
-## [GIT](GIT)
+## [GIT](GIT.md)
     GIT commands
 
 ---
-## [IDE](IDE)
+## [IDE](IDE.md)
     VS Code Instalation
 
 ---
-## [NGINX](NGINX)
+## [NGINX](NGINX.md)
     Instalation and configuration
 
 ---
-## [SSL](SSL)
+## [SSL](SSL.md)
     Instalation and configuration
 
 ---
-## [UBUNTU](UBUNTU)
+## [UBUNTU](UBUNTU.md)
     Instalation and configuration
