@@ -131,6 +131,7 @@
     
     npm install -g node-gyp@latest
     npm install -g node-sass@latest
+    npm install -g coffeescript
     npm install -g minifier
     npm install -g typescript
     
