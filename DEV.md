@@ -146,6 +146,7 @@
     npm install -g @angular/cli
     npm install -g loopback-cli
     npm install -g firebase-tools
+    npm install -g @compodoc/compodoc
         
     npm install -g npm-check-updates
     npm install -g source-map-explorer
