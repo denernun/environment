@@ -1,6 +1,6 @@
 # Environment
 
-## [APPS](APPS)
+## [APPS](APPS.md)
     Default apps for Windows instalations
 
 ---
