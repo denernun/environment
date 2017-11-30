@@ -52,7 +52,7 @@ MySQL
 Redis
 ---
 
-    *Windows*
+    **Windows**
 
     # chocolatey package install
     https://chocolatey.org/install
@@ -60,7 +60,7 @@ Redis
     # chocolatey install
     choco install redis-64
 
-    *Windows Manual*
+    **Windows Manual**
 
     # download
     https://github.com/MicrosoftArchive/redis/releases
@@ -74,6 +74,6 @@ Redis
     # uninstall
     redis-server --service-uninstall
     
-    *Linux*
+    **Linux**
 
 ----
