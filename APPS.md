@@ -22,10 +22,9 @@ Free
     XnConvert
     RIOT
     Spotify
-    Fiddler
     Cobian
     Slack
-    FoxIt Reader
+    SumatraPDF
 
 ---
 Pay
