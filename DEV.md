@@ -37,6 +37,8 @@
 **Gradle SDK**
 ---
 
+    https://gradle.org/install/#manually
+
     Root
     
     D:\GRADLE
