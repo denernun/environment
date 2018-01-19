@@ -34,6 +34,22 @@
     D:\SDK\platform-tools
 
 ----
+**Gradle SDK**
+---
+
+    Root
+    
+    D:\GRADLE
+    
+    Environment
+    
+    GRADLE_HOME=D:\GRADLE
+    
+    Path
+    
+    D:\GRADLE\bin
+
+----
 **GIT**
 ---
 
