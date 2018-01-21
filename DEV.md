@@ -104,7 +104,17 @@
 ---
 
     https://github.com/MicrosoftArchive/redis/releases
+
+----
+**RabbitMQ**
+---
+
+    Install Erlang
+    http://www.erlang.org/downloads
     
+    Install RabbitMQ
+    https://www.rabbitmq.com/download.html
+
 ----
 **NVM**
 ---
