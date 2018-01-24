@@ -28,8 +28,8 @@ Postgresql
     
     sudo apt-get update && sudo apt-get upgrade
     sudo apt-get install postgresql postgresql-contrib
-    sudo passwd xxx
     su postgres
+    passwd xxx
     createdb xxx
     
     sudo nano /etc/postgresql/9.X/main/postgresql.conf
@@ -41,6 +41,8 @@ Postgresql
     
     sudo -u postgres psql postgres
     \password postgres
+    \l
+    create database xxx
     \q
     
 ----
