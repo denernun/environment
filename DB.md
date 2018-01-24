@@ -45,6 +45,8 @@ Postgresql
     create database xxx
     \q
     
+    createdb -U postgres vigia
+    
 ----
 MySQL
 ---
