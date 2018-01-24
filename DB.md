@@ -39,6 +39,10 @@ Postgresql
     
     sudo systemctl restart postgres
     
+    sudo -u postgres psql postgres
+    \password postgres
+    \q
+    
 ----
 MySQL
 ---
