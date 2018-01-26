@@ -55,6 +55,7 @@
 ## Create
 
     $ sudo certbot certonly
+    $ sudo certbot certonly --webroot -w /var/www/example/ -d www.example.com -d example.com
 
 ## Renew Manual
 
