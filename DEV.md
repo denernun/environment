@@ -180,6 +180,8 @@
     npm install -g npm-check-updates
     npm install -g source-map-explorer
     npm install -g cross-env
+    npm install -g pwmetrics
+    npm install -g  lighthouse
     
     npm install -g webpack-dev-server
     
