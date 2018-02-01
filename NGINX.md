@@ -99,3 +99,13 @@
         }
 
     }
+    
+## google pagespeed
+
+    https://www.modpagespeed.com/doc/build_ngx_pagespeed_from_source
+    https://www.modpagespeed.com/doc/configuration
+    
+
+    
+
+    
