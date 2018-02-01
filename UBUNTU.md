@@ -25,3 +25,11 @@
     $ pm2 startup systemd
     $ sudo env PATH=$PATH:/usr/bin /usr/local/lib/node_modules/pm2/bin/pm2 startup upstart -u ubuntu --hp /home/ubuntu
 
+## update
+
+    $ sudo service nginx stop
+    $ sudo apt install python-software-properties
+    $ sudo add-apt-repository ppa:nginx/stable
+    $ sudo apt-get update
+    $ sudo apt-get upgrade
+    $ sudo apt-get install nginx
