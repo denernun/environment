@@ -157,36 +157,38 @@
 
     npm cache clean --force
     
-    npm install -g node-gyp@latest
-    npm install -g node-sass@latest
-    npm install -g coffeescript
-    npm install -g minifier
-    npm install -g typescript
-    
-    npm install -g gulp
-    npm install -g grunt
-    
-    npm install -g jslint
-    npm install -g jshint
-    npm install -g eslint
-    npm install -g eslint-plugin-import
-    npm install -g htmlhint
-        
-    npm install -g @angular/cli
-    npm install -g loopback-cli
-    npm install -g firebase-tools
-    npm install -g @compodoc/compodoc
-        
-    npm install -g npm-check-updates
-    npm install -g source-map-explorer
-    npm install -g cross-env
-    npm install -g pwmetrics
-    npm install -g  lighthouse
-    
-    npm install -g webpack-dev-server
-    
-    npm install -g --production windows-build-tools
+    npm i -g node-gyp@latest
+    npm i -g node-sass@latest
+    npm i -g coffeescript
+    npm i -g minifier
+    npm i -g typescript
+    npm i -g cross-env
 
+    npm i -g windows-build-tools --production
+    npm i -g npm-check-updates
+    npm i -g source-map-explorer
+    
+    npm i -g gulp
+    npm i -g grunt
+    
+    npm i -g jslint
+    npm i -g jshint
+    npm i -g eslint
+    npm i -g eslint-plugin-import
+    npm i -g htmlhint
+        
+    npm i -g @angular/cli
+    npm i -g loopback-cli
+    npm i -g firebase-tools
+    npm i -g redis-commander
+
+    npm i -g ionic
+    npm i -g cordova
+
+    npm i -g pwmetrics
+    npm i -g lighthouse
+    npm i -g artillery
+    
 ----
 **SSL**
 ---
