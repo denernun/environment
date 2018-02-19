@@ -36,24 +36,32 @@
 
 ## nginx
 
+    install
+    
     $ /etc/apt/sources.list
-    $ deb http://nginx.org/packages/ubuntu/ xenial nginx
-    $ deb-src http://nginx.org/packages/ubuntu/ xenial nginx
-    $ /etc/nginx
-    $ sudo wget http://nginx.org/keys/nginx_signing.key
-    $ sudo cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bak
-    $ sudo apt-key add nginx_signing.key
+      deb http://nginx.org/packages/ubuntu/ xenial nginx
+      deb-src http://nginx.org/packages/ubuntu/ xenial nginx
+    $ sudo curl -O https://nginx.org/keys/nginx_signing.key && sudo apt-key add ./nginx_signing.key
     $ sudo apt-get update
     $ sudo apt-get install nginx
+    $ sudo systemctl start nginx
+    $ sudo systemctl status nginx
     
+    update
+    
+    $ /etc/apt/sources.list
+      deb http://nginx.org/packages/ubuntu/ xenial nginx
+      deb-src http://nginx.org/packages/ubuntu/ xenial nginx
+    $ /etc/nginx
+    $ sudo cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bak
     $ sudo apt-get remove nginx nginx-common nginx-full nginx-core
     $ sudo apt-get update
     $ sudo apt-get install nginx
     $ sudo systemctl unmask nginx
     $ sudo systemctl start nginx
-    $ sudo systemctl enable nginx (if error)
-    $ systemctl status nginx
-    
+    $ sudo systemctl enable nginx
+    $ sudo systemctl status nginx
+     
     
     
     
