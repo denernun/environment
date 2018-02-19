@@ -10,16 +10,10 @@
     openssl req -new -sha256 -nodes -out server.csr -newkey rsa:2048 -keyout server.key -config sslgen.cnf
     openssl x509 -req -in server.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out server.crt -days 500 -sha256 -extfile sslgen.ext
     
-    # sslgen.ext
-    authorityKeyIdentifier=keyid,issuer
-    basicConstraints=CA:FALSE
-    keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
-    subjectAltName = @alt_names
-
+    # sslgen.cnf
     [alt_names]
     DNS.1 = localhost
-    
-    # sslgen.cnf
+        
     [req]
     default_bits = 2048
     prompt = no
@@ -34,6 +28,12 @@
     OU=Denernun
     emailAddress=denernun@gmail.com
     CN = localhost
+
+    # sslgen.ext
+    authorityKeyIdentifier=keyid,issuer
+    basicConstraints=CA:FALSE
+    keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
+    subjectAltName = @alt_names
 
 ## Validation
 
