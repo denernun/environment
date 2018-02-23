@@ -3,19 +3,10 @@
     ## remove a mensagem do chrome para certificados inválidos
     chrome://flags/#allow-insecure-localhost
 
-    set RANDFILE=C:\TEMP\.rnd
-
-    # sslgen.bat
-    
-    @echo off
-    #openssl genrsa -des3 -out rootCA.key 2048
-    openssl genrsa 2048 > rootCA.key
-    openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1024 -out rootCA.pem -config sslgen.cnf
-    openssl req -new -sha256 -nodes -out server.csr -newkey rsa:2048 -keyout server.key -config sslgen.cnf
-    openssl x509 -req -in server.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out server.crt -days 500 -sha256 -extfile sslgen.ext
+    # self-signed
+    openssl req -newkey rsa:2048 -x509 -nodes -keyout server.key -new -out server.crt -subj /CN=localhost -sha256 -days 3650
     
     # sslgen.cnf
-    
     [alt_names]
     DNS.1 = localhost
         
@@ -26,16 +17,9 @@
     distinguished_name = dn
 
     [dn]
-    C=BR
-    ST=Sao Paulo
-    L=Maua
-    O=Denernun
-    OU=Denernun
-    emailAddress=denernun@gmail.com
     CN = localhost
 
     # sslgen.ext
-    
     [usr_cert]
     authorityKeyIdentifier=keyid,issuer
     basicConstraints=CA:FALSE
