@@ -6,30 +6,17 @@
     # self-signed
     openssl req -newkey rsa:2048 -x509 -nodes -keyout server.key -new -out server.crt -subj /CN=localhost -sha256 -days 3650
     
-    # sslgen.cnf
-    [alt_names]
-    DNS.1 = localhost
-        
-    [req]
-    default_bits = 2048
-    prompt = no
-    default_md = sha256
-    distinguished_name = dn
-
-    [dn]
-    CN = localhost
-
-    # sslgen.ext
-    [usr_cert]
-    authorityKeyIdentifier=keyid,issuer
-    basicConstraints=CA:FALSE
-    keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
-    subjectAltName = @alt_names
+    # self-signed validation
+    openssl x509 -in server.crt -noout -text -pubkey
+    openssl rsa -in server.key -check -pubout
+    openssl rsa -in server.key -pubout
+    openssl x509 -noout -modulus -in server.crt| openssl md5
+    openssl rsa -noout -modulus -in server.key| openssl md5
 
 ## Validation
 
     ## test
-    https://www.ssllabs.com/index.html
+    https://www.ssllabs.com/ssltest/
 
 ## Install
 
@@ -65,8 +52,4 @@
     sudo systemctl stop nginx.service
     sudo /usr/bin/certbot renew --quiet
     sudo systemctl start nginx.service
-    sudo pm2 stop api
-    sudo cp /etc/letsencrypt/live/domain/fullchain.pem /var/www/api/certs
-    sudo cp /etc/letsencrypt/live/domain/privkey.pem /var/www/api/certs
-    sudo pm2 start api
-
+    
