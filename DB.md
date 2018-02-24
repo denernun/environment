@@ -28,24 +28,22 @@ Postgresql
     
     sudo apt-get update && sudo apt-get upgrade
     sudo apt-get install postgresql postgresql-contrib
-    su postgres
-    passwd xxx
-    createdb xxx
-    
+        
     sudo nano /etc/postgresql/9.X/main/postgresql.conf
     listen_addresses = '*'
+    
     sudo nano /etc/postgresql/9.X/main/pg_hba.conf
     host all all 0.0.0.0/0 md5
+    local all postgress trust
     
     sudo systemctl restart postgres
     
-    sudo -u postgres psql postgres
+    sudo -i -u postgres
+    sudo -u postgres psql
     \password postgres
-    \l
-    create database xxx
     \q
     
-    createdb -U postgres vigia
+    createdb -U postgres xxx
     
 ----
 MySQL
