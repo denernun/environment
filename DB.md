@@ -34,6 +34,7 @@ Postgresql
     
     sudo nano /etc/postgresql/9.X/main/pg_hba.conf
     host all all 0.0.0.0/0 md5
+    host all all ::0/0 md5
     local all postgress trust
     
     sudo systemctl restart postgres
@@ -42,8 +43,10 @@ Postgresql
     sudo -u postgres psql
     \password postgres
     \q
-    
-    createdb -U postgres xxx
+        
+    sudo -u postgres createdb db_name
+    sudo -u postgres psql db_name
+    alter user postgres with password 'new_password';
     
 ----
 MySQL
