@@ -13,6 +13,32 @@
     openssl x509 -noout -modulus -in server.crt| openssl md5
     openssl rsa -noout -modulus -in server.key| openssl md5
 
+    openssl genrsa -des3 -out rootCA.key 2048
+    openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1024 -out rootCA.pem -config sslgen.cnf
+    openssl req -sha256 -new -nodes -out server.csr -newkey rsa:2048 -keyout server.key -config sslgen.cnf
+    openssl x509 -req -in server.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out server.crt -days 500 -sha256 -extfile sslgen.cnf
+
+    # sslgen.cnf
+    [alt_names]
+    DNS.1 = localhost
+
+    [req]
+    default_bits = 2048
+    prompt = no
+    default_md = sha256
+    distinguished_name = dn
+
+    [dn]
+    CN = localhost
+
+    [usr_cert]
+    authorityKeyIdentifier=keyid,issuer
+    basicConstraints=CA:FALSE
+    keyUsage = digitalSignature, keyEncipherment
+
+    [ v3_ca ]
+    subjectAltName = @alt_names
+
 ## Validation
 
     ## test
