@@ -52,10 +52,12 @@ Postgresql
 MySQL
 ---
 
-    [https://dev.mysql.com/downloads/mysql/](MySQL)
+(https://dev.mysql.com/downloads/mysql/)[MySQL]
 
     Windows
 
+    user=root
+    password: abc12345
 
     Linux
     
