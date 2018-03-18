@@ -52,6 +52,8 @@ Postgresql
 MySQL
 ---
 
+    [https://dev.mysql.com/downloads/mysql/](MySQL)
+
     Windows
 
 
