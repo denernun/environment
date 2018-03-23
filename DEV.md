@@ -184,10 +184,6 @@
 
     npm i -g ionic
     npm i -g cordova
-
-    npm i -g pwmetrics
-    npm i -g lighthouse
-    npm i -g artillery
     
 ----
 **SSL**
