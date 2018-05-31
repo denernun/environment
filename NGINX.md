@@ -1,93 +1,147 @@
 ## config
 
-    user www-data;
-    worker_processes auto;
-    pid /run/nginx.pid;
+```
+user www-data;
+worker_processes auto;
+pid /run/nginx.pid;
 
-    events {
-        worker_connections 768;
-        multi_accept on;
-    }
+events {
+    worker_connections 768;
+    multi_accept on;
+}
 
-    http {
+http {
 
-        sendfile on;
-        tcp_nopush on;
-        tcp_nodelay on;
-        keepalive_timeout 65;
-        types_hash_max_size 2048;
+    sendfile on;
+    tcp_nopush on;
+    tcp_nodelay on;
+    keepalive_timeout 65;
+    types_hash_max_size 2048;
 
-        include /etc/nginx/mime.types;
-        default_type application/octet-stream;
+    include /etc/nginx/mime.types;
+    default_type application/octet-stream;
 
-        include /etc/letsencrypt/options-ssl-nginx.conf;
+	include /etc/letsencrypt/options-ssl-nginx.conf;
 
-        add_header Strict-Transport-Security "max-age=15768000" always;
-        add_header Strict-Transport-Security "max-age=15768000; includeSubDomains" always;
+	add_header Strict-Transport-Security "max-age=15768000; includeSubDomains" always;
+    add_header X-Frame-Options DENY;
 
-        access_log /var/log/nginx/access.log;
-        error_log /var/log/nginx/error.log;
+	log_format main_ext '$remote_addr - $remote_user [$time_local] "$request" '
+						'$status $body_bytes_sent "$http_referer" '
+						'"$http_user_agent" "$http_x_forwarded_for" '
+						'"$host" sn="$server_name" '
+						'rt=$request_time '
+						'ua="$upstream_addr" us="$upstream_status" '
+						'ut="$upstream_response_time" ul="$upstream_response_length" '
+						'cs=$upstream_cache_status' ;
 
-        gzip on;
-        gzip_disable "msie6";
-        gzip_vary on;
-        gzip_comp_level 6;
-        gzip_buffers 16 8k;
-        gzip_min_length 1000;
-        gzip_proxied expired no-cache no-store private auth;
-        gzip_types text/plain text/css application/json application/x-javascript text/javascript;
+	access_log /var/log/nginx/access.log main_ext;
+	error_log /var/log/nginx/error.log warn;
 
-## html
+	gzip on;
+	gzip_disable "msie6";
+	gzip_vary on;
+	gzip_proxied any;
+	gzip_comp_level 6;
+	gzip_buffers 16 8k;
+	gzip_http_version 1.1;
+	gzip_min_length 256;
+	gzip_types
+			text/plain
+			text/css
+			text/javascript
+			application/json
+			application/javascript
+			application/x-javascript
+			text/xml
+			application/xml
+			application/xml+rss
+			application/vnd.ms-fontobject
+			application/x-font-ttf
+			image/svg+xml
+			font/opentype
+			image/x-icon;
+
+    # -------------------------------------------------------------------
+    # METRICS
+    # -------------------------------------------------------------------
+
+	server {
+
+		listen 127.0.0.1:80;
+		server_name 127.0.0.1;
+
+		location /nginx_status {
+			stub_status on;
+			allow 127.0.0.1;
+			deny all;
+		}
+
+	}
+
+    # -------------------------------------------------------------------
+    # WWW
+    # -------------------------------------------------------------------
 
     server {
 
         listen 80;
-        listen [::]:80;
+		listen [::]:80;
+
+        server_name host.domain;
+
+        return 301 https://$host$request_uri;
+
+    }
+
+    server {
 
         listen 443 ssl http2;
-        listen [::]:443 ssl http2;
+		listen [::]:443 ssl http2;
 
-        root /var/www/html;
+        root /var/www/domain;
         index index.html;
-        server_name www.domain.com;
+        server_name host.domain;
 
         location / {
-            try_files $uri $uri/ =404;
+            try_files $uri $uri/ /index.html;
         }
 
-        ssl_certificate /etc/letsencrypt/live/www.domain.com/fullchain.pem;
-        ssl_certificate_key /etc/letsencrypt/live/www.domain.com/privkey.pem;
-        ssl_dhparam /etc/letsencrypt/dhparam.pem;
-
-        ssl_stapling on;
-        ssl_stapling_verify on;
-        ssl_trusted_certificate /etc/ssl/ca-certs.pem;
-
-        if ($scheme != "https") {
-                return 301 https://$server_name$request_uri;
-        }
+		ssl_certificate /etc/letsencrypt/live/domain/fullchain.pem;
+		ssl_certificate_key /etc/letsencrypt/live/domain/privkey.pem;
+		ssl_dhparam /etc/letsencrypt/dhparam.pem;
+		ssl_stapling on;
+		ssl_stapling_verify on;
 
     }
 
-## node
+    # -------------------------------------------------------------------
+    # API
+    # -------------------------------------------------------------------
 
-    server {
+	server {
 
         listen 80;
-        listen [::]:80;
+		listen [::]:80;
 
-        listen 443 ssl http2;
-        listen [::]:443 ssl http2;
+		server_name host.domain;
 
-        server_name api.domain.com;
+        return 301 https://$host$request_uri;
 
-        ssl_certificate /etc/letsencrypt/live/api.domain.com/fullchain.pem;
-        ssl_certificate_key /etc/letsencrypt/live/api.domain.com/privkey.pem;
-        ssl_dhparam /etc/letsencrypt/dhparam.pem;
+	}
 
-        ssl_stapling on;
-        ssl_stapling_verify on;
-        ssl_trusted_certificate /etc/ssl/ca-certs.pem;
+	server {
+
+		listen 443 ssl http2;
+		listen [::]:443 ssl http2;
+
+		server_name host.domain;
+
+		ssl_certificate /etc/letsencrypt/live/domain/fullchain.pem;
+		ssl_certificate_key /etc/letsencrypt/live/domain/privkey.pem;
+		ssl_dhparam /etc/letsencrypt/dhparam.pem;
+		ssl_stapling on;
+		ssl_stapling_verify on;
 
         location / {
                 proxy_pass https://localhost:3000;
@@ -98,12 +152,15 @@
                 proxy_cache_bypass $http_upgrade;
         }
 
-    }
+	}
+
+}
+```
     
 ## google pagespeed
 
-    https://www.modpagespeed.com/doc/build_ngx_pagespeed_from_source
-    https://www.modpagespeed.com/doc/configuration
+https://www.modpagespeed.com/doc/build_ngx_pagespeed_from_source
+https://www.modpagespeed.com/doc/configuration
     
 
     
