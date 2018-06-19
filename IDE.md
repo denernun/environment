@@ -39,7 +39,7 @@ User Config
   "codemetrics.basics.ComplexityLevelNormalDescription": "normal",
   "codemetrics.basics.DecorationModeEnabled": false,
   "css.validate": false,
-  "debug.toolbar": "dock",
+  "debug.openDebug": "openOnDebugBreak",
   "editor.autoIndent": true,
   "editor.cursorStyle": "line",
   "editor.find.autoFindInSelection": true,
@@ -83,6 +83,9 @@ User Config
   "gitlens.settings.mode": "advanced",
   "html.format.wrapLineLength": 240,
   "javascript.implicitProjectConfig.checkJs": true,
+  "javascript.preferences.importModuleSpecifier": "non-relative",
+  "javascript.preferences.quoteStyle": "single",
+  "javascript.updateImportsOnFileMove.enabled": "always",
   "less.validate": false,
   "liveServer.settings.donotShowInfoMsg": true,
   "scss.validate": false,
@@ -94,12 +97,14 @@ User Config
   "sync.gist": "d2b329909f33e301f8b022793402bc78",
   "sync.host": "",
   "sync.lastDownload": "2017-08-16T10:45:48.867Z",
-  "sync.lastUpload": "2018-05-25T05:23:21.502Z",
+  "sync.lastUpload": "2018-06-19T18:42:48.787Z",
   "sync.pathPrefix": "",
   "sync.quietSync": false,
   "sync.removeExtensions": true,
   "sync.syncExtensions": true,
   "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe",
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.preferences.quoteStyle": "single",
   "todohighlight.include": [
     "**/*.js",
     "**/*.ts"
@@ -112,5 +117,4 @@ User Config
   "workbench.colorTheme": "Monokai",
   "workbench.commandPalette.preserveInput": true,
   "workbench.iconTheme": "vscode-icons"
-}
-```
+}```
