@@ -1,4 +1,4 @@
-# Change the url projecvt
+# Change the url project
 
     git config --replace-all remote.origin.url https://user@bitbucket.org/UnicornsFactory/nome-do-projeto.git
     git remote set-url origin https://user@bitbucket.org/UnicornsFactory/nome-do-projeto.git
