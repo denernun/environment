@@ -3,6 +3,7 @@
     git config --replace-all remote.origin.url https://user@bitbucket.org/UnicornsFactory/nome-do-projeto.git
     git remote set-url origin https://user@bitbucket.org/UnicornsFactory/nome-do-projeto.git
 
+    git config --global credential.helper wincred
     git config --system http.sslcainfo "D:\GIT\mingw64\ssl\certs\ca-bundle.crt
 
     [user]
@@ -35,3 +36,5 @@
         ub = "!git push origin :$(git bn)"
         # Run merge test to check for any conflicts beforehand.
         mt = "!f() { git merge --no-commit --no-ff \"$1\"; git merge --abort; echo \"Merge aborted\"; };f "	
+    [credential]
+	    helper = wincred
