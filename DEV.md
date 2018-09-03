@@ -185,6 +185,8 @@
     npm i -g ionic
     npm i -g cordova
     
+    npm i -g docusaurus
+    
 ----
 **SSL**
 ---
