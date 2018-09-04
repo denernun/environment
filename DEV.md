@@ -176,7 +176,7 @@
     npm i -g eslint
     npm i -g eslint-plugin-import
     npm i -g htmlhint
-        
+	
     npm i -g @angular/cli
     npm i -g loopback-cli
     npm i -g firebase-tools
