@@ -156,36 +156,73 @@
     Packages
 
     npm cache clean --force
-    
-    npm i -g node-gyp@latest
-    npm i -g node-sass@latest
+
+    # check updates
+    npm i -g npm-check-updates
+
+    # working with npm
+    npm i -g yarn
+    npm i -g npx
+    npm i -g np
+    npm i -g npm-name-cli
+        
+    # general utilities
+    npm i -g node-gyp
+    npm i -g node-sass
     npm i -g coffeescript
     npm i -g minifier
-    npm i -g typescript
     npm i -g cross-env
+    npm i -g tldr
+    npm i -g now
+    npm i -g spoof
+    npm i -g fkill-cli
+    npm i -g castnow
+    npm i -g vtop    
 
-    npm i -g windows-build-tools --production
-    npm i -g npm-check-updates
-    npm i -g source-map-explorer
-    
-    npm i -g gulp
-    npm i -g grunt
-    
-    npm i -g jslint
-    npm i -g jshint
-    npm i -g eslint
-    npm i -g eslint-plugin-import
-    npm i -g htmlhint
-	
+    # debugging
+    npm i -g ndb
+    npm i -g node-inspector
+
+    # react
+    npm i -g create-react-app
+    npm i -g create-react-library
+    npm i -g react-native-cli
+    npm i -g eslint-config-standard-react
+    npm i -g eslint-config-standard-jsx
+    npm i -g eslint-plugin-react
+
+    # angular
+    npm i -g typescript
     npm i -g @angular/cli
+
+    # ionic
+    npm i -g ionic
+    npm i -g cordova
+
+    # others
     npm i -g loopback-cli
     npm i -g firebase-tools
     npm i -g redis-commander
-
-    npm i -g ionic
-    npm i -g cordova
-    
     npm i -g docusaurus
+
+    # linting
+    npm i -g jslint
+    npm i -g jshint
+    npm i -g eslint
+    npm i -g eslint-config-standard
+    npm i -g eslint-config-prettier
+    npm i -g eslint-plugin-prettier
+    npm i -g eslint-plugin-import
+    npm i -g babel-eslint
+    npm i -g prettier
+    npm i -g standard
+    npm i -g htmlhint
+    
+    # utils
+    npm i -g gulp
+    npm i -g grunt
+    npm i -g windows-build-tools --production
+    npm i -g source-map-explorer
     
 ----
 **SSL**
@@ -206,7 +243,8 @@
 **SSH**
 ---
 
-    https://mremoteng.org/download
+    # download portable edition
+    https://winsshterm.blogspot.com/
 
     Path
 
@@ -227,5 +265,6 @@
     Path
 
     D:\UTIL
+    D:\DLL
 
 ----
