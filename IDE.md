@@ -16,7 +16,7 @@ VS Code Insiders
     
     # gist
 
-    d2b329909f33e301f8b022793402bc78    
+    b8495e79573a81a9602e0c873973e71f
 
 User Config
 ---
@@ -33,11 +33,6 @@ User Config
     "release"
   ],
   "branchwarnings.suppressPopup": true,
-  "codemetrics.basics.ComplexityLevelExtremeDescription": "extreme",
-  "codemetrics.basics.ComplexityLevelHighDescription": "high",
-  "codemetrics.basics.ComplexityLevelLowDescription": "low",
-  "codemetrics.basics.ComplexityLevelNormalDescription": "normal",
-  "codemetrics.basics.DecorationModeEnabled": false,
   "css.validate": false,
   "debug.openDebug": "openOnDebugBreak",
   "editor.autoIndent": true,
