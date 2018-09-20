@@ -79,3 +79,35 @@
     sudo /usr/bin/certbot renew --quiet
     sudo systemctl start nginx.service
     
+## Private  Key
+
+```console
+ssh-keygen -t rsa -b 4096 -C "your@email.com"
+
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/<your-user>/.ssh/id_rsa):
+
+Created directory '/home/<your-user>/.ssh'.
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/<your-user>/.ssh/id_rsa.
+Your public key has been saved in /home/<your-user>/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:lXhYzNtK37chmNGsV5/278yr6LrWuUygcYvqklcdtzI my.email@gmail.com
+The key's randomart image is:
++---[RSA 4096]----+
+|         o.      |
+|         +o.     |
+|        o +oo    |
+|         +oo.o . |
+|       .S+oo*.. o|
+|       .=E+=.o.+o|
+|    . .o .+.o o.+|
+|   o ..  .oo.  +.|
+|    +o  .o+=...oB|
++----[SHA256]-----+
+
+cat ~/.ssh/id_rsa.pub
+ssh-rsa AAAAB3N...AAAAB3N your@gmail.com
+
+```
