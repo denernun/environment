@@ -33,26 +33,31 @@ password=postgres
 sudo apt-get update && sudo apt-get upgrade
 sudo apt-get install postgresql postgresql-contrib
 
-sudo nano /etc/postgresql/9.5/main/postgresql.conf
+sudo nano /etc/postgresql/9.6/main/postgresql.conf
 listen_addresses = '*'
 
-sudo nano /etc/postgresql/9.5/main/pg_hba.conf
+# allow access
+sudo nano /etc/postgresql/9.6/main/pg_hba.conf
 host all all 0.0.0.0/0 md5
 host all all ::0/0 md5
 local all postgres trust
 
+# services
 sudo service postgresql start
 sudo service postgresql stop
 sudo service postgresql restart
 
+# trocar senha
 sudo -u postgres psql
 \password postgres
 \q
 
-sudo -u postgres createdb 'db_name'
-sudo -u postgres psql 'db_name'
-alter user postgres with password 'new_password';
+# trocar senha
+\alter user postgres with password 'new_password';
 \q
+
+# criar banco
+sudo -u postgres createdb 'db_name'
 ```
 
 ---
