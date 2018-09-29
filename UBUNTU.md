@@ -68,5 +68,18 @@
     $ sudo apt-get install certbot
     $ sudo openssl dhparam -out /etc/letsencrypt/dhparam.pem 2048
     
+## certbot create
+
+    $ sudo certbot certonly
+    $ sudo certbot certonly --webroot -w /var/www/example/ -d www.example.com -d example.com
+
+## certbot renew manual
+
+    $ sudo certbot renew --dry-run
+
+## certbot renew auto
+
+    $ sudo crontab -e
+    $ 15 3 * * * /usr/bin/certbot renew --quiet
     
 
