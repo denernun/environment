@@ -1,4 +1,4 @@
-## config
+## date/time
 
     $ sudo timedatectl set-timezone America/Sao_Paulo
 
@@ -56,5 +56,17 @@
 
     $ sudo apt-get install chromium-bsu
 
+## certbot
+
+    https://certbot.eff.org/#ubuntuxenial-nginx
+
+    $ sudo wget -O - https://www.startssl.com/certs/ca.pem https://www.startssl.com/certs/sub.class1.server.ca.pem | sudo tee -a /etc/ssl/ca-certs.pem > /dev/null
+    $ sudo apt-get update
+    $ sudo apt-get install software-properties-common
+    $ sudo add-apt-repository ppa:certbot/certbot
+    $ sudo apt-get update
+    $ sudo apt-get install certbot
+    $ sudo openssl dhparam -out /etc/letsencrypt/dhparam.pem 2048
+    
     
 
