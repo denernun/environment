@@ -104,7 +104,7 @@ User Config
   "typescript.referencesCodeLens.enabled": true,
   "vsicons.dontShowNewVersionMessage": true,
   "vsicons.projectDetection.disableDetect": true,
-  "workbench.colorTheme": "Monokai",
+  "workbench.colorTheme": "dark-plus-syntax",
   "workbench.commandPalette.preserveInput": true,
   "workbench.iconTheme": "vscode-icons",
   "breadcrumbs.enabled": true,
@@ -113,5 +113,18 @@ User Config
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.cursorStyle": "underline",
   "terminal.external.windowsExec": "C:\\Windows\\System32\\cmd.exe",
-  "typescript.updateImportsOnFileMove.enabled": "always"
-}```
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "terminal.explorerKind": "external",
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe",
+  "todo-tree.defaultHighlight": {
+    "foreground": "green",
+    "type": "none"
+  },
+  "todo-tree.customHighlight": {
+    "TODO": {},
+    "FIXME": {}
+  },
+  "editor.suggest.localityBonus": true
+}
+```
