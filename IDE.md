@@ -3,19 +3,13 @@
 VS Code Insiders
 ---
 
+    # install
     Visual Studio Code Insiders (https://code.visualstudio.com/insiders)
     
     # install extension
-
     https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync
-
-    # keys
-
-    upload key: Shift + Alt + U
-    download key: Shift + Alt + D
     
     # gist
-
     b8495e79573a81a9602e0c873973e71f
 
 User Config
@@ -28,11 +22,6 @@ User Config
   "bracketPairColorizer.highlightActiveScope": true,
   "bracketPairColorizer.showHorizontalScopeLine": false,
   "bracketPairColorizer.showVerticalScopeLine": false,
-  "branchwarnings.protectedBranches": [
-    "master",
-    "release"
-  ],
-  "branchwarnings.suppressPopup": true,
   "css.validate": false,
   "debug.openDebug": "openOnDebugBreak",
   "editor.autoIndent": true,
@@ -95,10 +84,6 @@ User Config
   "sync.syncExtensions": true,
   "typescript.preferences.importModuleSpecifier": "non-relative",
   "typescript.preferences.quoteStyle": "single",
-  "todohighlight.include": [
-    "**/*.js",
-    "**/*.ts"
-  ],
   "tslint.alwaysShowStatus": true,
   "tslint.autoFixOnSave": true,
   "typescript.referencesCodeLens.enabled": true,
@@ -126,5 +111,5 @@ User Config
     "FIXME": {}
   },
   "editor.suggest.localityBonus": true
-}
+}  
 ```
