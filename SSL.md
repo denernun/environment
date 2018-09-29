@@ -43,41 +43,6 @@
 
     ## test
     https://www.ssllabs.com/ssltest/
-
-## Install
-
-    https://certbot.eff.org/#ubuntuxenial-nginx
-
-    $ sudo wget -O - https://www.startssl.com/certs/ca.pem https://www.startssl.com/certs/sub.class1.server.ca.pem | sudo tee -a /etc/ssl/ca-certs.pem > /dev/null
-    $ sudo apt-get update
-    $ sudo apt-get install software-properties-common
-    $ sudo add-apt-repository ppa:certbot/certbot
-    $ sudo apt-get update
-    $ sudo apt-get install certbot
-    $ sudo openssl dhparam -out /etc/letsencrypt/dhparam.pem 2048
-
-## Create
-
-    $ sudo certbot certonly
-    $ sudo certbot certonly --webroot -w /var/www/example/ -d www.example.com -d example.com
-
-## Renew Manual
-
-    $ sudo certbot renew --dry-run
-
-## Renew Auto
-
-    $ sudo crontab -e
-    $ 15 3 * * * /usr/bin/certbot renew --quiet
-
-## Update
-
-    update.sh
-
-    #/bin/sh
-    sudo systemctl stop nginx.service
-    sudo /usr/bin/certbot renew --quiet
-    sudo systemctl start nginx.service
     
 ## Private  Key
 
@@ -109,5 +74,4 @@ The key's randomart image is:
 
 cat ~/.ssh/id_rsa.pub
 ssh-rsa AAAAB3N...AAAAB3N your@gmail.com
-
 ```
