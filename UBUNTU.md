@@ -5,12 +5,13 @@
 ## nginx
 
     source
+
+    $ /etc/apt/sources.list
     deb http://nginx.org/packages/ubuntu/ xenial nginx
     deb-src http://nginx.org/packages/ubuntu/ xenial nginx
 
     install
     
-    $ /etc/apt/sources.list
     $ sudo curl -O https://nginx.org/keys/nginx_signing.key && sudo apt-key add ./nginx_signing.key
     $ sudo apt-get update
     $ sudo apt-get install nginx
@@ -54,7 +55,9 @@
 
 ## chromium
 
-    $ sudo apt-get install chromium-bsu
+    $ sudo apt-get install chromium
+      set the pollInterval to 10000 in node_modules/chrome-launcher.js
+      chromeFlags: ['--headless', '--disable-gpu', '--remote-debugging-address=0.0.0.0', '--no-sandbox']
 
 ## certbot
 
