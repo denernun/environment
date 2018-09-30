@@ -58,6 +58,9 @@
     $ sudo apt-get install chromium
       set the pollInterval to 10000 in node_modules/chrome-launcher.js
       chromeFlags: ['--headless', '--disable-gpu', '--remote-debugging-address=0.0.0.0', '--no-sandbox']
+      sudo apt -f install
+      sudo rm /var/cache/apt/archives/chromium*
+      sudo apt install chromium-browser
 
 ## certbot
 
