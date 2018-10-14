@@ -163,8 +163,6 @@
     # working with npm
     npm i -g yarn
     npm i -g npx
-    npm i -g np
-    npm i -g npm-name-cli
         
     # general utilities
     npm i -g node-gyp
@@ -172,24 +170,10 @@
     npm i -g coffeescript
     npm i -g minifier
     npm i -g cross-env
-    npm i -g tldr
-    npm i -g now
-    npm i -g spoof
-    npm i -g fkill-cli
-    npm i -g castnow
-    npm i -g vtop    
-
+    
     # debugging
     npm i -g ndb
-    npm i -g node-inspector
-
-    # react
-    npm i -g create-react-app
-    npm i -g create-react-library
-    npm i -g react-native-cli
-    npm i -g eslint-config-standard-react
-    npm i -g eslint-config-standard-jsx
-    npm i -g eslint-plugin-react
+    npm i -g nodemon
 
     # angular
     npm i -g typescript
@@ -203,18 +187,13 @@
     npm i -g loopback-cli
     npm i -g firebase-tools
     npm i -g redis-commander
-    npm i -g docusaurus
 
     # linting
     npm i -g jslint
     npm i -g jshint
     npm i -g eslint
     npm i -g eslint-config-standard
-    npm i -g eslint-config-prettier
-    npm i -g eslint-plugin-prettier
     npm i -g eslint-plugin-import
-    npm i -g babel-eslint
-    npm i -g prettier
     npm i -g standard
     npm i -g htmlhint
     
