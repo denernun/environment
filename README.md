@@ -1,8 +1,5 @@
 # Environment
 
-## [APPS](APPS.md)
-    Default apps for Windows instalations
-
 ---
 ## [DB](DB.md)
     Firebird
@@ -21,14 +18,6 @@
 ---
 ## [IDE](IDE.md)
     VS Code Instalation
-
----
-## [NGINX](NGINX.md)
-    Instalation and configuration
-
----
-## [SSL](SSL.md)
-    Instalation and configuration
 
 ---
 ## [UBUNTU](UBUNTU.md)
