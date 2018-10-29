@@ -9,21 +9,19 @@ VS Code Insiders
     # install extension
     https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync
     
-    # gist
-    b8495e79573a81a9602e0c873973e71f
-
 User Config
 ---
 
 ```json
 {
-  "ActiveFileInStatusBar.fullpath": false,
-  "ActiveFileInStatusBar.revealFile": true,
   "bracketPairColorizer.highlightActiveScope": true,
   "bracketPairColorizer.showHorizontalScopeLine": false,
   "bracketPairColorizer.showVerticalScopeLine": false,
-  "css.validate": false,
+  "breadcrumbs.enabled": true,
+  "csharp.format.enable": false,
   "debug.openDebug": "openOnDebugBreak",
+  "debug.toolBarLocation": "docked",
+  "debug.inlineValues": true,
   "editor.autoIndent": true,
   "editor.cursorStyle": "line",
   "editor.find.autoFindInSelection": true,
@@ -36,6 +34,8 @@ User Config
   "editor.renderControlCharacters": true,
   "editor.renderWhitespace": "boundary",
   "editor.snippetSuggestions": "top",
+  "editor.suggest.localityBonus": true,
+  "editor.tabCompletion": "on",
   "explorer.autoReveal": false,
   "explorer.confirmDelete": false,
   "explorer.openEditors.visible": 0,
@@ -44,7 +44,7 @@ User Config
   "extensions.ignoreRecommendations": true,
   "extensions.showRecommendationsOnlyOnDemand": true,
   "explorer.confirmDragAndDrop": false,
-  "files.autoSave": "off",
+  "files.autoSave": "afterDelay",
   "files.trimTrailingWhitespace": true,
   "gitlens.advanced.messages": {
     "suppressCommitHasNoPreviousCommitWarning": false,
@@ -58,7 +58,7 @@ User Config
   },
   "git.autofetch": true,
   "git.confirmSync": false,
-  "git.path": "D:/GIT/bin/git.exe",
+  "git.path": "D:/GIT/cmd/git.exe",
   "gitlens.defaultDateFormat": "D/MMM/YY hh:mm:ss",
   "gitlens.defaultDateStyle": "absolute",
   "gitlens.historyExplorer.enabled": true,
@@ -66,11 +66,16 @@ User Config
   "gitlens.keymap": "chorded",
   "gitlens.outputLevel": "errors",
   "gitlens.settings.mode": "advanced",
-  "html.format.wrapLineLength": 240,
+  "html.format.wrapLineLength": 140,
+  "insertGuid.showCodeSnippets": false,
+  "insertGuid.showUppercase": true,
+  "javascript.referencesCodeLens.enabled": true,
+  "javascript.suggest.completeFunctionCalls": true,
   "javascript.implicitProjectConfig.checkJs": true,
   "javascript.preferences.importModuleSpecifier": "non-relative",
   "javascript.preferences.quoteStyle": "single",
   "javascript.updateImportsOnFileMove.enabled": "always",
+  "css.validate": false,
   "less.validate": false,
   "scss.validate": false,
   "search.smartCase": true,
@@ -78,30 +83,32 @@ User Config
   "sync.autoDownload": false,
   "sync.autoUpload": false,
   "sync.forceDownload": false,
-  "sync.gist": "b8495e79573a81a9602e0c873973e71f",
+  "sync.gist": "39ef6d3138b0a36d0ee05fcbdc21b1f9",
   "sync.quietSync": false,
   "sync.removeExtensions": true,
   "sync.syncExtensions": true,
+  "terminal.explorerKind": "external",
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.cursorStyle": "underline",
+  "terminal.external.windowsExec": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+  "typescript.updateImportsOnFileMove.enabled": "always",
   "typescript.preferences.importModuleSpecifier": "non-relative",
   "typescript.preferences.quoteStyle": "single",
+  "typescript.tsserver.log": "verbose",
+  "typescript.implementationsCodeLens.enabled": true,
+  "typescript.suggest.completeFunctionCalls": true,
+  "typescript.tsserver.trace": "verbose",
+  "typescript.referencesCodeLens.enabled": true,
   "tslint.alwaysShowStatus": true,
   "tslint.autoFixOnSave": true,
-  "typescript.referencesCodeLens.enabled": true,
+  "tslint.alwaysShowRuleFailuresAsWarnings": true,
   "vsicons.dontShowNewVersionMessage": true,
   "vsicons.projectDetection.disableDetect": true,
   "workbench.colorTheme": "dark-plus-syntax",
   "workbench.commandPalette.preserveInput": true,
   "workbench.iconTheme": "vscode-icons",
-  "breadcrumbs.enabled": true,
-  "tslint.alwaysShowRuleFailuresAsWarnings": true,
-  "csharp.format.enable": false,
-  "terminal.integrated.cursorBlinking": true,
-  "terminal.integrated.cursorStyle": "underline",
-  "terminal.external.windowsExec": "C:\\Windows\\System32\\cmd.exe",
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "terminal.explorerKind": "external",
-  "terminal.integrated.copyOnSelection": true,
-  "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe",
+  "workbench.editor.highlightModifiedTabs": true,
   "todo-tree.defaultHighlight": {
     "foreground": "green",
     "type": "none"
@@ -110,6 +117,6 @@ User Config
     "TODO": {},
     "FIXME": {}
   },
-  "editor.suggest.localityBonus": true
-}  
+  "vscode-json-editor.theme": "dark"
+}
 ```
