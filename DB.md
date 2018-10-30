@@ -93,7 +93,7 @@ Linux
 
 ---
 
-#### Redis
+### Redis
 
 **Windows**
 
