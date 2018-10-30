@@ -2,11 +2,13 @@
 
 ---
 
-#### Firebird
+### Firebird
 
-http://www.firebirdsql.org/en/firebird-2-5/
+**Windows**
 
 ```text
+http://www.firebirdsql.org/en/firebird-2-5/
+
 Firebird 2.5.7 x32 (UDF)
 
 Path
@@ -14,9 +16,18 @@ Path
 C:\Program Files (x86)\Firebird\Firebird_2_5\bin
 ```
 
+**Linux**
+
+```text
+# apt-get install firebird2.5-superclassic
+# dpkg-reconfigure firebird2.5-superclassic
+# isql-fb
+# connect "localhost:database.fdb" user 'USER' password 'password';
+```
+
 ---
 
-#### Postgresql
+### Postgresql
 
 **Windows**
 
@@ -62,7 +73,7 @@ sudo -u postgres createdb 'db_name'
 
 ---
 
-#### MySQL
+### MySQL
 
 **Windows**
 
@@ -94,7 +105,7 @@ chocolatey install
 choco install redis-64
 ```
 
-**Windows Manual**
+**Windows**
 
 download
 https://github.com/MicrosoftArchive/redis/releases
