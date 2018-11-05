@@ -42,8 +42,8 @@ password=postgres
 **Windows**
 
 ```text
-Download<br>
-https://www.postgresql.org/download/windows/<br>
+Download
+https://www.postgresql.org/download/windows/
 ```
 
 **Linux**
