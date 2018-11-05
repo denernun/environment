@@ -30,6 +30,7 @@
 
     Path
 
+    D:\SDK\tools
     D:\SDK\tools\bin
     D:\SDK\platform-tools
 
