@@ -41,9 +41,10 @@ password=postgres
 
 **Windows**
 
+```text
 Download<br>
 https://www.postgresql.org/download/windows/<br>
-https://www.pgadmin.org/download/pgadmin-4-windows/<br>
+```
 
 **Linux**
 
