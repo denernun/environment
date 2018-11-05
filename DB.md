@@ -32,14 +32,16 @@ C:\Program Files (x86)\Firebird\Firebird_2_5\bin
 
 ### Postgresql
 
-**Windows**
-
-Download
-https://www.postgresql.org/download/windows/
-https://www.pgadmin.org/download/pgadmin-4-windows/
-
+```text
 user=postgres
 password=postgres
+```
+
+**Windows**
+
+Download<br>
+https://www.postgresql.org/download/windows/<br>
+https://www.pgadmin.org/download/pgadmin-4-windows/<br>
 
 **Linux**
 
