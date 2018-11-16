@@ -77,6 +77,7 @@ sudo -u postgres psql
 
 # criar banco
 sudo -u postgres createdb 'db_name'
+createdb -U postgres unicorns
 ```
 
 ---
