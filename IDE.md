@@ -2,16 +2,29 @@
 
 VS Code Insiders
 ---
+```text
 
     # install
     Visual Studio Code Insiders (https://code.visualstudio.com/insiders)
     
     # install extension
     https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync
+```
+
+VS Code Syncing
+---
+```text
+
+    # extension
+    Syncing (https://code.visualstudio.com/insiders)
     
+    # settings
+    gist: fd13682c2628ae3d751c14cf6afa9ede
+    token: ebb3a7541f9d4dad1699996e0d8d26196fae9f77
+```
+
 User Config
 ---
-
 ```json
 {
   "bracketPairColorizer.highlightActiveScope": true,
@@ -20,7 +33,7 @@ User Config
   "breadcrumbs.enabled": true,
   "csharp.format.enable": false,
   "debug.openDebug": "openOnDebugBreak",
-  "debug.toolBarLocation": "docked",
+  "debug.toolBarLocation": "hidden",
   "debug.inlineValues": true,
   "editor.autoIndent": true,
   "editor.cursorStyle": "line",
@@ -66,29 +79,21 @@ User Config
   "gitlens.keymap": "chorded",
   "gitlens.outputLevel": "errors",
   "gitlens.settings.mode": "advanced",
-  "html.format.wrapLineLength": 240,
+  "html.format.wrapLineLength": 140,
   "insertGuid.showCodeSnippets": false,
   "insertGuid.showUppercase": true,
-  "liveshare.audio.startCallOnShare": true,
-  "liveServer.settings.donotShowInfoMsg": true,
   "javascript.referencesCodeLens.enabled": true,
   "javascript.suggest.completeFunctionCalls": true,
   "javascript.implicitProjectConfig.checkJs": true,
   "javascript.preferences.importModuleSpecifier": "non-relative",
   "javascript.preferences.quoteStyle": "single",
   "javascript.updateImportsOnFileMove.enabled": "always",
+  "liveshare.audio.startCallOnShare": true,
+  "liveServer.settings.donotShowInfoMsg": true,
   "css.validate": false,
   "less.validate": false,
   "scss.validate": false,
   "search.smartCase": true,
-  "sync.askGistName": false,
-  "sync.autoDownload": false,
-  "sync.autoUpload": false,
-  "sync.forceDownload": false,
-  "sync.gist": "6dbb7af402bcb24d53166c16151eb027",
-  "sync.quietSync": false,
-  "sync.removeExtensions": true,
-  "sync.syncExtensions": true,
   "terminal.explorerKind": "external",
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.cursorBlinking": true,
@@ -111,6 +116,7 @@ User Config
   "workbench.colorTheme": "dark-plus-syntax",
   "workbench.commandPalette.preserveInput": true,
   "workbench.iconTheme": "vscode-icons",
+  "workbench.editor.highlightModifiedTabs": true,
   "todo-tree.defaultHighlight": {
     "foreground": "green",
     "type": "none"
@@ -119,6 +125,7 @@ User Config
     "TODO": {},
     "FIXME": {}
   },
-  "vscode-json-editor.theme": "dark"
+  "vscode-json-editor.theme": "dark",
+  "debug.showInStatusBar": "never"
 }
 ```
