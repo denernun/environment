@@ -19,8 +19,8 @@ VS Code Syncing
     Syncing (https://code.visualstudio.com/insiders)
     
     # settings
-    gist: fd13682c2628ae3d751c14cf6afa9ede
-    token: ebb3a7541f9d4dad1699996e0d8d26196fae9f77
+    id: x=fd13682c2628ae3d751c14cf6afa9ede=x
+    token: x=ebb3a7541f9d4dad1699996e0d8d26196fae9f77=x
 ```
 
 User Config
