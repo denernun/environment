@@ -11,8 +11,8 @@ Visual Studio Code Insiders (https://code.visualstudio.com/insiders)
 Syncing (https://code.visualstudio.com/insiders)
     
 # settings
-id: x=fd13682c2628ae3d751c14cf6afa9ede=x
-token: x=ebb3a7541f9d4dad1699996e0d8d26196fae9f77=x
+id: =42fbb93c27f2c6a2===c4cf20261a476033=
+token: =517018c24e5df2e===aa2c9dc764b3e6f2f87f99d99=
 ```
 
 User Config
