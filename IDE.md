@@ -5,17 +5,10 @@ VS Code Insiders
 ```text
 
     # install
+    Visual Studio Code (https://code.visualstudio.com)
     Visual Studio Code Insiders (https://code.visualstudio.com/insiders)
     
     # install extension
-    https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync
-```
-
-VS Code Syncing
----
-```text
-
-    # extension
     Syncing (https://code.visualstudio.com/insiders)
     
     # settings
