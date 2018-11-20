@@ -4,16 +4,16 @@ VS Code Insiders
 ---
 ```text
 
-    # install
-    Visual Studio Code (https://code.visualstudio.com)
-    Visual Studio Code Insiders (https://code.visualstudio.com/insiders)
+# install
+Visual Studio Code (https://code.visualstudio.com)
+Visual Studio Code Insiders (https://code.visualstudio.com/insiders)
     
-    # install extension
-    Syncing (https://code.visualstudio.com/insiders)
+# install extension
+Syncing (https://code.visualstudio.com/insiders)
     
-    # settings
-    id: x=fd13682c2628ae3d751c14cf6afa9ede=x
-    token: x=ebb3a7541f9d4dad1699996e0d8d26196fae9f77=x
+# settings
+id: x=fd13682c2628ae3d751c14cf6afa9ede=x
+token: x=ebb3a7541f9d4dad1699996e0d8d26196fae9f77=x
 ```
 
 User Config
