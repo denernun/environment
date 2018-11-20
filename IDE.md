@@ -3,7 +3,6 @@
 VS Code Insiders
 ---
 ```text
-
 # install
 Visual Studio Code (https://code.visualstudio.com)
 Visual Studio Code Insiders (https://code.visualstudio.com/insiders)
