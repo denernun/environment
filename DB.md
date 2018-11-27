@@ -44,6 +44,12 @@ password=postgres
 ```text
 Download
 https://www.postgresql.org/download/windows/
+
+# criar banco
+createdb -U postgres <db_name>
+
+# dml
+psql -U postgres <db_name>
 ```
 
 **Linux**
@@ -77,7 +83,7 @@ sudo -u postgres psql
 
 # criar banco
 sudo -u postgres createdb 'db_name'
-createdb -U postgres unicorns
+createdb -U postgres <db_name>
 ```
 
 ---
