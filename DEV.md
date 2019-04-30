@@ -197,6 +197,7 @@
     npm i -g eslint-plugin-import
     npm i -g standard
     npm i -g htmlhint
+    npm i -g typescript-tslint-plugin
     
     # utils
     npm i -g gulp
