@@ -87,62 +87,10 @@
     D:\PYTHON\Scripts
 	
 ----
-**Ruby**
----
-
-    https://rubyinstaller.org/downloads/
-	
-    Root
-    
-    D:\RUBY
-
-    Path
-
-    D:\RUBY\bin
-	
-----
 **Redis**
 ---
 
     https://github.com/MicrosoftArchive/redis/releases
-
-----
-**RabbitMQ**
----
-
-    Install Erlang
-    http://www.erlang.org/downloads
-    
-    Install RabbitMQ
-    https://www.rabbitmq.com/download.html
-
-----
-**NVM**
----
-
-    https://github.com/coreybutler/nvm-windows
-
-    Instructions
-    
-    Remove all versions of node in %appdata% and C:\Program Files\nodejs
-    Install in D:\NVM
-    Install SymLynk NodeJS in D:\NODE
-
-    Root
-    
-    D:\NVM
-    
-    Path
-
-    D:\NVM
-        
-    Comands
-    
-    nvm root <path> [D:\NVM]
-    nvm install <version> arch [32|64]
-    nvm list
-    nvm use <version>
-    nvm uninstall <version>
 
 ----
 **Node**
@@ -198,7 +146,8 @@
     npm i -g standard
     npm i -g htmlhint
     npm i -g typescript-tslint-plugin
-    
+    npm install -g editorconfig
+
     # utils
     npm i -g gulp
     npm i -g grunt
