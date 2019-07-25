@@ -16,9 +16,5 @@
     GIT commands
 
 ---
-## [IDE](IDE.md)
-    VS Code Instalation
-
----
 ## [UBUNTU](UBUNTU.md)
     Instalation and configuration
