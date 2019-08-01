@@ -55,7 +55,8 @@
 
 ## chromium
 
-    $ sudo apt-get install chromium
+    $ sudo apt-get install chromium-bsu
+    $ sudo apt-get install chromium-browser
       set the pollInterval to 10000 in node_modules/chrome-launcher.js
       chromeFlags: ['--headless', '--disable-gpu', '--remote-debugging-address=0.0.0.0', '--no-sandbox']
       sudo apt -f install
@@ -73,11 +74,6 @@
     $ sudo apt-get update
     $ sudo apt-get install certbot
     $ sudo openssl dhparam -out /etc/letsencrypt/dhparam.pem 2048
-    
-## certbot create
-
-    $ sudo certbot certonly
-    $ sudo certbot certonly --webroot -w /var/www/example/ -d www.example.com -d example.com
 
 ## certbot renew manual
 
@@ -88,7 +84,7 @@
     $ sudo crontab -e
     $ 15 3 * * * /usr/bin/certbot renew --quiet
     
-## Config
+## config
 
     ## remove a mensagem do chrome para certificados inválidos
     chrome://flags/#allow-insecure-localhost
@@ -129,40 +125,20 @@
     [ v3_ca ]
     subjectAltName = @alt_names
 
-## Validation
+## validation
 
     ## test
     https://www.ssllabs.com/ssltest/
     
-## Private  Key
+## keys
 
-```console
-ssh-keygen -t rsa -b 4096 -C "your@email.com"
+    $ ssh-keygen -t rsa -b 4096 -C ubuntu
 
-Generating public/private rsa key pair.
-Enter file in which to save the key (/home/<your-user>/.ssh/id_rsa):
+    # Generating public/private rsa key pair.
+    # Enter file in which to save the key (/home/<your-user>/.ssh/id_rsa):
 
-Created directory '/home/<your-user>/.ssh'.
-Enter passphrase (empty for no passphrase): 
-Enter same passphrase again: 
-Your identification has been saved in /home/<your-user>/.ssh/id_rsa.
-Your public key has been saved in /home/<your-user>/.ssh/id_rsa.pub.
-The key fingerprint is:
-SHA256:lXhYzNtK37chmNGsV5/278yr6LrWuUygcYvqklcdtzI my.email@gmail.com
-The key's randomart image is:
-+---[RSA 4096]----+
-|         o.      |
-|         +o.     |
-|        o +oo    |
-|         +oo.o . |
-|       .S+oo*.. o|
-|       .=E+=.o.+o|
-|    . .o .+.o o.+|
-|   o ..  .oo.  +.|
-|    +o  .o+=...oB|
-+----[SHA256]-----+
+    # Private Key: /home/<your-user>/.ssh/id_rsa.
+    # Public key: /home/<your-user>/.ssh/id_rsa.pub.
 
-cat ~/.ssh/id_rsa.pub
-ssh-rsa AAAAB3N...AAAAB3N your@gmail.com
-```
-
+    # cat ~/.ssh/id_rsa.pub
+    # ssh-rsa AAAAB3N...AAAAB3N ubuntu
