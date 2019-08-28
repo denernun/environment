@@ -79,8 +79,13 @@ sudo service postgresql start
 sudo service postgresql stop
 sudo service postgresql restart
 
-# trocar senha
+# criar banco
+sudo -u postgres createdb 'db_name'
+
+# console
 sudo -u postgres psql
+
+# trocar senha
 \password postgres
 \q
 
@@ -88,9 +93,6 @@ sudo -u postgres psql
 \alter user postgres with password 'new_password';
 \q
 
-# criar banco
-sudo -u postgres createdb 'db_name'
-createdb -U postgres <db_name>
 ```
 
 ---
