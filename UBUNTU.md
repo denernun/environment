@@ -20,8 +20,8 @@
     
     update
     
-    $ /etc/apt/sources.list
-    $ /etc/nginx
+    $ sudo nano /etc/apt/sources.list
+    $ cd /etc/nginx
     $ sudo cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bak
     $ sudo apt-get remove nginx nginx-common nginx-full nginx-core
     $ sudo apt-get update
