@@ -55,8 +55,9 @@ psql -U postgres <db_name>
 **Linux**
 
 ```text
-sudo apt-get update && sudo apt-get upgrade
-sudo apt-get install postgresql postgresql-contrib
+sudo apt update  
+sudo apt upgrade
+sudo apt install postgresql postgresql-contrib
 
 sudo nano /etc/postgresql/9.6/main/postgresql.conf
 listen_addresses = '*'
