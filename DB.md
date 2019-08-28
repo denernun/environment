@@ -19,13 +19,13 @@ C:\Program Files (x86)\Firebird\Firebird_2_5\bin
 **Linux**
 
 ```text
-# apt install firebird2.5-superclassic
-# dpkg-reconfigure firebird2.5-superclassic
-# nano /etc/firebird/2.5/firebird.conf
+# sudo apt install firebird2.5-superclassic
+# sudo dpkg-reconfigure firebird2.5-superclassic
+# nsudo ano /etc/firebird/2.5/firebird.conf
   RemoteBindAddress=
   DatabaseAccess=
-# isql-fb
-# connect "localhost:database.fdb" user 'USER' password 'password';
+# sudo isql-fb
+  connect "localhost:database.fdb" user 'USER' password 'password';
 ```
 
 ---
