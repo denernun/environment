@@ -6,7 +6,7 @@
 
     source
 
-    $ /etc/apt/sources.list
+    $ sudo nano /etc/apt/sources.list
     deb http://nginx.org/packages/ubuntu/ xenial nginx
     deb-src http://nginx.org/packages/ubuntu/ xenial nginx
 
