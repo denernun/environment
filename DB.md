@@ -9,7 +9,7 @@
 ```text
 http://www.firebirdsql.org/en/firebird-2-5/
 
-Firebird 2.5.7 x32 (UDF)
+Firebird 2.5.9 x32 (UDF)
 
 Path
 
@@ -19,9 +19,9 @@ C:\Program Files (x86)\Firebird\Firebird_2_5\bin
 **Linux**
 
 ```text
-# apt-get install firebird2.5-superclassic
+# apt install firebird2.5-superclassic
 # dpkg-reconfigure firebird2.5-superclassic
-# vi /etc/firebird/2.5/firebird.conf
+# nano /etc/firebird/2.5/firebird.conf
   RemoteBindAddress=
   DatabaseAccess=
 # isql-fb
