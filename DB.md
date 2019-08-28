@@ -21,9 +21,11 @@ C:\Program Files (x86)\Firebird\Firebird_2_5\bin
 ```text
 # sudo apt install firebird2.5-superclassic
 # sudo dpkg-reconfigure firebird2.5-superclassic
+
 # sudo nano /etc/firebird/2.5/firebird.conf
   RemoteBindAddress=
   DatabaseAccess=Full
+
 # sudo isql-fb
   connect "localhost:database.fdb" user 'USER' password 'password';
 ```
