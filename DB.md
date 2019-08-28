@@ -57,14 +57,18 @@ psql -U postgres <db_name>
 **Linux**
 
 ```text
+
+# install
+
 sudo apt update  
 sudo apt upgrade
 sudo apt install postgresql postgresql-contrib
 
-sudo nano /etc/postgresql/9.6/main/postgresql.conf
+# access
+
+sudo nano /etc/postgresql/9.X/main/postgresql.conf
 listen_addresses = '*'
 
-# allow access
 sudo nano /etc/postgresql/9.6/main/pg_hba.conf
 host all all 0.0.0.0/0 md5
 host all all ::0/0 md5
