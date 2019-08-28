@@ -13,8 +13,8 @@
     install
     
     $ sudo curl -O https://nginx.org/keys/nginx_signing.key && sudo apt-key add ./nginx_signing.key
-    $ sudo apt-get update
-    $ sudo apt-get install nginx
+    $ sudo apt update
+    $ sudo apt install nginx
     $ sudo systemctl start nginx
     $ sudo systemctl status nginx
     
@@ -23,19 +23,24 @@
     $ sudo nano /etc/apt/sources.list
     $ cd /etc/nginx
     $ sudo cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bak
-    $ sudo apt-get remove nginx nginx-common nginx-full nginx-core
-    $ sudo apt-get update
-    $ sudo apt-get install nginx
+    $ sudo apt remove nginx nginx-common nginx-full nginx-core
+    $ sudo apt update
+    $ sudo apt install nginx
     $ sudo systemctl unmask nginx
     $ sudo systemctl start nginx
     $ sudo systemctl enable nginx
     $ sudo systemctl status nginx
+    
+    folder
+    
+    $ sudo mkdir /var/www
+    $ sudo chown ubuntu:root /var/www
 
 ## node
 
-    $ curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-    $ sudo apt-get install -y nodejs
-    $ sudo vi ~/.bashrc
+    $ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+    $ sudo apt install -y nodejs
+    $ sudo nano ~/.bashrc
     $ export NODE_ENV=[ production | release ]
     $ node -v
     $ npm -v
@@ -48,15 +53,15 @@
 
 ## php
 
-    $ sudo apt-get install php7.0 php7.0-mcrypt
+    $ sudo apt install php7.0 php7.0-mcrypt
     $ sudo nano /etc/php/7.0/fpm/php.ini
-      cgi.fix_pathinfo=0
+    # cgi.fix_pathinfo=0
     $ sudo service php7-fpm restart
 
 ## chromium
 
-    $ sudo apt-get install chromium-bsu
-    $ sudo apt-get install chromium-browser
+    $ sudo apt install chromium-bsu
+    $ sudo apt install chromium-browser
       set the pollInterval to 10000 in node_modules/chrome-launcher.js
       chromeFlags: ['--headless', '--disable-gpu', '--remote-debugging-address=0.0.0.0', '--no-sandbox']
       sudo apt -f install
@@ -65,15 +70,18 @@
 
 ## certbot
 
+    site
+    
     https://certbot.eff.org/#ubuntuxenial-nginx
 
-    $ sudo wget -O - https://www.startssl.com/certs/ca.pem https://www.startssl.com/certs/sub.class1.server.ca.pem | sudo tee -a /etc/ssl/ca-certs.pem > /dev/null
-    $ sudo apt-get update
-    $ sudo apt-get install software-properties-common
+    install
+        
+    $ sudo apt update
+    $ sudo apt install software-properties-common
     $ sudo add-apt-repository ppa:certbot/certbot
-    $ sudo apt-get update
-    $ sudo apt-get install certbot
-    $ sudo openssl dhparam -out /etc/letsencrypt/dhparam.pem 2048
+    $ sudo apt update
+    $ sudo apt install certbot
+    $ sudo openssl dhparam -out /etc/letsencrypt/dhparam.pem 4096
 
 ## certbot renew manual
 
