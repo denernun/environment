@@ -1,18 +1,11 @@
 # Environment Install
 
-**Java SDK**
+**Java **
 ---
-
-    JavaSDK 64 http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
-    JavaJRE 32 http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html
-
-    Root
-    
-    C:\program Files\Java
 
     Environment
 
-    JAVA_HOME=C:\Program Files\Java
+    JAVA_HOME=C:\Program Files\Android\Android Studio\jre
 
 ----
 **Android SDK**
@@ -51,40 +44,6 @@
     Path
     
     D:\GRADLE\bin
-
-----
-**GIT**
----
-
-    https://git-scm.com/download/win (portable)
-
-    Root
-    
-    D:\GIT
-
-    Path
-
-    D:\GIT
-    D:\GIT\cmd
-
-----
-**Python**
----
-
-    https://www.python.org/downloads/
-	
-    Root
-    
-    D:\PYTHON
-
-    Environment
-
-    PYTHON=D:\PYTHON\PYTHON.EXE
-
-    Path
-
-    D:\PYTHON
-    D:\PYTHON\Scripts
 	
 ----
 **Redis**
