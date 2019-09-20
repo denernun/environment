@@ -97,37 +97,7 @@ sudo -u postgres psql
 
 ---
 
-### MySQL
-
-**Windows**
-
-download
-[https://dev.mysql.com/downloads/mysql/](MySQL)
-
-
-```text
-Windows
-
-user=root
-password: abc12345
-
-Linux
-
-```
-
----
-
 ### Redis
-
-**Windows**
-
-chocolatey package install
-https://chocolatey.org/install
-
-```text
-chocolatey install
-choco install redis-64
-```
 
 **Windows**
 
