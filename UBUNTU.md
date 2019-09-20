@@ -61,12 +61,6 @@
 ## chromium
 
     $ sudo apt install chromium-bsu
-    $ sudo apt install chromium-browser
-      set the pollInterval to 10000 in node_modules/chrome-launcher.js
-      chromeFlags: ['--headless', '--disable-gpu', '--remote-debugging-address=0.0.0.0', '--no-sandbox']
-      sudo apt -f install
-      sudo rm /var/cache/apt/archives/chromium*
-      sudo apt install chromium-browser
 
 ## certbot
 
@@ -91,49 +85,8 @@
 
     $ sudo crontab -e
     $ 15 3 * * * /usr/bin/certbot renew --quiet
-    
-## config
 
-    ## remove a mensagem do chrome para certificados inválidos
-    chrome://flags/#allow-insecure-localhost
-
-    # self-signed
-    openssl req -newkey rsa:2048 -x509 -nodes -keyout server.key -new -out server.crt -subj /CN=localhost -sha256 -days 3650
-    
-    # self-signed validation
-    openssl x509 -in server.crt -noout -text -pubkey
-    openssl rsa -in server.key -check -pubout
-    openssl rsa -in server.key -pubout
-    openssl x509 -noout -modulus -in server.crt| openssl md5
-    openssl rsa -noout -modulus -in server.key| openssl md5
-
-    openssl genrsa -des3 -out rootCA.key 2048
-    openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1024 -out rootCA.pem -config sslgen.cnf
-    openssl req -sha256 -new -nodes -out server.csr -newkey rsa:2048 -keyout server.key -config sslgen.cnf
-    openssl x509 -req -in server.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out server.crt -days 500 -sha256 -extfile sslgen.cnf
-
-    # sslgen.cnf
-    [alt_names]
-    DNS.1 = localhost
-
-    [req]
-    default_bits = 2048
-    prompt = no
-    default_md = sha256
-    distinguished_name = dn
-
-    [dn]
-    CN = localhost
-
-    [usr_cert]
-    authorityKeyIdentifier=keyid,issuer
-    basicConstraints=CA:FALSE
-    keyUsage = digitalSignature, keyEncipherment
-
-    [ v3_ca ]
-    subjectAltName = @alt_names
-
-## validation
+## validation certificates
 
     ## test
     https://www.ssllabs.com/ssltest/
