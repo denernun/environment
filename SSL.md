@@ -1,4 +1,4 @@
-**comands
+**comands**
 ```terminal
 rem https://www.freecodecamp.org/news/how-to-get-https-working-on-your-local-development-environment-in-5-minutes-7af615770eec/
 openssl genrsa -des3 -out rootCA.key 2048
@@ -8,7 +8,7 @@ openssl x509 -req -in localhost.csr -CA rootCA.pem -CAkey rootCA.key -CAcreatese
 ```
 
 
-**cert.cnf
+**cert.cnf**
 ```terminal
 [req]
 deafault_bits = 2048
@@ -27,7 +27,7 @@ CN=localhost
 ```
 
 
-**cert.ext
+**cert.ext**
 ```terminal
 authorityKeyIdentifier=keyid,issuer
 basicConstraints=CA:FALSE
@@ -38,14 +38,14 @@ subjectAltName = @alt_names
 DNS.1 = localhost
 ```
 
-**firefox
+**firefox**
 ```
 Browse to about:config
 Search for “network.stricttransportsecurity.preloadlist”.
 Set it to false.
 ```
 
-**chrome
+**chrome**
 ```
 chrome://flags/#allow-insecure-localhost
 ```
