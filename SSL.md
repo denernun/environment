@@ -48,4 +48,5 @@ Set it to false.
 **chrome**
 ```
 chrome://flags/#allow-insecure-localhost
+cors --disable-web-security --user-data-dir="C:/Users/Public/Chrome"
 ```
