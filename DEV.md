@@ -133,6 +133,7 @@
     Path
 
     D:\SSH
+    D:\SSH\tools
 
 ----
 **SVN**
