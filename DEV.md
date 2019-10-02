@@ -45,12 +45,6 @@
     Path
     
     D:\GRADLE\bin
-	
-----
-**Redis**
----
-
-    https://github.com/MicrosoftArchive/redis/releases
 
 ----
 **Node**
