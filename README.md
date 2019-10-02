@@ -4,7 +4,6 @@
 ## [DB](DB.md)
     Firebird
     PostgreSQL
-    MySQL
     Redis
 
 ---
