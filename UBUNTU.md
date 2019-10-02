@@ -51,13 +51,6 @@
     $ pm2 startup systemd
     $ sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u ubuntu --hp /home/ubuntu
 
-## php
-
-    $ sudo apt install php7.0 php7.0-mcrypt
-    $ sudo nano /etc/php/7.0/fpm/php.ini
-    # cgi.fix_pathinfo=0
-    $ sudo service php7-fpm restart
-
 ## chromium
 
     $ sudo apt install chromium-bsu
