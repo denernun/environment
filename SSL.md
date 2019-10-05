@@ -49,4 +49,5 @@ Set it to false.
 ```
 chrome://flags/#allow-insecure-localhost
 cors --disable-web-security --user-data-dir="C:/Users/Public/Chrome"
+debug --remote-debugging-port=9222
 ```
