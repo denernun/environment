@@ -16,17 +16,17 @@
 
     Root
     
-    D:\SDK
+    C:\Users\dener\AppData\Local\Android\Sdk\tools
 
     Environment
 
-    ANDROID_HOME=D:\SDK
+    ANDROID_HOME=C:\Users\dener\AppData\Local\Android\Sdk\tools
 
     Path
 
-    D:\SDK\tools
-    D:\SDK\tools\bin
-    D:\SDK\platform-tools
+    C:\Users\dener\AppData\Local\Android\Sdk\tools
+    C:\Users\dener\AppData\Local\Android\Sdk\tools\bin
+    C:\Users\dener\AppData\Local\Android\Sdk\tools\platform-tools
 
 ----
 **Gradle SDK**
