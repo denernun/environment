@@ -20,31 +20,13 @@
 
     Environment
 
-    ANDROID_HOME=C:\Users\dener\AppData\Local\Android\Sdk\tools
+    ANDROID_HOME=C:\Users\dener\AppData\Local\Android\Sdk
 
     Path
 
     C:\Users\dener\AppData\Local\Android\Sdk\tools
     C:\Users\dener\AppData\Local\Android\Sdk\tools\bin
     C:\Users\dener\AppData\Local\Android\Sdk\tools\platform-tools
-
-----
-**Gradle SDK**
----
-
-    https://gradle.org/install/#manually
-
-    Root
-    
-    D:\GRADLE
-    
-    Environment
-    
-    GRADLE_HOME=D:\GRADLE
-    
-    Path
-    
-    D:\GRADLE\bin
 
 ----
 **Node**
