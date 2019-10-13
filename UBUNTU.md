@@ -72,12 +72,10 @@
 
 ## certboot
 
-```console
-ubuntu@linux:~$ certbot certonly --webroot -d domain --email denernun@gmail.com -w /etc/letsencrypt -n --agree-tos --force-renewal
-ubuntu@linux:~$ nginx -t && sudo systemctl reload nginx
-ubuntu@linux:~$ echo -e '#!/bin/bash\nnginx -t && systemctl reload nginx' | sudo tee /etc/letsencrypt/renewal-hooks/post/nginx-reload.sh
-ubuntu@linux:~$ sudo chmod a+x /etc/letsencrypt/renewal-hooks/post/nginx-reload.sh
-```
+    $ certbot certonly --webroot -d domain --email denernun@gmail.com -w /etc/letsencrypt -n --agree-tos --force-renewal
+    $ nginx -t && sudo systemctl reload nginx
+    $ echo -e '#!/bin/bash\nnginx -t && systemctl reload nginx' | sudo tee /etc/letsencrypt/renewal-hooks/post/nginx-reload.sh
+    $ sudo chmod a+x /etc/letsencrypt/renewal-hooks/post/nginx-reload.sh
 
 ## certbot renew manual
 
