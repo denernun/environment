@@ -68,15 +68,15 @@
     $ sudo add-apt-repository ppa:certbot/certbot
     $ sudo apt update
     $ sudo apt install certbot
-    $ sudo openssl dhparam -out /etc/letsencrypt/dhparam.pem 4096
+    $ sudo openssl dhparam -out /etc/nginx/dhparam.pem 4096
 
 ## certboot
 
-```bash
-$ certbot certonly --webroot -d domain --email denernun@gmail.com -w /etc/letsencrypt -n --agree-tos --force-renewal
-$ sudo nginx -t && sudo systemctl reload nginx
-$ echo -e '#!/bin/bash\nnginx -t && systemctl reload nginx' | sudo tee /etc/letsencrypt/renewal-hooks/post/nginx-reload.sh
-$ sudo chmod a+x /etc/letsencrypt/renewal-hooks/post/nginx-reload.sh
+```console
+ubuntu@linux:~$ certbot certonly --webroot -d domain --email denernun@gmail.com -w /etc/letsencrypt -n --agree-tos --force-renewal
+ubuntu@linux:~$ nginx -t && sudo systemctl reload nginx
+ubuntu@linux:~$ echo -e '#!/bin/bash\nnginx -t && systemctl reload nginx' | sudo tee /etc/letsencrypt/renewal-hooks/post/nginx-reload.sh
+ubuntu@linux:~$ sudo chmod a+x /etc/letsencrypt/renewal-hooks/post/nginx-reload.sh
 ```
 
 ## certbot renew manual
