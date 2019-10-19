@@ -26,6 +26,6 @@ $ sudo apt install vim-gtk3
 ```
 **delphi
 ```
-[PAServer](http://docwiki.embarcadero.com/RADStudio/en/Installing_the_Platform_Assistant_on_Linux)
+[http://docwiki.embarcadero.com/RADStudio/en/Installing_the_Platform_Assistant_on_Linux](http://docwiki.embarcadero.com/RADStudio/en/Installing_the_Platform_Assistant_on_Linux)
 
 ```
