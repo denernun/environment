@@ -15,6 +15,10 @@ $ sudo apt full-upgrade
 $ sudo apt install libcurl4-gnutls-dev build-essential
 $ sudo apt autoremove
 ```
+**linux xserver
+```
+xfce4-session
+```
 **linux x410**
 ```
 $ echo 'sudo export LIBGL_ALWAYS_INDIRECT=1' >> .bashrc
@@ -26,6 +30,10 @@ $ sudo apt install vim-gtk3
 ```
 **delphi
 ```
-[http://docwiki.embarcadero.com/RADStudio/en/Installing_the_Platform_Assistant_on_Linux](http://docwiki.embarcadero.com/RADStudio/en/Installing_the_Platform_Assistant_on_Linux)
-
+$ http://docwiki.embarcadero.com/RADStudio/en/Installing_the_Platform_Assistant_on_Linux
+$ tar -xf LinuxPAServer20.0.tar.gz
+$ mv PAServer-20.0/ PAServer
+$ cd PAServer
+$ ./paserver
+$ wsl ~/paserver/paserver
 ```
