@@ -38,6 +38,9 @@
 
     NODE_ENV=development
 
+    Tools
+    https://github.com/nodejs/node-gyp#on-windows
+
     Packages
 
     npm cache clean --force
