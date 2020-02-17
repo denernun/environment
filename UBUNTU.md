@@ -61,6 +61,13 @@
     ## test
     https://www.ssllabs.com/ssltest/
     
+## resize volume
+
+    $ lsblk
+    $ df -h
+    $ sudo growpart /dev/xvda 1
+    $ sudo resize2fs /dev/xvda1
+        
 ## keys
 
     $ ssh-keygen -t rsa -b 4096 -C ubuntu
