@@ -3,13 +3,7 @@
     $ sudo timedatectl set-timezone America/Sao_Paulo
 
 ## nginx
-
-    source
-
-    $ sudo nano /etc/apt/sources.list
-    deb http://nginx.org/packages/ubuntu/ xenial nginx
-    deb-src http://nginx.org/packages/ubuntu/ xenial nginx
-
+    
     install
     
     $ sudo curl -O https://nginx.org/keys/nginx_signing.key && sudo apt-key add ./nginx_signing.key
@@ -18,23 +12,10 @@
     $ sudo systemctl start nginx
     $ sudo systemctl status nginx
     
-    update
-    
-    $ sudo nano /etc/apt/sources.list
-    $ cd /etc/nginx
-    $ sudo cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bak
-    $ sudo apt remove nginx nginx-common nginx-full nginx-core
-    $ sudo apt update
-    $ sudo apt install nginx
-    $ sudo systemctl unmask nginx
-    $ sudo systemctl start nginx
-    $ sudo systemctl enable nginx
-    $ sudo systemctl status nginx
-    
     folder
     
     $ sudo mkdir /var/www
-    $ sudo chown ubuntu:root /var/www
+    $ sudo chown ubuntu -R /var/www
 
 ## node
 
@@ -65,26 +46,15 @@
         
     $ sudo apt update
     $ sudo apt install software-properties-common
+    $ sudo add-apt-repository universe
     $ sudo add-apt-repository ppa:certbot/certbot
     $ sudo apt update
-    $ sudo apt install certbot
+    $ sudo apt-get install certbot python-certbot-nginx
     $ sudo openssl dhparam -out /etc/nginx/dhparam.pem 4096
 
-## certboot
+## certbot renew
 
-    $ certbot certonly --webroot -d domain --email denernun@gmail.com -w /etc/letsencrypt -n --agree-tos --force-renewal
-    $ nginx -t && sudo systemctl reload nginx
-    $ echo -e '#!/bin/bash\nnginx -t && systemctl reload nginx' | sudo tee /etc/letsencrypt/renewal-hooks/post/nginx-reload.sh
-    $ sudo chmod a+x /etc/letsencrypt/renewal-hooks/post/nginx-reload.sh
-
-## certbot renew manual
-
-    $ sudo certbot renew --dry-run
-
-## certbot renew auto
-
-    $ sudo crontab -e
-    $ 15 3 * * * /usr/bin/certbot renew --quiet
+    $ sudo certbot renew
 
 ## validation certificates
 
