@@ -123,8 +123,7 @@ USE 'demodb';
 SHOW DATABASES;
 
 # user
-INSERT INTO mysql.user (User,Host,authentication_string,ssl_cipher,x509_issuer,x509_subject)
-VALUES('demouser','localhost',PASSWORD('demopassword'),'','','');
+CREATE USER 'demouser'@'localhost' IDENTIFIED BY 'demopassword';
 FLUSH PRIVILEGES;
 
 # permissions
