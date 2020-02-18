@@ -59,13 +59,11 @@ psql -U postgres <db_name>
 ```text
 
 # install
-
 sudo apt update  
 sudo apt upgrade
 sudo apt install postgresql postgresql-contrib
 
 # access
-
 sudo nano /etc/postgresql/9.X/main/postgresql.conf
 listen_addresses = '*'
 
@@ -97,6 +95,44 @@ sudo -u postgres psql
 
 ---
 
+### MySQL
+
+**Linux**
+
+```text
+# install
+sudo apt-get update
+sudo apt-get install mysql-server
+sudo mysql_secure_installation utility
+sudo systemctl start mysql
+sudo systemctl enable mysql
+sudo pico /etc/mysql/mysql.conf.d/mysqld.cnf
+bind-address = 0.0.0.0
+
+# shell
+sudo mysql -u root -p
+
+#  password
+UPDATE mysql.user SET authentication_string = PASSWORD('password') WHERE User = 'root';
+FLUSH PRIVILEGES;
+
+# database
+CREATE DATABASE 'demodb';
+DROP DATABASE 'demodb';
+USE 'demodb';
+SHOW DATABASES;
+
+# user
+INSERT INTO mysql.user (User,Host,authentication_string,ssl_cipher,x509_issuer,x509_subject)
+VALUES('demouser','localhost',PASSWORD('demopassword'),'','','');
+FLUSH PRIVILEGES;
+
+# permissions
+GRANT ALL PRIVILEGES ON demodb.* to demouser@localhost;
+FLUSH PRIVILEGES;
+```
+---
+
 ### Redis
 
 **Windows**
@@ -116,3 +152,9 @@ redis-server --service-uninstall
 ```
 
 **Linux**
+
+```text
+# install
+sudo apt install
+
+```
