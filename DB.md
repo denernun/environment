@@ -112,22 +112,22 @@ bind-address = 0.0.0.0
 # shell
 sudo mysql -u root -p
 
-#  password
-UPDATE mysql.user SET authentication_string = PASSWORD('password') WHERE User = 'root';
-FLUSH PRIVILEGES;
-
 # database
 CREATE DATABASE 'demodb';
 DROP DATABASE 'demodb';
-USE 'demodb';
 SHOW DATABASES;
+USE 'demodb';
+
+# permissions
+GRANT ALL PRIVILEGES ON demodb.* to demouser@localhost;
+FLUSH PRIVILEGES;
 
 # user
 CREATE USER 'demouser'@'localhost' IDENTIFIED BY 'demopassword';
 FLUSH PRIVILEGES;
 
-# permissions
-GRANT ALL PRIVILEGES ON demodb.* to demouser@localhost;
+#  password
+ALTER USER 'demouser'@'localhost' IDENTIFIED BY 'demopassword';
 FLUSH PRIVILEGES;
 ```
 ---
