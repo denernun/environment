@@ -18,11 +18,13 @@ import the localhost.pem to certicate local computer and certificate user person
 
 **import**
 ```terminal
-rootCA.pem to Personal/Certificates in Computer Certificates
-rootCA.pem to Personal/Certificates in User Certificates
+Certificates/Current User/Personal/Certificates/rootCA.pem
+Certificates/Current User/Trusted Root/Certificates/rootCA.pem
+Certificates/Local Computer/Personal/Certificates/rootCA.pem
+Certificates/Local Computer/Trusted Root/Certificates/rootCA.pem
 
-rootCA.pem to Trusted/Certificates in Computer Certificates
-rootCA.pem to Trusted/Certificates in User Certificates
+Certificates/Current User/Trusted Root/Certificates/localhost.pem
+Certificates/Local Computer/Trusted Root/Certificates/localhost.pem
 
 localhost.pem to Trusted/Certificates in Computer Certificates
 localhost.pem to Trusted/Certificates in User Certificates
