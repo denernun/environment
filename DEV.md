@@ -49,23 +49,13 @@
     npm i -g node-gyp
     npm i -g node-sass
     npm i -g cross-env
-    npm i -g ndb
     npm i -g nodemon
+    npm i -g http-server
 
     npm i -g typescript
     npm i -g @angular/cli
-
     npm i -g loopback-cli
     npm i -g redis-commander
-
-    npm i -g eslint
-    npm i -g htmlhint
-    npm i -g tslint
-    npm i -g editorconfig
-
-    npm i -g gulp
-    npm i -g grunt
-    npm i -g windows-build-tools --production
     
 ----
 **SSL**
