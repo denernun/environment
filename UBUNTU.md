@@ -26,6 +26,17 @@
     $ node -v
     $ npm -v
 
+## netcore
+
+    $ sudo wget https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+    $ sudo dpkg -i packages-microsoft-prod.deb
+    $ sudo apt-get update
+    $ sudo apt-get install apt-transport-https
+    $ sudo apt-get update
+    $ sudo apt-get install dotnet-sdk-3.1
+    $ sudo apt-get install aspnetcore-runtime-3.1
+    $ sudo apt-get install dotnet-runtime-3.1
+
 ## pm2
 
     $ sudo npm install pm2@latest -g
@@ -50,7 +61,7 @@
     $ sudo add-apt-repository ppa:certbot/certbot
     $ sudo apt update
     $ sudo apt-get install certbot python-certbot-nginx
-    $ sudo openssl dhparam -out /etc/nginx/dhparam.pem 4096
+    $ sudo openssl dhparam -out /etc/nginx/dhparam.pem 2048
 
 ## certbot renew
 
