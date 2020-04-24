@@ -28,12 +28,3 @@ $ echo 'sudo export DISPLAY=$WSL_HOST:0' >> .bashrc
 $ sudo apt install dbus-x11
 $ sudo apt install vim-gtk3
 ```
-**delphi**
-```
-$ http://docwiki.embarcadero.com/RADStudio/en/Installing_the_Platform_Assistant_on_Linux
-$ tar -xf LinuxPAServer20.0.tar.gz
-$ mv PAServer-20.0/ PAServer
-$ cd PAServer
-$ ./paserver
-$ wsl ~/paserver/paserver
-```
