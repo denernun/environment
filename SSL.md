@@ -25,9 +25,6 @@ Certificates/Local Computer/Trusted Root/Certificates/rootCA.pem
 
 Certificates/Current User/Trusted Root/Certificates/localhost.pem
 Certificates/Local Computer/Trusted Root/Certificates/localhost.pem
-
-localhost.pem to Trusted/Certificates in Computer Certificates
-localhost.pem to Trusted/Certificates in User Certificates
 ```
 
 
