@@ -91,3 +91,13 @@
 
     # cat ~/.ssh/id_rsa.pub
     # ssh-rsa AAAAB3N...AAAAB3N ubuntu
+    
+## wsl service
+
+    # 
+    # /etc/init.d
+    # chmod +x <service>
+    # sudo update-rc.d <service> defaults
+    # ASPNETCORE_ENVIRONMENT=[Development,Release,Production]
+    # ASPNETCORE_URLS=[http://*:XXXX]
+    
