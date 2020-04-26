@@ -6,21 +6,21 @@
 ## comands
 **windows**
 ```terminal
+@echo off
+openssl dhparam -out /etc/nginx/dhparam.pem 2048
+openssl genrsa -des3 -out rootCA.key 2048
+openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1024 -out rootCA.pem
+openssl req -new -sha256 -nodes -out localhost.csr -newkey rsa:2048 -keyout localhost.key -config cert.cnf
+openssl x509 -req -in localhost.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out localhost.crt -days 500 -sha256 -extfile cert.ext
+```
+**linux**
+```terminal
 #/bin/sh
 sudo openssl dhparam -out /etc/nginx/dhparam.pem 2048
 sudo openssl genrsa -des3 -out rootCA.key 2048
 sudo openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1024 -out rootCA.pem
 sudo openssl req -new -sha256 -nodes -out localhost.csr -newkey rsa:2048 -keyout localhost.key -config cert.cnf
 sudo openssl x509 -req -in localhost.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out localhost.crt -days 500 -sha256 -extfile cert.ext
-```
-**linux**
-```terminal
-@rcho off
-openssl dhparam -out /etc/nginx/dhparam.pem 2048
-openssl genrsa -des3 -out rootCA.key 2048
-openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1024 -out rootCA.pem
-openssl req -new -sha256 -nodes -out localhost.csr -newkey rsa:2048 -keyout localhost.key -config cert.cnf
-openssl x509 -req -in localhost.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out localhost.crt -days 500 -sha256 -extfile cert.ext
 ```
 **cert.cnf**
 ```terminal
