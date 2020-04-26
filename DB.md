@@ -41,6 +41,13 @@ user=postgres
 password=postgres
 ```
 
+**UUID**
+
+```text
+default uuid_generate_v4()
+create extension if not exists "uuid-ossp";
+```
+
 **Windows**
 
 ```text
