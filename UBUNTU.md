@@ -53,14 +53,13 @@
     Description=xxx
 
     [Service]
-    Type=notify
     WorkingDirectory=/var/www/xxx
     ExecStart=/usr/bin/dotnet /var/www/xxx/xxx.dll
     Restart=always
     RestartSec=10
     KillSignal=SIGINT
     SyslogIdentifier=xxx
-    User=www-data
+    User=ubuntu
     Environment=ASPNETCORE_ENVIRONMENT=Production
     Environment=ASPNETCORE_URLS=http://localhost:5001
     Environment=DOTNET_PRINT_TELEMETRY_MESSAGE=false
