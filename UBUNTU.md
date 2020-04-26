@@ -100,7 +100,7 @@ $ sudo openssl dhparam -out /etc/nginx/dhparam.pem 2048
 ```text
 $ sudo certbot renew
 ```
-## validation certificates
+## certbot validation
 ```text
 https://www.ssllabs.com/ssltest/
 ```    
