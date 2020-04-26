@@ -6,25 +6,12 @@
 
 **comands**
 ```terminal
-openssl dhparam -out /etc/nginx/dhparam.pem 4096
+openssl dhparam -out /etc/nginx/dhparam.pem 2048
 openssl genrsa -des3 -out rootCA.key 2048
 openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1024 -out rootCA.pem
 openssl req -new -sha256 -nodes -out localhost.csr -newkey rsa:2048 -keyout localhost.key -config cert.cnf
 openssl x509 -req -in localhost.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out localhost.crt -days 500 -sha256 -extfile cert.ext
-
 ```
-
-**import**
-```terminal
-Certificates/Current User/Personal/Certificates/rootCA.pem
-Certificates/Current User/Trusted Root/Certificates/rootCA.pem
-Certificates/Local Computer/Personal/Certificates/rootCA.pem
-Certificates/Local Computer/Trusted Root/Certificates/rootCA.pem
-
-Certificates/Current User/Trusted Root/Certificates/localhost.pem
-Certificates/Local Computer/Trusted Root/Certificates/localhost.pem
-```
-
 
 **cert.cnf**
 ```terminal
@@ -44,7 +31,6 @@ CN=localhost
 emailAddress=denernun@gmail.com
 ```
 
-
 **cert.ext**
 ```terminal
 authorityKeyIdentifier=keyid,issuer
@@ -56,6 +42,31 @@ subjectAltName = @alt_names
 DNS.1 = localhost
 ```
 
+**import**
+```terminal
+Certificates/Current User/Personal/Certificates/rootCA.pem
+Certificates/Current User/Trusted Root/Certificates/rootCA.pem
+Certificates/Local Computer/Personal/Certificates/rootCA.pem
+Certificates/Local Computer/Trusted Root/Certificates/rootCA.pem
+
+Certificates/Current User/Trusted Root/Certificates/localhost.pem
+Certificates/Local Computer/Trusted Root/Certificates/localhost.pem
+```
+
+## keys
+```terminal
+ssh-keygen -t rsa -b 4096 -C ubuntu
+
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/<your-user>/.ssh/id_rsa):
+
+Private Key: /home/<your-user>/.ssh/id_rsa.
+Public key: /home/<your-user>/.ssh/id_rsa.pub.
+
+cat ~/.ssh/id_rsa.pub
+ssh-rsa AAAAB3N...AAAAB3N ubuntu authorized_keys
+```
+    
 **firefox**
 ```
 Browse to about:config
