@@ -4,8 +4,6 @@ $ sudo timedatectl set-timezone America/Sao_Paulo
 ```
 ## nginx
 ```text    
-install
-
 $ sudo curl -O https://nginx.org/keys/nginx_signing.key && sudo apt-key add ./nginx_signing.key
 $ sudo apt update
 $ sudo apt install nginx
@@ -28,6 +26,7 @@ $ pm2 startup systemd
 $ sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u ubuntu --hp /home/ubuntu
 ```
 ## netcore
+**sdk**
 ```text
 $ sudo wget https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
 $ sudo dpkg -i packages-microsoft-prod.deb
@@ -36,19 +35,8 @@ $ sudo apt-get install apt-transport-https
 $ sudo apt-get update
 $ sudo apt-get install dotnet-sdk-3.1
 ```
-## netcore service
+**service systemd**
 ```text
-/etc/systemd/system/xxx.service
-
-sudo systemctl daemon-reload
-sudo systemctl enable xxx.service
-sudo systemctl status xxx.service
-sudo systemctl start xxx.service
-
-sudo journalctl -fxeu xxx.service
-
-# service
-
 [Unit]
 Description=xxx
 
@@ -67,27 +55,35 @@ Environment=DOTNET_PRINT_TELEMETRY_MESSAGE=false
 [Install]
 WantedBy=multi-user.target    
 ```
-## netcore service wsl
+**service systemd install**
 ```text
-# 
+/etc/systemd/system/xxx.service
+sudo systemctl daemon-reload
+sudo systemctl enable xxx.service
+sudo journalctl -fxeu xxx.service
+```
+**service wsl**
+```text
 # /etc/init.d
 # chmod +x <service>
 # sudo update-rc.d <service> defaults
 # ASPNETCORE_ENVIRONMENT=[Development,Release,Production]
 # ASPNETCORE_URLS=[http://*:XXXX]
 ```
+**service wsl install*
+```text
+```
 ## chromium
 ```text
 $ sudo apt install chromium-bsu
 ```
 ## certbot
+**site**
 ```text
-site
-
-https://certbot.eff.org/#ubuntuxenial-nginx
-
-install
-
+[site certbot](https://certbot.eff.org/#ubuntuxenial-nginx)
+```
+**install**
+```text
 $ sudo apt update
 $ sudo apt install software-properties-common
 $ sudo add-apt-repository universe
@@ -96,13 +92,13 @@ $ sudo apt update
 $ sudo apt-get install certbot python-certbot-nginx
 $ sudo openssl dhparam -out /etc/nginx/dhparam.pem 2048
 ```
-## certbot renew
+**renew**
 ```text
 $ sudo certbot renew
 ```
-## certbot validation
+**validation**
 ```text
-https://www.ssllabs.com/ssltest/
+[site ssllabs](https://www.ssllabs.com/ssltest/)
 ```    
 ## resize volume
 ```text
