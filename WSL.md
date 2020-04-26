@@ -1,5 +1,6 @@
 
-**windows**
+## windows
+
 ```
 $ wsl --set-default-version 2
 $ wsl --list --all
@@ -8,18 +9,18 @@ $ wsl --distribution <DistributionName>
 $ wsl --user <Username>
 $ wsl --unregister <DistributionName>
 ```
-**linux**
+## linux
 ```
 $ sudo apt update
 $ sudo apt full-upgrade
 $ sudo apt install libcurl4-gnutls-dev build-essential
 $ sudo apt autoremove
 ```
-**linux xserver**
+## linux xserver
 ```
 xfce4-session
 ```
-**linux x410**
+## linux x410
 ```
 $ echo 'sudo export LIBGL_ALWAYS_INDIRECT=1' >> .bashrc
 $ echo "sudo export WSL_HOST=$(tail -1 /etc/resolv.conf | cut -d' ' -f2)" >> .bashrc
