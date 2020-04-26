@@ -36,7 +36,22 @@
     $ sudo apt-get update
     $ sudo apt-get install dotnet-sdk-3.1
 
-## wsl service
+## netcore service
+
+    /etc/systemd/system/xxx.service
+    
+    sudo systemctl daemon-reload
+    sudo systemctl enable xxx.service
+    sudo systemctl status xxx.service
+    sudo systemctl start xxx.service
+    
+    sudo journalctl -u xxx.service
+
+    # service
+    
+    
+
+## netcore service wsl
 
     # 
     # /etc/init.d
