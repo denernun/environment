@@ -1,7 +1,6 @@
 ## Firebird
-```text
 **Windows**
-
+```text
 text
 http://www.firebirdsql.org/en/firebird-2-5/
 
@@ -29,9 +28,9 @@ C:\Program Files (x86)\Firebird\Firebird_2_5\bin
 
 user=postgres
 password=postgres
-
+```
 **Windows**
-
+```text
 Download
 https://www.postgresql.org/download/windows/
 
@@ -40,9 +39,9 @@ createdb -U postgres <db_name>
 
 # dml
 psql -U postgres <db_name>
-
+```
 **Linux**
-
+```text
 # install
 sudo apt update  
 sudo apt upgrade
@@ -77,9 +76,8 @@ sudo -u postgres psql
 \q
 ```
 ## MySQL
-```text
 **Linux**
-
+```text
 # install
 sudo apt-get update
 sudo apt-get install mysql-server
@@ -111,13 +109,11 @@ ALTER USER 'demouser'@'localhost' IDENTIFIED BY 'demopassword';
 FLUSH PRIVILEGES;
 ```
 ## Redis
-```text
 **Windows**
-
+```text
 download
 https://github.com/MicrosoftArchive/redis/releases
 
-```text
 path
 C:\Program Files\Redis
 
