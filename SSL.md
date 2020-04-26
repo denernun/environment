@@ -53,7 +53,7 @@ Certificates/Current User/Trusted Root/Certificates/localhost.pem
 Certificates/Local Computer/Trusted Root/Certificates/localhost.pem
 ```
 
-## keys
+**keys**
 ```terminal
 ssh-keygen -t rsa -b 4096 -C ubuntu
 
