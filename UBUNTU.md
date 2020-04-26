@@ -50,6 +50,7 @@ $ sudo apt-get install dotnet-sdk-3.1
 Description=xxx
 
 [Service]
+#Type=notify (only service worker)
 WorkingDirectory=/var/www/xxx
 ExecStart=/usr/bin/dotnet /var/www/xxx/xxx.dll
 Restart=always
