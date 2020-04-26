@@ -80,9 +80,9 @@ sudo journalctl -fxeu xxx.service
 # ASPNETCORE_URLS=[http://*:XXXX]
 ```
 **references**
-```terminal
+
 [Service Worker](https://devblogs.microsoft.com/dotnet/net-core-and-systemd/)
-```
+
 **service wsl install**
 ```terminal
 ```
@@ -106,9 +106,9 @@ $ sudo openssl dhparam -out /etc/nginx/dhparam.pem 2048
 $ sudo certbot renew
 ```
 **validation**
-```terminal
+
 [site ssllabs](https://www.ssllabs.com/ssltest/)
-```    
+
 ## chromium
 ```terminal
 $ sudo apt install chromium-bsu
