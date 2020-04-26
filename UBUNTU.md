@@ -11,15 +11,10 @@
     $ sudo apt install nginx
     $ sudo systemctl start nginx
     $ sudo systemctl status nginx
-    
-    folder
-    
-    $ sudo mkdir /var/www
-    $ sudo chown ubuntu -R /var/www
 
 ## node
 
-    $ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+    $ curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
     $ sudo apt install -y nodejs
     $ sudo nano ~/.bashrc
     $ export NODE_ENV=[ production | release ]
@@ -85,18 +80,5 @@
     $ df -h
     $ sudo growpart /dev/xvda 1
     $ sudo resize2fs /dev/xvda1
-        
-## keys
+       
 
-    $ ssh-keygen -t rsa -b 4096 -C ubuntu
-
-    # Generating public/private rsa key pair.
-    # Enter file in which to save the key (/home/<your-user>/.ssh/id_rsa):
-
-    # Private Key: /home/<your-user>/.ssh/id_rsa.
-    # Public key: /home/<your-user>/.ssh/id_rsa.pub.
-
-    # cat ~/.ssh/id_rsa.pub
-    # ssh-rsa AAAAB3N...AAAAB3N ubuntu
-
-    
