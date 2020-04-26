@@ -45,7 +45,7 @@
     sudo systemctl status xxx.service
     sudo systemctl start xxx.service
     
-    sudo journalctl -u xxx.service
+    sudo journalctl -fxeu xxx.service
 
     # service
     
