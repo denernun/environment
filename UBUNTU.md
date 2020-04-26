@@ -3,7 +3,7 @@
 $ sudo timedatectl set-timezone America/Sao_Paulo
 ```
 ## nginx
-**install*
+**install**
 ```terminal
 $ sudo curl -O https://nginx.org/keys/nginx_signing.key && sudo apt-key add ./nginx_signing.key
 $ sudo apt update
