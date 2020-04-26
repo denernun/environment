@@ -26,6 +26,12 @@
     $ node -v
     $ npm -v
 
+## pm2
+
+    $ sudo npm install pm2@latest -g
+    $ pm2 startup systemd
+    $ sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u ubuntu --hp /home/ubuntu
+
 ## netcore
 
     $ sudo wget https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
@@ -37,11 +43,14 @@
     $ sudo apt-get install aspnetcore-runtime-3.1
     $ sudo apt-get install dotnet-runtime-3.1
 
-## pm2
+## wsl service
 
-    $ sudo npm install pm2@latest -g
-    $ pm2 startup systemd
-    $ sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u ubuntu --hp /home/ubuntu
+    # 
+    # /etc/init.d
+    # chmod +x <service>
+    # sudo update-rc.d <service> defaults
+    # ASPNETCORE_ENVIRONMENT=[Development,Release,Production]
+    # ASPNETCORE_URLS=[http://*:XXXX]
 
 ## chromium
 
@@ -54,7 +63,7 @@
     https://certbot.eff.org/#ubuntuxenial-nginx
 
     install
-        
+    
     $ sudo apt update
     $ sudo apt install software-properties-common
     $ sudo add-apt-repository universe
@@ -91,13 +100,5 @@
 
     # cat ~/.ssh/id_rsa.pub
     # ssh-rsa AAAAB3N...AAAAB3N ubuntu
-    
-## wsl service
 
-    # 
-    # /etc/init.d
-    # chmod +x <service>
-    # sudo update-rc.d <service> defaults
-    # ASPNETCORE_ENVIRONMENT=[Development,Release,Production]
-    # ASPNETCORE_URLS=[http://*:XXXX]
     
