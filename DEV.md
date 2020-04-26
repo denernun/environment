@@ -1,16 +1,12 @@
 # Environment Install
 
-----
-**Java**
----
+## Java## 
 
     Environment
 
     JAVA_HOME=C:\Program Files\Android\Android Studio\jre
 
-----
-**Android SDK**
----
+## Android SDK
 
     Android Studio https://developer.android.com/studio/preview/index.html
 
@@ -28,9 +24,7 @@
     C:\Users\dener\AppData\Local\Android\Sdk\tools\bin
     C:\Users\dener\AppData\Local\Android\Sdk\tools\platform-tools
 
-----
-**Node**
----
+## Node
 
     https://nodejs.org/en/
 
@@ -57,9 +51,7 @@
     npm i -g loopback-cli
     npm i -g redis-commander
     
-----
-**SSL**
----
+## SSL
 
     https://sourceforge.net/projects/openssl/
 
@@ -72,9 +64,7 @@
 
     D:\SSL\BIN
 
-----
-**SSH**
----
+## SSH
 
     # download portable edition
     https://winsshterm.blogspot.com/
@@ -84,21 +74,15 @@
     D:\SSH
     D:\SSH\tools
 
-----
-**SVN**
----
+## SVN
 
     Path
 
     D:\SVN
 
-----
-**Others**
----
+## Others
 
     Path
 
     D:\UTIL
     D:\DLL
-
-----
