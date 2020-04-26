@@ -1,7 +1,5 @@
-
 ## windows
-
-```
+```text
 $ wsl --set-default-version 2
 $ wsl --list --all
 $ wsl --setdefault <DistributionName>
