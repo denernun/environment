@@ -28,7 +28,7 @@ OU=Dener Rocha
 CN=localhost
 emailAddress=denernun@gmail.com
 ```
-**rt.ext**
+**cert.ext**
 ```terminal
 authorityKeyIdentifier=keyid,issuer
 basicConstraints=CA:FALSE
