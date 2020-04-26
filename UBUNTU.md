@@ -1,17 +1,26 @@
 ## date/time
-```text
+```terminal
 $ sudo timedatectl set-timezone America/Sao_Paulo
 ```
 ## nginx
-```text    
+**install*
+```terminal
 $ sudo curl -O https://nginx.org/keys/nginx_signing.key && sudo apt-key add ./nginx_signing.key
 $ sudo apt update
 $ sudo apt install nginx
 $ sudo systemctl start nginx
 $ sudo systemctl status nginx
 ```
+**modules**
+```terminal
+50-mod-http-geoip.conf
+50-mod-http-image-filter.conf
+50-mod-http-xslt-filter.conf
+50-mod-mail.conf
+50-mod-stream.conf
+```
 ## node
-```text
+```terminal
 $ curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 $ sudo apt install -y nodejs
 $ sudo nano ~/.bashrc
@@ -20,14 +29,14 @@ $ node -v
 $ npm -v
 ```
 ## pm2
-```text
+```terminal
 $ sudo npm install pm2@latest -g
 $ pm2 startup systemd
 $ sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u ubuntu --hp /home/ubuntu
 ```
 ## netcore
 **sdk**
-```text
+```terminal
 $ sudo wget https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
 $ sudo dpkg -i packages-microsoft-prod.deb
 $ sudo apt-get update
@@ -36,7 +45,7 @@ $ sudo apt-get update
 $ sudo apt-get install dotnet-sdk-3.1
 ```
 **service systemd**
-```text
+```terminal
 [Unit]
 Description=xxx
 
@@ -56,14 +65,14 @@ Environment=DOTNET_PRINT_TELEMETRY_MESSAGE=false
 WantedBy=multi-user.target    
 ```
 **service systemd install**
-```text
+```terminal
 /etc/systemd/system/xxx.service
 sudo systemctl daemon-reload
 sudo systemctl enable xxx.service
 sudo journalctl -fxeu xxx.service
 ```
 **service wsl**
-```text
+```terminal
 # /etc/init.d
 # chmod +x <service>
 # sudo update-rc.d <service> defaults
@@ -71,15 +80,15 @@ sudo journalctl -fxeu xxx.service
 # ASPNETCORE_URLS=[http://*:XXXX]
 ```
 **service wsl install**
-```text
+```terminal
 ```
 ## certbot
 **site**
-```text
+```terminal
 [site certbot](https://certbot.eff.org/#ubuntuxenial-nginx)
 ```
 **install**
-```text
+```terminal
 $ sudo apt update
 $ sudo apt install software-properties-common
 $ sudo add-apt-repository universe
@@ -89,19 +98,19 @@ $ sudo apt-get install certbot python-certbot-nginx
 $ sudo openssl dhparam -out /etc/nginx/dhparam.pem 2048
 ```
 **renew**
-```text
+```terminal
 $ sudo certbot renew
 ```
 **validation**
-```text
+```terminal
 [site ssllabs](https://www.ssllabs.com/ssltest/)
 ```    
 ## chromium
-```text
+```terminal
 $ sudo apt install chromium-bsu
 ```
 ## resize volume
-```text
+```terminal
 $ lsblk
 $ df -h
 $ sudo growpart /dev/xvda 1
