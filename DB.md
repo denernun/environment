@@ -23,9 +23,8 @@ C:\Program Files (x86)\Firebird\Firebird_2_5\bin
   connect "localhost:database.fdb" user 'USER' password 'password';
 ```
 ## Postgresql
-```text
 **Autenticacao**
-
+```text
 user=postgres
 password=postgres
 ```
