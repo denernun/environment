@@ -4,7 +4,7 @@
 
 [How to trust the IIS Express Self-Signed Certificate](https://blogs.msdn.microsoft.com/robert_mcmurray/2013/11/15/how-to-trust-the-iis-express-self-signed-certificate/)
 
-**comands**
+## comands
 ```terminal
 openssl dhparam -out /etc/nginx/dhparam.pem 2048
 openssl genrsa -des3 -out rootCA.key 2048
@@ -12,7 +12,6 @@ openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1024 -out rootCA.pem
 openssl req -new -sha256 -nodes -out localhost.csr -newkey rsa:2048 -keyout localhost.key -config cert.cnf
 openssl x509 -req -in localhost.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out localhost.crt -days 500 -sha256 -extfile cert.ext
 ```
-
 **cert.cnf**
 ```terminal
 [req]
@@ -30,8 +29,7 @@ OU=Dener Rocha
 CN=localhost
 emailAddress=denernun@gmail.com
 ```
-
-**cert.ext**
+**rt.ext**
 ```terminal
 authorityKeyIdentifier=keyid,issuer
 basicConstraints=CA:FALSE
@@ -41,8 +39,7 @@ subjectAltName = @alt_names
 [alt_names]
 DNS.1 = localhost
 ```
-
-**import**
+## import
 ```terminal
 Certificates/Current User/Personal/Certificates/rootCA.pem
 Certificates/Current User/Trusted Root/Certificates/rootCA.pem
@@ -52,8 +49,7 @@ Certificates/Local Computer/Trusted Root/Certificates/rootCA.pem
 Certificates/Current User/Trusted Root/Certificates/localhost.pem
 Certificates/Local Computer/Trusted Root/Certificates/localhost.pem
 ```
-
-**keys**
+## keys
 ```terminal
 ssh-keygen -t rsa -b 4096 -C ubuntu
 
@@ -66,15 +62,13 @@ Public key: /home/<your-user>/.ssh/id_rsa.pub.
 cat ~/.ssh/id_rsa.pub
 ssh-rsa AAAAB3N...AAAAB3N ubuntu authorized_keys
 ```
-    
-**firefox**
+## firefox
 ```
 Browse to about:config
 Search for “network.stricttransportsecurity.preloadlist”.
 Set it to false.
 ```
-
-**chrome**
+## chrome
 ```
 chrome://flags/#allow-insecure-localhost
 cors --disable-web-security --user-data-dir="C:/Users/Public/Chrome"
