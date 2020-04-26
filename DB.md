@@ -1,12 +1,8 @@
-# DB
-
----
-
-### Firebird
-
+## Firebird
+```text
 **Windows**
 
-```text
+text
 http://www.firebirdsql.org/en/firebird-2-5/
 
 Firebird 2.5.9 x32 (UDF)
@@ -15,9 +11,7 @@ Path
 
 C:\Program Files (x86)\Firebird\Firebird_2_5\bin
 ```
-
 **Linux**
-
 ```text
 # sudo apt install firebird2.5-superclassic
 # sudo dpkg-reconfigure firebird2.5-superclassic
@@ -29,21 +23,15 @@ C:\Program Files (x86)\Firebird\Firebird_2_5\bin
 # sudo isql-fb
   connect "localhost:database.fdb" user 'USER' password 'password';
 ```
-
----
-
-### Postgresql
-
+## Postgresql
+```text
 **Autenticacao**
 
-```text
 user=postgres
 password=postgres
-```
 
 **Windows**
 
-```text
 Download
 https://www.postgresql.org/download/windows/
 
@@ -52,11 +40,8 @@ createdb -U postgres <db_name>
 
 # dml
 psql -U postgres <db_name>
-```
 
 **Linux**
-
-```text
 
 # install
 sudo apt update  
@@ -90,16 +75,11 @@ sudo -u postgres psql
 # trocar senha
 \alter user postgres with password 'new_password';
 \q
-
 ```
-
----
-
-### MySQL
-
+## MySQL
+```text
 **Linux**
 
-```text
 # install
 sudo apt-get update
 sudo apt-get install mysql-server
@@ -130,10 +110,8 @@ FLUSH PRIVILEGES;
 ALTER USER 'demouser'@'localhost' IDENTIFIED BY 'demopassword';
 FLUSH PRIVILEGES;
 ```
----
-
-### Redis
-
+## Redis
+```text
 **Windows**
 
 download
@@ -149,11 +127,8 @@ redis-server --service-install redis.windows.conf --loglevel verbose
 uninstall
 redis-server --service-uninstall
 ```
-
 **Linux**
-
 ```text
 # install
 sudo apt install
-
 ```
