@@ -70,12 +70,8 @@ sudo journalctl -fxeu xxx.service
 # ASPNETCORE_ENVIRONMENT=[Development,Release,Production]
 # ASPNETCORE_URLS=[http://*:XXXX]
 ```
-**service wsl install*
+**service wsl install**
 ```text
-```
-## chromium
-```text
-$ sudo apt install chromium-bsu
 ```
 ## certbot
 **site**
@@ -100,6 +96,10 @@ $ sudo certbot renew
 ```text
 [site ssllabs](https://www.ssllabs.com/ssltest/)
 ```    
+## chromium
+```text
+$ sudo apt install chromium-bsu
+```
 ## resize volume
 ```text
 $ lsblk
