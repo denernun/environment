@@ -50,6 +50,8 @@ DNS.1 = localhost
 ```
 ## import
 ```terminal
+Certificates/Personal/Certificates/*.pfx
+
 Certificates/Current User/Personal/Certificates/rootCA.pem
 Certificates/Current User/Personal/Certificates/localhost.pem
 
