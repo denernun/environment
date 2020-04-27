@@ -68,9 +68,8 @@ ssh-rsa AAAAB3N...AAAAB3N ubuntu authorized_keys
 ```
 ## firefox
 ```terminal
-Browse to about:config
-Search for “network.stricttransportsecurity.preloadlist”.
-Set it to false.
+about:config
+network.stricttransportsecurity.preloadlist=false
 ```
 ## chrome
 ```terminal
