@@ -51,12 +51,10 @@ DNS.1 = localhost
 ## import
 ```terminal
 Certificates/Current User/Personal/Certificates/rootCA.pem
-Certificates/Current User/Trusted Root/Certificates/rootCA.pem
-Certificates/Local Computer/Personal/Certificates/rootCA.pem
-Certificates/Local Computer/Trusted Root/Certificates/rootCA.pem
+Certificates/Current User/Personal/Certificates/localhost.pem
 
+Certificates/Current User/Trusted Root/Certificates/rootCA.pem
 Certificates/Current User/Trusted Root/Certificates/localhost.pem
-Certificates/Local Computer/Trusted Root/Certificates/localhost.pem
 ```
 ## keys
 ```terminal
