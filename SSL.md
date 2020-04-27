@@ -1,26 +1,20 @@
 ## self-signed
 **windows**
 ```terminal
-@echo off
 openssl genrsa -des3 -out rootCA.key 2048
 openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1024 -out rootCA.pem -config cert.cnf
-echo adicione o rootCA.pem no Certificates/Current User/Personal
-@pause
+# add rootCA.pem do certificates trusted
 openssl req -new -sha256 -nodes -out localhost.csr -newkey rsa:2048 -keyout localhost.key -config cert.cnf
 openssl x509 -req -in localhost.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out localhost.crt -days 500 -sha256 -extfile cert.ext
-del rootCA.srl
-del localhost.csr
 ```
 **linux**
 ```terminal
-#/bin/sh
 sudo openssl dhparam -out /etc/nginx/dhparam.pem 2048
 sudo openssl genrsa -des3 -out rootCA.key 2048
 sudo openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1024 -out rootCA.pem -config cert.cnf
+# add rootCA.pem do certificates trusted
 sudo openssl req -new -sha256 -nodes -out localhost.csr -newkey rsa:2048 -keyout localhost.key -config cert.cnf
 sudo openssl x509 -req -in localhost.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out localhost.crt -days 500 -sha256 -extfile cert.ext
-sudo rm localhost.csr
-sudo rm rootCA.srl
 ```
 **cert.cnf**
 ```terminal
