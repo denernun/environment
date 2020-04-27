@@ -49,7 +49,6 @@ subjectAltName = @alt_names
 [alt_names]
 DNS.1 = localhost
 ```
-**[Reference](https://www.freecodecamp.org/news/how-to-get-https-working-on-your-local-development-environment-in-5-minutes-7af615770eec/)**
 ## import
 ```terminal
 Certificates/Personal/Certificates/*.pfx
@@ -91,6 +90,7 @@ dotnet dev-certs https --help
 dotnet dev-certs https --trust
 ```
 
-**links**
-[How to get HTTPS working on your local development environment in 5 minutes](https://www.freecodecamp.org/news/how-to-get-https-working-on-your-local-development-environment-in-5-minutes-7af615770eec/)\
-[How to trust the IIS Express Self-Signed Certificate](https://blogs.msdn.microsoft.com/robert_mcmurray/2013/11/15/how-to-trust-the-iis-express-self-signed-certificate/)
+**links**\
+[developing locally with netcore under https ssl and self-signed certs](https://www.hanselman.com/blog/DevelopingLocallyWithASPNETCoreUnderHTTPSSSLAndSelfSignedCerts.aspx\)\
+[how to get https working on your local development environment in 5 minutes](https://www.freecodecamp.org/news/how-to-get-https-working-on-your-local-development-environment-in-5-minutes-7af615770eec/)\
+[how to trust the iis express self-signed certificate](https://blogs.msdn.microsoft.com/robert_mcmurray/2013/11/15/how-to-trust-the-iis-express-self-signed-certificate/)\
