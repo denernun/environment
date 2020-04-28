@@ -1,6 +1,7 @@
 ## date/time
 ```terminal
 $ sudo timedatectl set-timezone America/Sao_Paulo
+$ sudo nano /etc/environment TMPDIR=/tmp
 ```
 ## nginx
 **install**
