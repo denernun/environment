@@ -1,6 +1,6 @@
 ## self-signed
 **windows**
-```terminal
+```bash
 openssl genrsa -des3 -out rootCA.key 2048
 openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1024 -out rootCA.pem -config cert.cnf
 # add rootCA.pem do certificates trusted
@@ -8,7 +8,7 @@ openssl req -new -sha256 -nodes -out localhost.csr -newkey rsa:2048 -keyout loca
 openssl x509 -req -in localhost.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out localhost.crt -days 500 -sha256 -extfile cert.ext
 ```
 **linux**
-```terminal
+```bash
 sudo openssl dhparam -out /etc/nginx/dhparam.pem 2048
 sudo openssl genrsa -des3 -out rootCA.key 2048
 sudo openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1024 -out rootCA.pem -config cert.cnf
@@ -17,7 +17,7 @@ sudo openssl req -new -sha256 -nodes -out localhost.csr -newkey rsa:2048 -keyout
 sudo openssl x509 -req -in localhost.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out localhost.crt -days 500 -sha256 -extfile cert.ext
 ```
 **cert.cnf**
-```terminal
+```bash
 [req]
 deafault_bits = 2048
 prompt = no
@@ -34,7 +34,7 @@ CN=localhost
 emailAddress=denernun@gmail.com
 ```
 **cert.ext**
-```terminal
+```bash
 authorityKeyIdentifier=keyid,issuer
 basicConstraints=CA:FALSE
 keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
@@ -44,41 +44,38 @@ subjectAltName = @alt_names
 DNS.1 = localhost
 ```
 ## import
-```terminal
-Certificates/Personal/Certificates/*.pfx
-
+```bash
 Certificates/Current User/Personal/Certificates/rootCA.pem
-Certificates/Current User/Personal/Certificates/localhost.pem
-
 Certificates/Current User/Trusted Root/Certificates/rootCA.pem
-Certificates/Current User/Trusted Root/Certificates/localhost.pem
 ```
 ## keys
-```terminal
-ssh-keygen -t rsa -b 4096 -C ubuntu
+```bash
+ssh-keygen -t rsa -b 4096 -C "denernun@gmail.com"
 
 Generating public/private rsa key pair.
-Enter file in which to save the key (/home/<your-user>/.ssh/id_rsa):
+Enter file in which to save the key (~/.ssh/id_rsa):
 
-Private Key: /home/<your-user>/.ssh/id_rsa.
-Public key: /home/<your-user>/.ssh/id_rsa.pub.
+Private Key: ~/.ssh/id_rsa.
+Public key: ~/.ssh/id_rsa.pub.
 
 cat ~/.ssh/id_rsa.pub
 ssh-rsa AAAAB3N...AAAAB3N ubuntu authorized_keys
+
+puttygen
 ```
 ## firefox
-```terminal
+```text
 about:config
 network.stricttransportsecurity.preloadlist=false
 ```
 ## chrome
-```terminal
+```text
 chrome://flags/#allow-insecure-localhost
 cors --disable-web-security --user-data-dir="C:/Users/Public/Chrome"
 debug --remote-debugging-port=9222
 ```
 ## netcore
-```terminal
+```text
 dotnet dev-certs https --help
 dotnet dev-certs https --trust
 ```
