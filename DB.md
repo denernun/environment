@@ -108,22 +108,10 @@ ALTER USER 'demouser'@'localhost' IDENTIFIED BY 'demopassword';
 FLUSH PRIVILEGES;
 ```
 ## Redis
-**Windows**
-```text
-download
-https://github.com/MicrosoftArchive/redis/releases
-
-path
-C:\Program Files\Redis
-
-install
-redis-server --service-install redis.windows.conf --loglevel verbose
-
-uninstall
-redis-server --service-uninstall
-```
 **Linux**
-```text
-# install
-sudo apt install
+```bash
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install redis-server
+redis-cli -v
 ```
