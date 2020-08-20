@@ -23,6 +23,7 @@ $ sudo apt autoremove
 $ sudo apt purge xrdp
 $ sudo apt install xrdp
 $ sudo apt install xfce4 xfce4-terminal xfce4-goodies firefox
+$ sudo apt purge xfce4
 ```
 **rdp**
 ```terminal
@@ -36,4 +37,11 @@ $ sudo nano /etc/xrdp/startwm.sh
   - exec /bin/sh
   + startxfce4
 $ sudo /etc/init.d/xrdp start
+```
+**kali**
+```terminal
+$ sudo sudo apt update
+$ sudo sudo apt dist-upgrade
+$ sudo sudo apt update && sudo apt install -y kali-win-kex
+$ kex
 ```
