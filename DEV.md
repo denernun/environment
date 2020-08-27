@@ -3,7 +3,6 @@
 ## Java
 ```text
 Environment
-
 JAVA_HOME=C:\Program Files\Android\Android Studio\jre
 ```
 ## Android SDK
@@ -17,7 +16,6 @@ Environment
 ANDROID_HOME=C:\Users\dener\AppData\Local\Android\Sdk
 
 Path
-
 C:\Users\dener\AppData\Local\Android\Sdk\tools
 C:\Users\dener\AppData\Local\Android\Sdk\tools\bin
 C:\Users\dener\AppData\Local\Android\Sdk\platform-tools
@@ -27,7 +25,6 @@ C:\Users\dener\AppData\Local\Android\Sdk\platform-tools
 https://nodejs.org/en/
 
 Environment
-
 NODE_ENV=development
 
 Tools
@@ -55,12 +52,10 @@ npm i -g redis-commander
 https://sourceforge.net/projects/openssl/
 
 Environment
-
 OPENSSL_HOME=D:\SSL
 OPENSSL_CONF=D:\SSL\BIN\OPENSSL.CNF
 
 Path
-
 D:\SSL\BIN
 ```
 ## SSH
@@ -69,7 +64,6 @@ D:\SSL\BIN
 https://winsshterm.blogspot.com/
 
 Path
-
 D:\SSH
 D:\SSH\tools
 ```
@@ -82,7 +76,6 @@ D:\SVN
 ## Others
 ```text
 Path
-
 D:\UTIL
 D:\DLL
 ```
