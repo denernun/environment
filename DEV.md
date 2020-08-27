@@ -7,7 +7,8 @@ JAVA_HOME=C:\Program Files\Android\Android Studio\jre
 ```
 ## Android SDK
 ```text
-Android Studio https://developer.android.com/studio/preview/index.html
+Download
+https://developer.android.com/studio/preview/index.html
 
 Root
 C:\Users\dener\AppData\Local\Android\Sdk\tools
@@ -22,6 +23,7 @@ C:\Users\dener\AppData\Local\Android\Sdk\platform-tools
 ```
 ## Node
 ```text
+Download
 https://nodejs.org/en/
 
 Environment
@@ -49,6 +51,7 @@ npm i -g redis-commander
 ```    
 ## SSL
 ```text
+Download
 https://sourceforge.net/projects/openssl/
 
 Environment
@@ -60,7 +63,7 @@ D:\SSL\BIN
 ```
 ## SSH
 ```text
-# download portable edition
+# download
 https://winsshterm.blogspot.com/
 
 Path
