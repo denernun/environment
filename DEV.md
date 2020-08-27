@@ -11,18 +11,16 @@ JAVA_HOME=C:\Program Files\Android\Android Studio\jre
 Android Studio https://developer.android.com/studio/preview/index.html
 
 Root
-
 C:\Users\dener\AppData\Local\Android\Sdk\tools
 
 Environment
-
 ANDROID_HOME=C:\Users\dener\AppData\Local\Android\Sdk
 
 Path
 
 C:\Users\dener\AppData\Local\Android\Sdk\tools
 C:\Users\dener\AppData\Local\Android\Sdk\tools\bin
-C:\Users\dener\AppData\Local\Android\Sdk\tools\platform-tools
+C:\Users\dener\AppData\Local\Android\Sdk\platform-tools
 ```
 ## Node
 ```text
@@ -49,6 +47,7 @@ npm i -g http-server
 npm i -g typescript
 npm i -g @angular/cli
 npm i -g loopback-cli
+npm i -g @nest/cli
 npm i -g redis-commander
 ```    
 ## SSL
