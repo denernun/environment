@@ -81,14 +81,6 @@ sudo journalctl -fxeu xxx.service
 # ASPNETCORE_ENVIRONMENT=[Development,Release,Production]
 # ASPNETCORE_URLS=[http://*:XXXX]
 ```
-**service wsl install**
-```terminal
-
-```
-**references**
-
-[Service Worker](https://devblogs.microsoft.com/dotnet/net-core-and-systemd/)
-
 ## certbot
 **site**
 ```terminal
@@ -110,7 +102,7 @@ $ sudo certbot renew
 ```
 **validation**
 
-[site ssllabs](https://www.ssllabs.com/ssltest/)
+[ssllabs](https://www.ssllabs.com/ssltest/)
 
 ## chromium
 ```terminal
