@@ -101,9 +101,9 @@ $ sudo openssl dhparam -out /etc/nginx/dhparam.pem 2048
 $ sudo certbot renew
 ```
 **validation**
-
-[ssllabs](https://www.ssllabs.com/ssltest/)
-
+```terminal
+$ https://www.ssllabs.com/ssltest/
+```
 ## chromium
 ```terminal
 $ sudo apt install chromium-bsu
