@@ -84,7 +84,7 @@ sudo journalctl -fxeu xxx.service
 ## certbot
 **site**
 ```terminal
-[site certbot](https://certbot.eff.org/#ubuntuxenial-nginx)
+$ https://certbot.eff.org/#ubuntuxenial-nginx
 ```
 **install**
 ```terminal
