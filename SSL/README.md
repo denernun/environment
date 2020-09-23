@@ -18,6 +18,11 @@ sudo openssl x509 -req -in localhost.csr -CA rootCA.pem -CAkey rootCA.key -CAcre
 ```bash
 rootCA.pem to "Manage User Certificates/Trusted Root Certification Authorities"
 ```
+## use
+```bash
+localhost.crt
+localhost.key
+```
 ## firefox
 ```text
 Options/Privacy & Security/View Certificates/Authorities/Import/rootCA.pem
