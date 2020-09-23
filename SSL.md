@@ -82,10 +82,10 @@ puttygen to generate .ppk
 dotnet dev-certs https --help
 dotnet dev-certs https --trust
 ```
-###### ssl dll
+###### donwload
+[https://sourceforge.net/projects/openssl/](https://sourceforge.net/projects/openssl/)\
 [https://opendec.wordpress.com/](https://opendec.wordpress.com/)\
-[https://indy.fulgan.com/SSL/](https://indy.fulgan.com/SSL/)\
-[https://sourceforge.net/projects/openssl/](https://sourceforge.net/projects/openssl/)
+[https://indy.fulgan.com/SSL/](https://indy.fulgan.com/SSL/)
 ###### links
 [https://github.com/jsha/minica](https://github.com/jsha/minica)\
 [https://www.hanselman.com/blog/DevelopingLocallyWithASPNETCoreUnderHTTPSSSLAndSelfSignedCerts.aspx](https://www.hanselman.com/blog/DevelopingLocallyWithASPNETCoreUnderHTTPSSSLAndSelfSignedCerts.aspx)\
