@@ -1,3 +1,0 @@
-### WSL ###
-
-## nginx.conf ##
