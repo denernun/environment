@@ -1,53 +1,18 @@
 ## self-signed
 **windows**
-```bash
+```terminal
 openssl genrsa -des3 -out rootCA.key 2048
 openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1024 -out rootCA.pem -config cert.cnf
-# add rootCA.pem to "Manage User Certificates/Trusted Root Certification Authorities"
 openssl req -new -sha256 -nodes -out localhost.csr -newkey rsa:2048 -keyout localhost.key -config cert.cnf
 openssl x509 -req -in localhost.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out localhost.crt -days 500 -sha256 -extfile cert.ext
 ```
 **linux**
-```bash
+```terminal
 sudo openssl dhparam -out /etc/nginx/dhparam.pem 2048
 sudo openssl genrsa -des3 -out rootCA.key 2048
 sudo openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1024 -out rootCA.pem -config cert.cnf
 sudo openssl req -new -sha256 -nodes -out localhost.csr -newkey rsa:2048 -keyout localhost.key -config cert.cnf
 sudo openssl x509 -req -in localhost.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out localhost.crt -days 500 -sha256 -extfile cert.ext
-```
-**cert.cnf**
-```bash
-[req]
-deafault_bits = 2048
-prompt = no
-default_md = sha256
-x509_extensions = v3_req
-distinguished_name = dn
-
-[dn]
-C=BR
-ST=Sao Paulo
-L=Maua
-O=Dener Rocha
-OU=Dener Rocha
-emailAddress=denernun@gmail.com
-CN=localhost
-
-[v3_req]
-subjectAltName = @alt_names
-```
-**cert.ext**
-```bash
-[EXT]
-subjectAltName = @alt_names
-authorityKeyIdentifier=keyid,issuer
-basicConstraints=CA:FALSE
-keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
-extendedKeyUsage=serverAuth
-
-[alt_names]
-DNS.1 = *.localhost
-DNS.2 = localhost
 ```
 ## import
 ```bash
@@ -60,7 +25,6 @@ Options/Privacy & Security/View Certificates/Authorities/Import/rootCA.pem
 ## chrome
 ```text
 chrome://flags/#allow-insecure-localhost
-cors --disable-web-security --user-data-dir="C:/Users/Public/Chrome"
 ```
 ## keys
 ```bash
