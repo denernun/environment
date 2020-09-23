@@ -1,0 +1,18 @@
+[req]
+deafault_bits = 2048
+prompt = no
+default_md = sha256
+x509_extensions = v3_req
+distinguished_name = dn
+
+[dn]
+C=BR
+ST=Sao Paulo
+L=Maua
+O=Dener Rocha
+OU=Dener Rocha
+emailAddress=denernun@gmail.com
+CN=localhost
+
+[v3_req]
+subjectAltName = @alt_names
