@@ -22,6 +22,7 @@ $ sudo systemctl status nginx
 ```
 ## node
 ```terminal
+$ sudo apt-get install gcc g++ make
 $ curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 $ sudo apt install -y nodejs
 $ sudo nano ~/.bashrc
