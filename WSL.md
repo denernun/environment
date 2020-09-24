@@ -23,5 +23,5 @@ $ sudo apt autoremove
 $ sudo apt purge xrdp
 $ sudo apt install xrdp
 $ sudo apt install xfce4 xfce4-terminal xfce4-goodies firefox
-$ sudo apt purge xfce4
+$ sudo apt autoremove
 ```
