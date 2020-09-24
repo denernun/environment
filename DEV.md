@@ -29,18 +29,29 @@ Packages
 
 npm cache clean --force
 
-npm i -g npm-check-updates
-npm i -g node-gyp
-npm i -g node-sass
-npm i -g cross-env
-npm i -g nodemon
-npm i -g http-server
+npm -i -g
 
-npm i -g typescript
-npm i -g @angular/cli
-npm i -g loopback-cli
-npm i -g @nest/cli
-npm i -g redis-commander
+npm-check-updates
+node-gyp
+node-sass
+cross-env
+nodemon
+http-server
+typescript
+@angular/cli
+loopback-cli
+@nest/cli
+redis-commander
+editorconfig
+eslint
+grunt
+gulp
+htmlhint
+jest
+npm-check
+redis-commander
+tslint
+windows-build-tools
 ```    
 ## SSL
 ```text
