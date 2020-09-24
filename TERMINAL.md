@@ -1,4 +1,4 @@
-```json
+```code
 {
   // global settings https://aka.ms/terminal-global-settings
   // profiles settings https://aka.ms/terminal-profile-settings
