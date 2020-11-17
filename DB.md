@@ -56,16 +56,19 @@ sudo service postgresql restart
 ```
 **Console**
 ```text
-# console
+# console windows
 psql -U postgres
+
+# console linux
 sudo -u postgres psql
 
-# criar banco
+# criar banco windows
 create database <db_name>;
-drop database <db_name>;
+
+# criar banco linux
 sudo -u postgres createdb <db_name>
 
-# trocar senha
+# senha
 \password postgres
 \alter user postgres with password <new_password>;
 ```
