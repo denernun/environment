@@ -23,7 +23,7 @@ $ sudo systemctl status nginx
 ## node
 ```terminal
 $ sudo apt-get install gcc g++ make
-$ curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+$ curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 $ sudo apt install -y nodejs
 $ sudo nano ~/.bashrc
 $ export NODE_ENV=[ production | release ]
@@ -39,12 +39,12 @@ $ sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd
 ## netcore
 **sdk**
 ```terminal
-$ sudo wget https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+$ sudo wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
 $ sudo dpkg -i packages-microsoft-prod.deb
 $ sudo apt-get update
 $ sudo apt-get install apt-transport-https
 $ sudo apt-get update
-$ sudo apt-get install dotnet-sdk-3.1
+$ sudo apt-get install dotnet-sdk-3.1 --fix-mixing
 ```
 **service systemd**
 ```terminal
