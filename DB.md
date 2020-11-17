@@ -32,12 +32,6 @@ password=postgres
 ```text
 Download
 https://www.postgresql.org/download/windows/
-
-# criar banco
-createdb -U postgres <db_name>
-
-# dml
-psql -U postgres <db_name>
 ```
 **Linux**
 ```text
@@ -59,21 +53,23 @@ local all postgres trust
 sudo service postgresql start
 sudo service postgresql stop
 sudo service postgresql restart
+```
+**Console**
+```text
+# console
+psql -U postgres
+sudo -u postgres psql
 
 # criar banco
-sudo -u postgres createdb 'db_name'
-
-# console
-sudo -u postgres psql
+create database <db_name>;
+drop database <db_name>;
+sudo -u postgres createdb <db_name>
 
 # trocar senha
 \password postgres
-\q
-
-# trocar senha
-\alter user postgres with password 'new_password';
-\q
+\alter user postgres with password <new_password>;
 ```
+
 ## MySQL
 **Linux**
 ```text
