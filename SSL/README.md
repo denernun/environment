@@ -26,6 +26,7 @@ localhost.key
 ## firefox
 ```text
 Options/Privacy & Security/View Certificates/Authorities/Import/rootCA.pem
+Options/Privacy & Security/View Certificates/People/Import/localhost.key
 ```
 ## chrome
 ```text
