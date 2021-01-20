@@ -1,26 +1,12 @@
 ## Firebird
-**Windows**
-```text
-text
-http://www.firebirdsql.org/en/firebird-2-5/
-
-Firebird 2.5.9 x32 (UDF)
-
-Path
-
-C:\Program Files (x86)\Firebird\Firebird_2_5\bin
-```
 **Linux**
 ```text
-# sudo apt install firebird2.5-superclassic
-# sudo dpkg-reconfigure firebird2.5-superclassic
-
-# sudo nano /etc/firebird/2.5/firebird.conf
-  RemoteBindAddress=
-  DatabaseAccess=Full
-
-# sudo isql-fb
-  connect "localhost:database.fdb" user 'USER' password 'password';
+# https://github.com/FirebirdSQL/firebird/releases/download/R2_5_9/FirebirdSS-2.5.9.27139-0.amd64.tar.gz
+# sudo tar -xf FirebirdSS-2.5.9.27139-0.amd64.tar.gz
+# sudo apt install libncurses5
+# sudo ./install
+# sudo nano /opt/firebird/2.5/firebird.conf
+  DatabaseAccess = Restrict /var/db
 ```
 ## Postgresql
 **Autenticacao**
@@ -38,13 +24,13 @@ https://www.postgresql.org/download/windows/
 # install
 sudo apt update  
 sudo apt upgrade
-sudo apt install postgresql postgresql-contrib
+sudo apt install postgresql-12 postgresql-client-12
 
 # access
-sudo nano /etc/postgresql/9.X/main/postgresql.conf
+sudo nano /etc/postgresql/12/main/postgresql.conf
 listen_addresses = '*'
 
-sudo nano /etc/postgresql/9.6/main/pg_hba.conf
+sudo nano /etc/postgresql/12/main/pg_hba.conf
 host all all 0.0.0.0/0 md5
 host all all ::0/0 md5
 local all postgres trust
