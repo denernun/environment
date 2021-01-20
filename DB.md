@@ -42,21 +42,13 @@ sudo service postgresql restart
 ```
 **Console**
 ```text
-# console windows
+# alterar senha
+sudo su - postgres
 psql -U postgres
+psql -c "alter user postgres with password 'StrongAdminP@ssw0rd'"
 
-# console linux
-sudo -u postgres psql
-
-# criar banco windows
-create database <db_name>;
-
-# criar banco linux
+# criar banco
 sudo -u postgres createdb <db_name>
-
-# senha
-\password postgres
-\alter user postgres with password <new_password>;
 ```
 
 ## MySQL
