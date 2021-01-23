@@ -1,7 +1,8 @@
 ## date/time
 ```terminal
 $ sudo timedatectl set-timezone America/Sao_Paulo
-$ sudo nano /etc/environment TMPDIR=/tmp
+$ sudo nano /etc/environment
+  TMPDIR=/tmp
 ```
 ## nginx
 **install**
@@ -35,6 +36,17 @@ $ npm -v
 $ sudo npm install pm2@latest -g
 $ pm2 startup systemd
 $ sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u ubuntu --hp /home/ubuntu
+```
+## aplify
+```terminal
+$ sudo nano /etc/apt/sources.list.d/nginx-amplify.list
+  deb [arch=amd64] https://packages.amplify.nginx.com/py3/ubuntu focal amplify-agent
+$ sudo apt-get install python3-setproctitle python3-lockfile python3-daemon python3-greenlet python3-gevent python3-ujson python3-rstr python3-pymysql
+$ sudo apt-get update && sudo apt-get install nginx-amplify-agent
+$ sudo cp /etc/amplify-agent/agent.conf.default /etc/amplify-agent/agent.conf
+$ sudo service amplify-agent start
+$ sudo service amplify-agent stop
+$ sudo service amplify-agent restart
 ```
 ## netcore
 **sdk**
