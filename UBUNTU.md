@@ -13,6 +13,13 @@ $ sudo apt install nginx
 $ sudo systemctl start nginx
 $ sudo systemctl status nginx
 ```
+##remove##
+```terminal
+$ sudo update-rc.d -f nginx remove
+$ sudo rm /etc/init.d/nginx
+$ sudo apt-get purge nginx nginx-common
+$ sudo apt-get remove nginx-core nginx-full nginx-light nginx-extras nginx-naxsi nginx-common
+```
 **modules**
 ```terminal
 50-mod-http-geoip.conf
