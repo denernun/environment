@@ -13,7 +13,7 @@ $ sudo apt install nginx
 $ sudo systemctl start nginx
 $ sudo systemctl status nginx
 ```
-##remove##
+**remove**
 ```terminal
 $ sudo update-rc.d -f nginx remove
 $ sudo rm /etc/init.d/nginx
