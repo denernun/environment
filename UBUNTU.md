@@ -2,7 +2,7 @@
 ```terminal
 $ sudo timedatectl set-timezone America/Sao_Paulo
 ```
-## date/time
+## environment
 ```terminal
 $ sudo nano /etc/environment
   TMPDIR=/tmp
