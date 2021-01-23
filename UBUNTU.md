@@ -112,11 +112,11 @@ $ https://certbot.eff.org/#ubuntuxenial-nginx
 **install**
 ```terminal
 $ sudo apt update
-$ sudo apt install software-properties-common
-$ sudo add-apt-repository universe
-$ sudo add-apt-repository ppa:certbot/certbot
-$ sudo apt update
-$ sudo apt-get install certbot python-certbot-nginx
+$ sudo snap install core
+$ sudo snap refresh core
+$ sudo apt-get remove certbot
+$ sudo snap install --classic certbot
+$ sudo ln -s /snap/bin/certbot /usr/bin/certbot
 $ sudo openssl dhparam -out /etc/nginx/dhparam.pem 2048
 ```
 **renew**
