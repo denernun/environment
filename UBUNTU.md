@@ -107,21 +107,20 @@ sudo journalctl -fxeu xxx.service
 ## certbot
 **site**
 ```terminal
-$ https://certbot.eff.org/#ubuntuxenial-nginx
+$ https://certbot.eff.org/lets-encrypt/ubuntufocal-nginx
 ```
 **install**
 ```terminal
-$ sudo apt-add-repository -r ppa:certbot/certbot (se erro)
+$ sudo apt-get remove certbot
 $ sudo apt update
 $ sudo snap install core
 $ sudo snap refresh core
-$ sudo apt-get remove certbot
 $ sudo snap install --classic certbot
 $ sudo ln -s /snap/bin/certbot /usr/bin/certbot
 ```
 **renew**
 ```terminal
-$ sudo certbot renew
+$ sudo certbot renew --dry-run
 ```
 **validation**
 ```terminal
