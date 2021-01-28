@@ -30,6 +30,10 @@ sudo apt install postgresql-12 postgresql-client-12
 sudo nano /etc/postgresql/12/main/postgresql.conf
 listen_addresses = '*'
 
+# timezone
+log_timezone = 'America/Sao_Paulo'
+timezone = 'America/Sao_Paulo'
+
 sudo nano /etc/postgresql/12/main/pg_hba.conf
 host all all 0.0.0.0/0 md5
 host all all ::0/0 md5
