@@ -47,7 +47,7 @@ $ sudo npm install pm2@latest -g
 $ pm2 startup systemd
 $ sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u ubuntu --hp /home/ubuntu
 ```
-## aplify
+## amplify
 ```terminal
 $ sudo nano /etc/apt/sources.list.d/nginx-amplify.list
   deb [arch=amd64] https://packages.amplify.nginx.com/py3/ubuntu focal amplify-agent
