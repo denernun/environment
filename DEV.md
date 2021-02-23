@@ -1,19 +1,5 @@
 # Environment Install
 
-## Android SDK
-```text
-Download
-https://developer.android.com/studio/preview/index.html
-
-Environment
-JAVA_HOME=C:\Program Files\Android\Android Studio\jre
-ANDROID_HOME=C:\Users\dener\AppData\Local\Android\Sdk
-
-Path
-C:\Users\dener\AppData\Local\Android\Sdk\tools
-C:\Users\dener\AppData\Local\Android\Sdk\tools\bin
-C:\Users\dener\AppData\Local\Android\Sdk\platform-tools
-```
 ## SSL
 ```text
 Download
