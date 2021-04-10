@@ -117,6 +117,7 @@ $ sudo snap install core
 $ sudo snap refresh core
 $ sudo snap install --classic certbot
 $ sudo ln -s /snap/bin/certbot /usr/bin/certbot
+$ sudo openssl dhparam -out /etc/letsencrypt/dhparam.pem 4096
 ```
 **renew**
 ```terminal
