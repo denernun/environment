@@ -30,7 +30,7 @@ localhost.key
 ```
 **firefox**
 ```text
-Options/Privacy & Security/View Certificates/Your Certificates/Import/rootCA.pem
+rootCA.pem to Options/Privacy & Security/View Certificates/Your Certificates
 ```
 **chrome**
 ```text
