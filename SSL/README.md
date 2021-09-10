@@ -12,7 +12,7 @@ openssl x509 -req -in localhost.csr -CA rootCA.pem -CAkey rootCA.key -CAcreatese
 openssl pkcs12 -export -in localhost.crt -inkey localhost.key -out localhost.p12
 openssl pkcs12 -inkey localhost.key -in localhost.crt -export -out localhost.pfx
 ```
-**validate**
+**verify**
 ```bash
 openssl req -text -noout -verify -in localhost.csr
 openssl rsa -in localhost.key -check
