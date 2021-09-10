@@ -1,18 +1,24 @@
 [req]
-deafault_bits = 2048
+default_bits = 2048
 prompt = no
 default_md = sha256
 x509_extensions = v3_req
 distinguished_name = dn
 
-[dn]
-C=BR
-ST=Sao Paulo
-L=Maua
-O=Dener Rocha
-OU=Dener Rocha
-emailAddress=denernun@gmail.com
-CN=localhost
+[v3_ca]
+basicConstraints = critical,CA:TRUE
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid:always,issuer:always
 
 [v3_req]
 subjectAltName = @alt_names
+basicConstraints = CA:FALSE
+keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
+extendedKeyUsage = serverAuth
+authorityKeyIdentifier = keyid,issuer
+
+[dn]
+CN = localhost
+
+[alt_names]
+DNS.1 = localhost
