@@ -1,30 +1,43 @@
 ## self-signed
 **create**
 ```terminal
+$env:RANDFILE=".rnd"
 openssl genrsa -des3 -out rootCA.key 2048
-openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1024 -out rootCA.pem -config cert.cnf
-openssl req -new -sha256 -nodes -out localhost.csr -newkey rsa:2048 -keyout localhost.key -config cert.cnf
-openssl x509 -req -in localhost.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out localhost.crt -days 500 -sha256 -extfile cert.ext
+openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1095 -out rootCA.pem -config cert.cnf -reqexts v3_req -extensions v3_ca
+openssl req -new -sha256 -nodes -newkey rsa:2048 -out localhost.csr -keyout localhost.key -config cert.cnf
+openssl x509 -req -in localhost.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out localhost.crt -days 1095 -sha256 -extfile cert.cnf -extensions v3_req
 ```
-## import
+**export**
+```bash
+openssl pkcs12 -export -in localhost.crt -inkey localhost.key -out localhost.p12
+openssl pkcs12 -inkey localhost.key -in localhost.crt -export -out localhost.pfx
+```
+**validate**
+```bash
+openssl req -text -noout -verify -in localhost.csr
+openssl rsa -in localhost.key -check
+openssl x509 -in localhost.crt -text -noout
+openssl pkcs12 -info -in localhost.pfx
+```
+**import**
 ```bash
 rootCA.pem to "Manage User Certificates/Trusted Root Certification Authorities"
 ```
-## use
+**use**
 ```bash
 localhost.crt
 localhost.key
 ```
-## firefox
+**firefox**
 ```text
 Options/Privacy & Security/View Certificates/Authorities/Import/rootCA.pem
 Options/Privacy & Security/View Certificates/People/Import/localhost.key
 ```
-## chrome
+**chrome**
 ```text
 chrome://flags/#allow-insecure-localhost
 ```
-## keys
+**keys**
 ```bash
 ssh-keygen -t rsa -b 2048 -C "denernun@gmail.com"
 
