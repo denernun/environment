@@ -61,6 +61,7 @@ dotnet dev-certs https --trust
 [https://opendec.wordpress.com/](https://opendec.wordpress.com/)\
 [https://indy.fulgan.com/SSL/](https://indy.fulgan.com/SSL/)
 ###### links
+[https://gist.github.com/princeppy/d00bad66d9caac86d9b7d3ce9e35fc12](https://gist.github.com/princeppy/d00bad66d9caac86d9b7d3ce9e35fc12)
 [https://github.com/jsha/minica](https://github.com/jsha/minica)\
 [https://www.hanselman.com/blog/DevelopingLocallyWithASPNETCoreUnderHTTPSSSLAndSelfSignedCerts.aspx](https://www.hanselman.com/blog/DevelopingLocallyWithASPNETCoreUnderHTTPSSSLAndSelfSignedCerts.aspx)\
 [https://www.freecodecamp.org/news/how-to-get-https-working-on-your-local-development-environment-in-5-minutes-7af615770eec](https://www.freecodecamp.org/news/how-to-get-https-working-on-your-local-development-environment-in-5-minutes-7af615770eec)\
