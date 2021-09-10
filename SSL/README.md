@@ -3,9 +3,36 @@
 ```terminal
 $env:RANDFILE=".rnd"
 openssl genrsa -des3 -out rootCA.key 2048
-openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1095 -out rootCA.pem -config cert.cnf -reqexts v3_req -extensions v3_ca
-openssl req -new -sha256 -nodes -newkey rsa:2048 -out localhost.csr -keyout localhost.key -config cert.cnf
-openssl x509 -req -in localhost.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out localhost.crt -days 1095 -sha256 -extfile cert.cnf -extensions v3_req
+openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1095 -out rootCA.pem -config cert.conf -reqexts v3_req -extensions v3_ca
+openssl req -new -sha256 -nodes -newkey rsa:2048 -out localhost.csr -keyout localhost.key -config cert.conf
+openssl x509 -req -in localhost.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out localhost.crt -days 1095 -sha256 -extfile cert.conf -extensions v3_req
+```
+**cert.conf**
+```terminal
+[req]
+default_bits = 2048
+prompt = no
+default_md = sha256
+x509_extensions = v3_req
+distinguished_name = dn
+
+[v3_ca]
+basicConstraints = critical,CA:TRUE
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid:always,issuer:always
+
+[v3_req]
+subjectAltName = @alt_names
+basicConstraints = CA:FALSE
+keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
+extendedKeyUsage = serverAuth
+authorityKeyIdentifier = keyid,issuer
+
+[dn]
+CN = localhost
+
+[alt_names]
+DNS.1 = localhost
 ```
 **export**
 ```bash
