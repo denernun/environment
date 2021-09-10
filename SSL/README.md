@@ -29,7 +29,7 @@ localhost.crt
 localhost.key
 ```
 **firefox**
-```text
+```bash
 rootCA.pem to "Options/Privacy & Security/View Certificates/Your Certificates"
 ```
 **chrome**
