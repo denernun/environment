@@ -1,4 +1,4 @@
-```code
+```json
 {
   "$schema": "https://aka.ms/terminal-profiles-schema",
   "actions": [
