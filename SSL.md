@@ -69,7 +69,7 @@ localhost.key
 ```
 **firefox**
 ```bash
-rootCA.pem to "Options/Privacy & Security/View Certificates/Authorities/Import"
+rootCA.pem to "Options/Privacy & Security/View Certificates/Authorities"
 ```
 **chrome**
 ```text
