@@ -46,11 +46,6 @@ CN = localhost
 [alt_names]
 DNS.1 = localhost
 ```
-**export**
-```bash
-openssl pkcs12 -export -in localhost.crt -inkey localhost.key -out localhost.p12
-openssl pkcs12 -inkey localhost.key -in localhost.crt -export -out localhost.pfx
-```
 **verify**
 ```bash
 openssl req -text -noout -verify -in localhost.csr
@@ -58,22 +53,27 @@ openssl rsa -in localhost.key -check
 openssl x509 -in localhost.crt -text -noout
 openssl pkcs12 -info -in localhost.pfx
 ```
+**export**
+```bash
+openssl pkcs12 -export -in localhost.crt -inkey localhost.key -out localhost.p12
+openssl pkcs12 -inkey localhost.key -in localhost.crt -export -out localhost.pfx
+```
 **import**
 ```bash
-rootCA.pem to "Manage User Certificates/Trusted Root Certification Authorities"
-```
-**use**
-```bash
-localhost.crt
-localhost.key
+import rootCA.pem to "Manage User Certificates/Trusted Root Certification Authorities"
 ```
 **firefox**
 ```bash
-rootCA.pem to "Options/Privacy & Security/View Certificates/Authorities"
+import rootCA.pem to "Options/Privacy & Security/View Certificates/Authorities"
 ```
 **chrome**
 ```text
 chrome://flags/#allow-insecure-localhost
+```
+**use**
+```bash
+localhost.crt (Certificates)
+localhost.key (Private Key)
 ```
 **keys**
 ```bash
