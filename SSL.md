@@ -75,6 +75,12 @@ chrome://flags/#allow-insecure-localhost
 localhost.crt (Certificates)
 localhost.key (Private Key)
 ```
+**export to pfx**
+```bash
+openssl pkcs12 -in localhost.pfx -out localhost.txt -nodes
+copy -----BEGIN CERTIFICATE----- to -----END CERTIFICATE----- to localhost.crt
+copy -----BEGIN PRIVATE KEY----- to -----END PRIVATE KEY----- to localhost.key
+```
 **keys**
 ```bash
 ssh-keygen -t rsa -b 2048 -C "denernun@gmail.com"
