@@ -33,8 +33,10 @@ $ sudo apt-get remove nginx-core nginx-full nginx-light nginx-extras nginx-naxsi
 ```
 ## node
 ```terminal
-$ sudo apt-get install gcc g++ make
-$ curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+$ sudo apt update
+$ sudo apt upgrade
+$ sudo apt install gcc g++ make
+$ curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 $ sudo apt install -y nodejs
 $ sudo nano ~/.bashrc
 $ export NODE_ENV=[ production | release ]
