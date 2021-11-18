@@ -1,7 +1,3 @@
-## date/time
-```terminal
-$ sudo timedatectl set-timezone America/Sao_Paulo
-```
 ## environment
 ```terminal
 $ sudo nano /etc/environment
