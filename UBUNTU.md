@@ -32,14 +32,13 @@ $ sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd
 ```
 ## amplify
 ```terminal
+$ sudo apt-get install python2.7
+$ sudo nano /etc/apt/sources.list.d/nginx-amplify.list
+  deb [arch=amd64] https://packages.amplify.nginx.com/py3/ubuntu focal amplify-agent
 $ curl -L -O https://github.com/nginxinc/nginx-amplify-agent/raw/master/packages/install.sh
 $ nano install.sh
   xxxname='bionic'
-$ sudo nano /etc/apt/sources.list.d/nginx-amplify.list
-  deb [arch=amd64] https://packages.amplify.nginx.com/py3/ubuntu focal amplify-agent
-$ sudo apt-get install python3-setproctitle python3-lockfile python3-daemon python3-greenlet python3-gevent python3-ujson python3-rstr python3-pymysql
-$ sudo apt-get update && sudo apt-get install nginx-amplify-agent
-$ sudo cp /etc/amplify-agent/agent.conf.default /etc/amplify-agent/agent.conf
+$ API_KEY='1145f635a3597c2d0960210ae1efcc1c' sh ./install.sh
 $ sudo service amplify-agent start
 $ sudo service amplify-agent stop
 $ sudo service amplify-agent restart
