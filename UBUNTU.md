@@ -16,21 +16,6 @@ $ sudo apt install nginx
 $ sudo systemctl start nginx
 $ sudo systemctl status nginx
 ```
-**remove**
-```terminal
-$ sudo update-rc.d -f nginx remove
-$ sudo rm /etc/init.d/nginx
-$ sudo apt-get purge nginx nginx-common
-$ sudo apt-get remove nginx-core nginx-full nginx-light nginx-extras nginx-naxsi nginx-common
-```
-**modules**
-```terminal
-50-mod-http-geoip.conf
-50-mod-http-image-filter.conf
-50-mod-http-xslt-filter.conf
-50-mod-mail.conf
-50-mod-stream.conf
-```
 ## node
 ```terminal
 $ sudo apt update
