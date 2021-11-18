@@ -8,6 +8,7 @@ $ sudo nano /etc/environment
 ```terminal
 $ sudo curl -O https://nginx.org/keys/nginx_signing.key && sudo apt-key add ./nginx_signing.key
 $ sudo apt update
+$ sudo apt upgrade
 $ sudo apt install nginx
 $ sudo systemctl start nginx
 $ sudo systemctl status nginx
