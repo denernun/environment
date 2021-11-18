@@ -36,6 +36,8 @@ $ sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd
 $ sudo apt-get install python2.7
 $ sudo nano /etc/apt/sources.list.d/nginx-amplify.list
   deb [arch=amd64] https://packages.amplify.nginx.com/py3/ubuntu focal amplify-agent
+$ sudo app update
+$ sudo app upgrade
 $ curl -L -O https://github.com/nginxinc/nginx-amplify-agent/raw/master/packages/install.sh
 $ nano install.sh
   xxxname='bionic'
@@ -99,6 +101,7 @@ $ https://certbot.eff.org/lets-encrypt/ubuntufocal-nginx
 ```terminal
 $ sudo apt-get remove certbot
 $ sudo apt update
+$ sudo apt upgrade
 $ sudo snap install core
 $ sudo snap refresh core
 $ sudo snap install --classic certbot
