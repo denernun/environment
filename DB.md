@@ -95,4 +95,8 @@ sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install redis-server
 redis-cli -v
+
+sudo nano /etc/redis/redis.conf
+#bind 127.0.0.1 ::1
+protected-mode no
 ```
