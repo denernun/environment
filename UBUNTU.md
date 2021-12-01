@@ -32,7 +32,9 @@ $ sudo npm install pm2@latest -g
 $ pm2 startup systemd
 $ sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u ubuntu --hp /home/ubuntu
 $ pm2 install pm2-logrotate
-$ pm2 set pm2-logrotate:rotateInterval '* * * 1 * *'
+$ pm2 set pm2-logrotate:max_size 10M
+$ pm2 set pm2-logrotate:compress true
+$ pm2 set pm2-logrotate:rotateInterval '0 0 * * *'
 ```
 ## amplify
 ```terminal
