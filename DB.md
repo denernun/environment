@@ -1,12 +1,14 @@
 ## Firebird
 **Linux**
 ```text
+# sudo apt update  
+# sudo apt upgrade
+# sudo apt install libncurses5
 # https://github.com/FirebirdSQL/firebird/releases/download/R2_5_9/FirebirdSS-2.5.9.27139-0.amd64.tar.gz
 # sudo tar -xf FirebirdSS-2.5.9.27139-0.amd64.tar.gz
-# sudo apt install libncurses5
-# sudo ./install
-# sudo nano /opt/firebird/2.5/firebird.conf
-  DatabaseAccess = Restrict /var/db
+# sudo ./install.sh
+# sudo nano /opt/firebird/firebird.conf
+  DatabaseAccess = Restrict /var/nginx/softclass/db
 ```
 ## Postgresql
 **Autenticacao**
