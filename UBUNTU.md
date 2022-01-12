@@ -1,6 +1,7 @@
 ## environment
 ```terminal
 $ sudo timedatectl set-timezone America/Sao_Paulo
+
 $ sudo nano /etc/environment
   TMPDIR=/tmp
 ```
@@ -34,7 +35,7 @@ $ sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd
 $ pm2 install pm2-logrotate
 $ pm2 set pm2-logrotate:max_size 10M
 $ pm2 set pm2-logrotate:compress false
-$ pm2 set pm2-logrotate:rotateInterval '0 0 * * *'
+$ pm2 set pm2-logrotate:rotateInterval '* * * 1 * *'
 ```
 ## amplify
 ```terminal
@@ -51,52 +52,6 @@ $ API_KEY='1145f635a3597c2d0960210ae1efcc1c' sh ./install.sh
 $ sudo service amplify-agent start
 $ sudo service amplify-agent stop
 $ sudo service amplify-agent restart
-```
-## netcore
-**sdk**
-```terminal
-$ sudo wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
-$ sudo dpkg -i packages-microsoft-prod.deb
-$ sudo apt-get update
-$ sudo apt-get install apt-transport-https
-$ sudo apt-get update
-$ sudo apt-get install dotnet-sdk-3.1
-```
-**service systemd**
-```terminal
-[Unit]
-Description=xxx
-
-[Service]
-#Type=notify (only service worker)
-WorkingDirectory=/var/www/xxx
-ExecStart=/usr/bin/dotnet /var/www/xxx/xxx.dll
-Restart=always
-RestartSec=10
-KillSignal=SIGINT
-SyslogIdentifier=xxx
-User=ubuntu
-Environment=ASPNETCORE_ENVIRONMENT=Production
-Environment=ASPNETCORE_URLS=http://localhost:5001
-Environment=DOTNET_PRINT_TELEMETRY_MESSAGE=false
-
-[Install]
-WantedBy=multi-user.target    
-```
-**service systemd install**
-```terminal
-/etc/systemd/system/xxx.service
-sudo systemctl daemon-reload
-sudo systemctl enable xxx.service
-sudo journalctl -fxeu xxx.service
-```
-**service wsl**
-```terminal
-# /etc/init.d
-# chmod +x <service>
-# sudo update-rc.d <service> defaults
-# ASPNETCORE_ENVIRONMENT=[Development,Release,Production]
-# ASPNETCORE_URLS=[http://*:XXXX]
 ```
 ## certbot
 **site**
