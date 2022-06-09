@@ -25,7 +25,6 @@ D:\SSH\tools
 ## SVN
 ```text
 Path
-
 D:\SVN
 ```
 ## Others
@@ -33,6 +32,15 @@ D:\SVN
 Path
 D:\UTIL
 D:\DLL
+```
+## Harbour
+```text
+Environment
+HB_INSTALL=D:\HARBOUR
+
+Path
+D:\HARBOUR\BIN
+D:\BCC\BIN
 ```
 ## Python
 ```text
