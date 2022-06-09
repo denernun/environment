@@ -27,12 +27,6 @@ D:\SSH\tools
 Path
 D:\SVN
 ```
-## Others
-```text
-Path
-D:\UTIL
-D:\DLL
-```
 ## Harbour
 ```text
 Environment
@@ -55,6 +49,12 @@ NPM
 npm config list
 npm config -g set msvs_version 2017
 npm config set python C:\Users\dener\AppData\Local\Programs\Python\Python39\python.exe
+```
+## Others
+```text
+Path
+D:\UTIL
+D:\DLL
 ```
 
 
