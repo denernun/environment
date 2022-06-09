@@ -1,13 +1,5 @@
 # Environment Install
 
-## NODE
-```text
-Download
-https://nodejs.org
-
-Environment
-NODE_ENV=development
-```
 ## SSL
 ```text
 Download
