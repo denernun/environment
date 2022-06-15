@@ -31,6 +31,9 @@ D:\SVN
 ```text
 Environment
 HB_INSTALL=D:\HARBOUR
+HB_ARCHITECTURE=w32
+HB_COMPILER=bcc32
+HB_GT_LIB=gtwin
 
 Path
 D:\HARBOUR\BIN
