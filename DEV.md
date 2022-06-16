@@ -46,7 +46,7 @@ https://www.python.org/downloads/
 
 Environment
 PYTHON=C:\Users\dener\AppData\Local\Programs\Python\Python39
-NODE_GYP_FORCE_PYTHON=C:\Users\dener\AppData\Local\Programs\Python\PythonXX\python.exe
+NODE_GYP_FORCE_PYTHON=C:\Users\dener\AppData\Local\Programs\Python\Python39\python.exe
 
 NPM
 npm config list
