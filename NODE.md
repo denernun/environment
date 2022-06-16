@@ -37,5 +37,5 @@ Packages
 +-- npm-run-all@4.1.5
 +-- npm@8.12.1
 +-- typescript@4.7.3
-`-- windows-build-tools@
++-- windows-build-tools@
 ```
