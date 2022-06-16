@@ -27,7 +27,6 @@ Packages
 +-- gulp@4.0.2
 +-- htmlhint@1.1.4
 +-- http-server@14.1.1
-+-- hugo@0.0.3
 +-- jest@28.1.1
 +-- node-gyp-build@4.4.0
 +-- node-gyp@9.0.0
@@ -38,6 +37,5 @@ Packages
 +-- npm-run-all@4.1.5
 +-- npm@8.12.1
 +-- typescript@4.7.3
-+-- universal-analytics@0.5.3
 `-- windows-build-tools@
 ```
