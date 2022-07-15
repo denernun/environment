@@ -17,9 +17,9 @@ Path
 C:\Users\dener\AppData\Roaming\npm
 
 Packages
++-- @nestjs/cli
 +-- @angular/cli
 +-- @loopback/cli
-+-- @nestjs/cli
 +-- cross-env
 +-- editorconfig
 +-- eslint
@@ -28,11 +28,11 @@ Packages
 +-- htmlhint
 +-- http-server
 +-- jest
-+-- node-gyp-build
-+-- node-gyp
-+-- node-sass
-+-- nodemon
 +-- npm-check-updates
++-- node-gyp
++-- node-gyp-build
++-- nodemon
++-- node-sass
 +-- npm-check
 +-- npm-run-all
 +-- typescript
