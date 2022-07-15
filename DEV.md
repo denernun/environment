@@ -3,15 +3,16 @@
 ## SSL
 ```text
 Download
+https://slproweb.com/products/Win32OpenSSL.html
 https://sourceforge.net/projects/openssl/
 
 Environment
-RANDFILE=D:\SSL
-OPENSSL_HOME=D:\SSL
-OPENSSL_CONF=D:\SSL\BIN\OPENSSL.CNF
+RANDFILE=C:\Program Files\OpenSSL
+OPENSSL_HOME=C:\Program Files\OpenSSL
+OPENSSL_CONF=C:\Program Files\OpenSSL\openssl.cfg
 
 Path
-D:\SSL\BIN
+C:\Program Files\OpenSSL\bin
 ```
 ## SSH
 ```text
@@ -59,6 +60,3 @@ Path
 D:\UTIL
 D:\DLL
 ```
-
-
-
