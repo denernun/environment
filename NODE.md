@@ -7,6 +7,9 @@ https://nodejs.org
 
 Environment
 NODE_ENV=development
+
+Node-Gyp
+https://github.com/nodejs/node-gyp#on-windows
 ```
 ## NPM
 ```text
