@@ -24,6 +24,8 @@ https://www.postgresql.org/download/windows/
 **Linux**
 ```text
 # install
+curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc|sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/postgresql.gpg
+echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" |sudo tee  /etc/apt/sources.list.d/pgdg.list
 sudo apt update  
 sudo apt upgrade
 sudo apt install postgresql-12 postgresql-client-12
@@ -32,10 +34,7 @@ sudo apt install postgresql-12 postgresql-client-12
 sudo nano /etc/postgresql/12/main/postgresql.conf
 listen_addresses = '*'
 
-# timezone
-log_timezone = 'America/Sao_Paulo'
-timezone = 'America/Sao_Paulo'
-
+# access
 sudo nano /etc/postgresql/12/main/pg_hba.conf
 host all all 0.0.0.0/0 md5
 host all all ::0/0 md5
@@ -49,7 +48,8 @@ sudo service postgresql restart
 **Console**
 ```text
 $ sudo su postgres
-$ psql -c "alter user postgres with password 'StrongAdminP@ssw0rd'"
+$ psql
+$ alter user postgres with password '94HHC$Z4uV8go'
 $ psql -c "createdb <db_name>"
 
 $ psql
