@@ -46,14 +46,6 @@ $ sudo apt-get install python3-setproctitle python3-lockfile python3-daemon pyth
 $ sudo apt update
 $ sudo apt upgrade
 $ curl -L -O https://github.com/nginxinc/nginx-amplify-agent/raw/master/packages/install.sh
-$ nano install.sh
-  test -d /etc/apt/sources.list.d && \
-  ${sudo_cmd} test -w /etc/apt/sources.list.d && \
-  ${sudo_cmd} rm -f /etc/apt/sources.list.d/amplify-agent.list && \
-  ${sudo_cmd} rm -f /etc/apt/sources.list.d/nginx-amplify.list && \
-  echo "deb [arch=amd64] https://packages.amplify.nginx.com/py3/ubuntu focal amplify-agent" | \
-  ${sudo_cmd} tee /etc/apt/sources.list.d/nginx-amplify.list > /dev/null 2>&1 && \
-  ${sudo_cmd} chmod 644 /etc/apt/sources.list.d/nginx-amplify.list > /dev/null 2>&1
 $ API_KEY='1145f635a3597c2d0960210ae1efcc1c' sh ./install.sh
 $ sudo service amplify-agent start
 $ sudo service amplify-agent stop
