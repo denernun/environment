@@ -93,9 +93,8 @@ FLUSH PRIVILEGES;
 ## Redis
 **Linux**
 ```bash
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install redis-server
+sudo apt update && sudo apt upgrade -y
+sudo apt install redis-server -y
 redis-cli -v
 
 sudo nano /etc/redis/redis.conf
