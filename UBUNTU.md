@@ -9,16 +9,14 @@ $ sudo nano /etc/environment
 **install**
 ```terminal
 $ sudo curl -O https://nginx.org/keys/nginx_signing.key && sudo apt-key add ./nginx_signing.key
-$ sudo apt update
-$ sudo apt upgrade
+$ sudo apt update && sudo apt upgrade -y
 $ sudo apt install nginx
 $ sudo systemctl start nginx
 $ sudo systemctl status nginx
 ```
 ## node
 ```terminal
-$ sudo apt update
-$ sudo apt upgrade
+$ sudo apt update && sudo apt upgrade -y
 $ sudo apt install gcc g++ make
 $ curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 $ sudo apt install -y nodejs
@@ -39,12 +37,10 @@ $ pm2 set pm2-logrotate:rotateInterval '* * * 1 * *'
 ```
 ## amplify
 ```terminal
-$ sudo apt-get install python2.7
 $ sudo nano /etc/apt/sources.list.d/nginx-amplify.list
   deb [arch=amd64] https://packages.amplify.nginx.com/py3/ubuntu focal amplify-agent
-$ sudo apt-get install python3-setproctitle python3-lockfile python3-daemon python3-greenlet python3-gevent python3-ujson python3-rstr python3-pymysql  
-$ sudo apt update
-$ sudo apt upgrade
+$ sudo apt install python3-setproctitle python3-lockfile python3-daemon python3-greenlet python3-gevent python3-ujson python3-rstr python3-pymysql -y
+$ sudo apt update & sudo apt upgrade -y
 $ curl -L -O https://github.com/nginxinc/nginx-amplify-agent/raw/master/packages/install.sh
 $ API_KEY='1145f635a3597c2d0960210ae1efcc1c' sh ./install.sh
 $ sudo service amplify-agent start
@@ -58,9 +54,8 @@ $ https://certbot.eff.org/lets-encrypt/ubuntufocal-nginx
 ```
 **install**
 ```terminal
-$ sudo apt-get remove certbot
-$ sudo apt update
-$ sudo apt upgrade
+$ sudo apt remove certbot
+$ sudo apt update && sudo apt upgrade -y
 $ sudo snap install core
 $ sudo snap refresh core
 $ sudo snap install --classic certbot
