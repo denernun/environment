@@ -1,4 +1,7 @@
 **windows**
+```store
+install windows subsystem for linux
+```
 ```terminal
 # wsl --list
 # wsl --set-version <Distro> 2
