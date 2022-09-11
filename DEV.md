@@ -28,6 +28,12 @@ D:\SSH\tools
 Path
 D:\SVN
 ```
+## UTIL
+```text
+Path
+D:\UTIL
+D:\DLL
+```
 ## Harbour
 ```text
 Environment
@@ -47,16 +53,11 @@ https://www.python.org/downloads/
 
 Environment
 PYTHON=C:\Users\dener\AppData\Local\Programs\Python\Python39
-NODE_GYP_FORCE_PYTHON=C:\Users\dener\AppData\Local\Programs\Python\Python39\python.exe
-
-NPM
+NODE_GYP_FORCE_PYTHON=C:\Users\dener\AppData\Local\Programs\Python\Python310\python.exe
+```
+## NPM
+```text
 npm config list
 npm config -g set msvs_version 2019
-npm config set python C:\Users\dener\AppData\Local\Programs\Python\Python39\python.exe
-```
-## Others
-```text
-Path
-D:\UTIL
-D:\DLL
+npm config set python C:\Users\dener\AppData\Local\Programs\Python\Python310\python.exe
 ```
