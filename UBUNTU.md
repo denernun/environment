@@ -46,6 +46,13 @@ $ API_KEY='1145f635a3597c2d0960210ae1efcc1c' sh ./install.sh
 $ sudo service amplify-agent start
 $ sudo service amplify-agent stop
 $ sudo service amplify-agent restart
+
+$ sudo apt update && sudo apt install nginx-amplify-agent
+
+$ sudo nano /etc/amplify-agent/agent.conf
+[nginx]
+user = www-data
+configfile = /etc/nginx/nginx.conf
 ```
 ## certbot
 **site**
