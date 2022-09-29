@@ -10,6 +10,11 @@ NODE_ENV=development
 
 Node-Gyp
 https://github.com/nodejs/node-gyp#on-windows
+
+Node-SASS Build
+npm config set msbuild_path "C:\Program Files\Microsoft Visual Studio\2022\Community\Msbuild\Current\Bin\MSBuild.exe"
+npm config set msvs_version 2022
+npm config set msvs_version 2022 --global
 ```
 ## NPM
 ```text
@@ -33,6 +38,7 @@ Packages
 +-- jest
 +-- npm-check-updates
 +-- nodemon
++-- node-gyp
 +-- node-sass
 +-- npm-check
 +-- npm-run-all
