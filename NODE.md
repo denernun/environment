@@ -12,9 +12,12 @@ Node-Gyp
 https://github.com/nodejs/node-gyp#on-windows
 
 Node-SASS Build
-npm config set msbuild_path "C:\Program Files\Microsoft Visual Studio\2022\Community\Msbuild\Current\Bin\MSBuild.exe"
+node-gyp configure --msvs_version=2022
 npm config set msvs_version 2022
 npm config set msvs_version 2022 --global
+npm config set python "C:\Users\dener\AppData\Local\Programs\Python\Python310\python.exe"
+npm config set msbuild_path "C:\Program Files\Microsoft Visual Studio\2022\Community\Msbuild\Current\Bin\MSBuild.exe"
+npm config set node_gyp "C:\Users\dener\AppData\Roaming\npm\node_modules\node-gyp\bin\node-gyp.js"
 ```
 ## NPM
 ```text
@@ -47,5 +50,5 @@ Packages
 ```
 # Packages
 ```text
-npm i -g @angular/cli @loopback/cli @nestjs/cli cross-env editorconfig eslint grunt gulp htmlhint http-server jest node-sass nodemon npm-check-updates npm-check npm-run-all typescript npm-windows-upgrade
+npm i -g @angular/cli @loopback/cli @nestjs/cli cross-env editorconfig eslint grunt gulp htmlhint http-server jest node-sass node-gyp nodemon npm-check-updates npm-check npm-run-all typescript npm-windows-upgrade
 ```
