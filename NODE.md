@@ -11,6 +11,10 @@ NODE_ENV=development
 Node-Gyp
 https://github.com/nodejs/node-gyp#on-windows
 
+cd "C:\Program Files\nodejs"
+cd node_modules\npm\node_modules\@npmcli\run-script
+npm install node-gyp@latest
+
 Node-SASS Build
 node-gyp configure --msvs_version=2022
 npm config set msvs_version 2022
