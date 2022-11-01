@@ -33,7 +33,7 @@ $ sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd
 $ pm2 install pm2-logrotate
 $ pm2 set pm2-logrotate:max_size 10M
 $ pm2 set pm2-logrotate:compress false
-$ pm2 set pm2-logrotate:rotateInterval '* * * 1 * *'
+$ pm2 set pm2-logrotate:rotateInterval '* * * 1 0 0'
 ```
 ## amplify
 ```terminal
