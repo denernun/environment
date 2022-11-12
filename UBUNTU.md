@@ -18,7 +18,7 @@ $ sudo systemctl status nginx
 ```terminal
 $ sudo apt update && sudo apt upgrade -y
 $ sudo apt install gcc g++ make
-$ curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+$ curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 $ sudo apt install -y nodejs
 $ sudo nano ~/.bashrc
 $ export NODE_ENV=[ production | release ]
