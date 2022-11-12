@@ -50,6 +50,11 @@ $ psql
 $ alter user postgres with password '94HHC$Z4uV8go';
 # create database <db_name>;
 ```
+**Backup**
+```text
+$ pg_dump -h localhost -p 5432 -U postgres -d <dbname> -v -Fc -b -f /tmp/<dbname>.backup
+# pg_restore -h localhost -p 5432 -U postgres -v -c -C -Fc -d <dbname> /tmp/<dbname>.backup
+```
 
 ## MySQL
 **Linux**
