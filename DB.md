@@ -55,7 +55,39 @@ $ alter user postgres with password '94HHC$Z4uV8go';
 $ pg_dump -h localhost -p 5432 -U postgres -d <dbname> -v -Fc -b -f /tmp/<dbname>.backup
 # pg_restore -h localhost -p 5432 -U postgres -v -c -C -Fc -d <dbname> /tmp/<dbname>.backup
 ```
+**Pool**
+```text
+$ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+$ sudo wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+$ sudo apt update
+$ sudo apt install pgbouncer -y
 
+$ sudo nano /etc/pgbouncer/pgbouncer.ini
+  [databases]
+  * = host=localhost port=5432 auth_user=postgres
+
+  [users]  
+  
+  [pgbouncer]
+  logfile = /var/log/postgresql/pgbouncer.log
+  pidfile = /var/run/postgresql/pgbouncer.pid
+  user = postgres
+  listen_addr = localhost
+  listen_port = 6432
+  unix_socket_dir = /var/run/postgresql
+  auth_type = md5
+  auth_file = /etc/pgbouncer/userlist.txt
+
+$ sudo nano /etc/pgbouncer/userlist.txt
+  echo -n "md5"; echo -n "password" | md5sum | awk '{print $1}'
+  "postgres" "<md5>"
+
+$ sudo nano /etc/postgresql/12/main/pg_hba.conf
+  host all all 127.0.0.1 trust
+
+$ sudo systemctl reload pgbouncer.service
+$ sudo psql -h localhost -U postgres -p 6432
+```
 ## MySQL
 **Linux**
 ```text
