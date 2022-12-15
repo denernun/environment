@@ -75,9 +75,6 @@ $ sudo nano /etc/pgbouncer/userlist.txt
   echo -n "md5"; echo -n "<password><username>" | md5sum | awk '{print $1}'
   "<username>" "<md5>"
 
-$ sudo nano /etc/postgresql/12/main/pg_hba.conf
-  host all all 127.0.0.1/32 trust
-
 $ sudo systemctl reload pgbouncer.service
 $ sudo psql -h localhost -U <username> -p 6432
 ```
