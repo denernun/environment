@@ -11,11 +11,6 @@
   DatabaseAccess = Restrict /var/nginx/softclass/db
 ```
 ## Postgresql
-**Autenticacao**
-```text
-user=postgres
-password=postgres
-```
 **Windows**
 ```text
 Download
@@ -47,7 +42,7 @@ sudo service postgresql restart
 ```text
 $ sudo su postgres
 $ psql
-$ alter user postgres with password '94HHC$Z4uV8go';
+$ alter user postgres with password '<password>';
 # create database <db_name>;
 ```
 **Backup**
@@ -69,7 +64,7 @@ $ sudo nano /etc/pgbouncer/pgbouncer.ini
   [pgbouncer]
   logfile = /var/log/postgresql/pgbouncer.log
   pidfile = /var/run/postgresql/pgbouncer.pid
-  user = postgres
+  user = <username>
   listen_addr = localhost
   listen_port = 6432
   unix_socket_dir = /var/run/postgresql
@@ -77,14 +72,14 @@ $ sudo nano /etc/pgbouncer/pgbouncer.ini
   auth_file = /etc/pgbouncer/userlist.txt
 
 $ sudo nano /etc/pgbouncer/userlist.txt
-  echo -n "md5"; echo -n "<password>postgres" | md5sum | awk '{print $1}'
-  "postgres" "<md5>"
+  echo -n "md5"; echo -n "<password><username>" | md5sum | awk '{print $1}'
+  "<username>" "<md5>"
 
 $ sudo nano /etc/postgresql/12/main/pg_hba.conf
   host all all 127.0.0.1/32 trust
 
 $ sudo systemctl reload pgbouncer.service
-$ sudo psql -h localhost -U postgres -p 6432
+$ sudo psql -h localhost -U <username> -p 6432
 ```
 ## MySQL
 **Linux**
