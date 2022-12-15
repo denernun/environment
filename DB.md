@@ -57,6 +57,7 @@ $ pg_dump -h localhost -p 5432 -U postgres -d <dbname> -v -Fc -b -f /tmp/<dbname
 ```
 **Pool**
 ```text
+$ https://www.scaleway.com/en/docs/tutorials/install-pgbouncer/
 $ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
 $ sudo wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 $ sudo apt update
@@ -64,10 +65,7 @@ $ sudo apt install pgbouncer -y
 
 $ sudo nano /etc/pgbouncer/pgbouncer.ini
   [databases]
-  * = host=localhost port=5432 auth_user=postgres
-
-  [users]  
-  
+  * = host=localhost port=5432
   [pgbouncer]
   logfile = /var/log/postgresql/pgbouncer.log
   pidfile = /var/run/postgresql/pgbouncer.pid
@@ -79,11 +77,11 @@ $ sudo nano /etc/pgbouncer/pgbouncer.ini
   auth_file = /etc/pgbouncer/userlist.txt
 
 $ sudo nano /etc/pgbouncer/userlist.txt
-  echo -n "md5"; echo -n "password" | md5sum | awk '{print $1}'
+  echo -n "md5"; echo -n "<password>postgres" | md5sum | awk '{print $1}'
   "postgres" "<md5>"
 
 $ sudo nano /etc/postgresql/12/main/pg_hba.conf
-  host all all 127.0.0.1 trust
+  host all all 127.0.0.1/32 trust
 
 $ sudo systemctl reload pgbouncer.service
 $ sudo psql -h localhost -U postgres -p 6432
