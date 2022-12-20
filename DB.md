@@ -78,6 +78,10 @@ $ sudo nano /etc/pgbouncer/userlist.txt
 $ sudo systemctl reload pgbouncer.service
 $ sudo psql -h localhost -U <username> -p 6432
 ```
+**Monitor**
+```text
+pg_top -C -h localhost -p 5432 -U postgres -W
+```
 ## MySQL
 **Linux**
 ```text
