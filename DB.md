@@ -80,7 +80,7 @@ $ sudo psql -h localhost -U <username> -p 6432
 ```
 **Monitor**
 ```text
-pg_top -C -h localhost -p 5432 -U postgres -W
+pg_top -C -I -W -h localhost -p 5432 -U postgres
 ```
 ## MySQL
 **Linux**
