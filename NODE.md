@@ -32,10 +32,11 @@ Path
 C:\Users\dener\AppData\Roaming\npm
 
 Packages
-+-- @nestjs/cli
 +-- @angular/cli
 +-- @loopback/cli
++-- @nestjs/cli
 +-- cross-env
++-- dart-sass
 +-- editorconfig
 +-- eslint
 +-- grunt
@@ -46,13 +47,15 @@ Packages
 +-- npm-check-updates
 +-- nodemon
 +-- node-gyp
-+-- dart-sass
++-- node-sass
 +-- npm-check
 +-- npm-run-all
-+-- typescript
 +-- npm-windows-upgrade
++-- sass
++-- sass-migrator
++-- typescript
 ```
 # Packages
 ```text
-npm i -g @angular/cli @loopback/cli @nestjs/cli cross-env editorconfig eslint grunt gulp htmlhint http-server jest dart-sass node-gyp nodemon npm-check-updates npm-check npm-run-all typescript npm-windows-upgrade
+npm i -g @angular/cli @loopback/cli @nestjs/cli cross-env dart-sass editorconfig eslint grunt gulp htmlhint http-server jest node-gyp nodemon npm-check-updates node-sass npm-check npm-run-all npm-windows-upgrade sass sass-migrator typescript
 ```
