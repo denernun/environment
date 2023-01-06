@@ -52,8 +52,8 @@ Download
 https://www.python.org/downloads/
 
 Environment
-PYTHON=C:\Users\dener\AppData\Local\Programs\Python\Python39
-NODE_GYP_FORCE_PYTHON=C:\Users\dener\AppData\Local\Programs\Python\Python310\python.exe
+PYTHON=C:\Users\dener\AppData\Local\Programs\Python\Python311
+NODE_GYP_FORCE_PYTHON=C:\Users\dener\AppData\Local\Programs\Python\Python311\python.exe
 ```
 ## NPM
 ```text
