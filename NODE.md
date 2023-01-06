@@ -46,7 +46,7 @@ Packages
 +-- npm-check-updates
 +-- nodemon
 +-- node-gyp
-+-- node-sass
++-- dart-sass
 +-- npm-check
 +-- npm-run-all
 +-- typescript
@@ -54,5 +54,5 @@ Packages
 ```
 # Packages
 ```text
-npm i -g @angular/cli @loopback/cli @nestjs/cli cross-env editorconfig eslint grunt gulp htmlhint http-server jest node-sass node-gyp nodemon npm-check-updates npm-check npm-run-all typescript npm-windows-upgrade
+npm i -g @angular/cli @loopback/cli @nestjs/cli cross-env editorconfig eslint grunt gulp htmlhint http-server jest dart-sass node-gyp nodemon npm-check-updates npm-check npm-run-all typescript npm-windows-upgrade
 ```
