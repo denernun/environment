@@ -19,7 +19,7 @@ npm install node-gyp@latest
 Node-SASS Build
 npm config set msvs_version 2022
 npm config set msvs_version 2022 --global
-npm config set python "C:\Users\dener\AppData\Local\Programs\Python\Python310\python.exe"
+npm config set python "C:\Users\dener\AppData\Local\Programs\Python\Python311\python.exe"
 npm config set msbuild_path "C:\Program Files\Microsoft Visual Studio\2022\Community\Msbuild\Current\Bin\MSBuild.exe"
 npm config set node_gyp "C:\Users\dener\AppData\Roaming\npm\node_modules\node-gyp\bin\node-gyp.js"
 ```
