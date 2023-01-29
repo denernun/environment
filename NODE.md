@@ -46,16 +46,14 @@ Packages
 +-- jest
 +-- npm-check-updates
 +-- nodemon
-+-- node-gyp
 +-- node-sass
 +-- npm-check
 +-- npm-run-all
-+-- npm-windows-upgrade
 +-- sass
 +-- sass-migrator
 +-- typescript
 ```
 # Packages
 ```text
-npm i -g @angular/cli @loopback/cli @nestjs/cli cross-env dart-sass editorconfig eslint grunt gulp htmlhint http-server jest node-gyp nodemon npm-check-updates node-sass npm-check npm-run-all npm-windows-upgrade sass sass-migrator typescript
+npm i -g @angular/cli @loopback/cli @nestjs/cli cross-env dart-sass editorconfig eslint grunt gulp htmlhint http-server jest nodemon npm-check-updates node-sass npm-check npm-run-all sass sass-migrator typescript
 ```
