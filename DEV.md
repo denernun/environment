@@ -34,7 +34,7 @@ Path
 D:\UTIL
 D:\DLL
 ```
-## Harbour
+## HARBOUR
 ```text
 Environment
 HB_INSTALL=D:\HARBOUR
@@ -46,7 +46,7 @@ Path
 D:\HARBOUR\BIN
 D:\BCC\BIN
 ```
-## Python
+## PYTHON
 ```text
 Download
 https://www.python.org/downloads/
