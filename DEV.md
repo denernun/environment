@@ -53,11 +53,4 @@ https://www.python.org/downloads/
 
 Environment
 PYTHON=C:\Users\dener\AppData\Local\Programs\Python\Python311
-NODE_GYP_FORCE_PYTHON=C:\Users\dener\AppData\Local\Programs\Python\Python311\python.exe
-```
-## NPM
-```text
-npm config list
-npm config -g set msvs_version 2022
-npm config set python C:\Users\dener\AppData\Local\Programs\Python\Python311\python.exe
 ```
