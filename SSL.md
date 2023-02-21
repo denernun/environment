@@ -68,7 +68,7 @@ edge://flags/#allow-insecure-localhost
 edge://net-internals/#hsts
 domain localhost delete
 clean cache
-HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome\HSTSPolicyBypassList
+HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Edge\HSTSPolicyBypassList
 100 SZ localhost
 ```
 **chrome**
@@ -77,7 +77,7 @@ chrome://flags/#allow-insecure-localhost
 chrome://net-internals/#hsts
 domain localhost delete
 clean cache
-HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Edge\HSTSPolicyBypassList
+HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome\HSTSPolicyBypassList
 100 SZ localhost
 ```
 **firefox**
