@@ -66,10 +66,6 @@ import rootCA.pem to "Manage User Certificates/Trusted Root Certification Author
 ```text
 edge://flags/#allow-insecure-localhost
 edge://net-internals/#hsts
-domain localhost delete
-clean cache
-HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Edge\HSTSPolicyBypassList
-100 SZ localhost
 ```
 **chrome**
 ```text
