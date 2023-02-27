@@ -13,6 +13,12 @@ $ sudo service docker stop
 $ sudo service docker start
 $ docker run hello-world
 ```
+## START
+```text
+$ sudo nano /etc/wsl.conf
+  [boot]
+  command="service docker start"
+```
 ## CONECT
 ```text
 $ docker ps
