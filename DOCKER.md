@@ -8,5 +8,5 @@
 # wmic process where ProcessID=XXXXX delete
 # net start LxssManager
 # wsl -l -v
-# wsl unregister
+# wsl --unregister
 ```
