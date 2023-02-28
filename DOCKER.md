@@ -13,11 +13,22 @@ $ sudo service docker stop
 $ sudo service docker start
 $ docker run hello-world
 ```
-## START
+## INIT
 ```text
 $ sudo nano /etc/wsl.conf
   [boot]
   command="service docker start"
+$ wsl --shutdown
+```
+## INIT SYSTEMD
+```text
+$ sudo nano /etc/wsl.conf
+  [boot]
+  systemd=true
+$ wsl --shutdown
+$ sudo systemctl enable docker
+$ sudo systemctl disable docker
+$ systemctl list-unit-files --type=service
 ```
 ## CONECT
 ```text
