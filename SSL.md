@@ -64,6 +64,7 @@ import rootCA.pem to "Manage User Certificates/Trusted Root Certification Author
 ```
 **edge**
 ```text
+edge://flags/#edge-automatic-https
 edge://flags/#allow-insecure-localhost
 edge://net-internals/#hsts
 ```
