@@ -44,19 +44,21 @@ Import-Module -Name Terminal-Icons
         {
           "type": "git",
           "style": "powerline",
-          "powerline_symbol": "\ue0b0",
-          "invert_powerline": false,
-          "background": "#ffb86c",
-          "foreground": "#ffffff",
-          "leading_diamond": "",
-          "trailing_diamond": "",
+          "powerline_symbol": "",
+          "foreground": "#193549",
+          "background": "#ffeb3b",
+          "background_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#FFEB3B{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#FFCC80{{ end }}",
+            "{{ if gt .Ahead 0 }}#B388FF{{ end }}",
+            "{{ if gt .Behind 0 }}#B388FB{{ end }}"
+          ],
+          "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uF044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uF046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}",
           "properties": {
-            "branch_icon": "",
             "fetch_status": true,
             "fetch_stash_count": true,
             "fetch_upstream_icon": true
-          },
-          "template": " \u279c ({{ .UpstreamIcon }}{{ .HEAD }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }}) "
+          }
         },
         {
           "type": "time",
