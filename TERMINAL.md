@@ -120,3 +120,7 @@ irm get.scoop.sh -outfile 'install.ps1'
 Path
 C:\Users\dener\scoop\shims
 ```
+### z
+```text
+Install-Module -Name Z -Force  -AllowClobber
+```
