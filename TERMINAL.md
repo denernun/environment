@@ -1,12 +1,12 @@
-### install 
-```text
-winget install JanDeDobbeleer.OhMyPosh
-Install-Module -Name Terminal-Icons -Repository PSGallery
-```
 ### fonts
 ```text
 Caskaydia Cove Nerd Font
 https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/CascadiaCode.zip?WT.mc_id=-blog-scottha
+```
+### install 
+```text
+winget install JanDeDobbeleer.OhMyPosh -s winget
+Install-Module -Name Terminal-Icons -Repository PSGallery
 ```
 ### config
 ```text
@@ -109,4 +109,12 @@ Import-Module -Name Terminal-Icons
   "final_space": true,
   "version": 2
 }
+```
+### scoop
+```text
+PowerShell Admin
+irm get.scoop.sh -outfile 'install.ps1'
+.\install.ps1 -RunAsAdmin
+Path
+C:\Users\dener\scoop\shims
 ```
