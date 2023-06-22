@@ -1,4 +1,3 @@
-```
 ### disable program compatibility assistant
 ```text
 gpedit.msc
