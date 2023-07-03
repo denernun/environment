@@ -9,6 +9,7 @@ install the boss
 install the boss Delphi IDE
 ```
 ### HORSE
-```
 [https://github.com/HashLoad/horse](https://github.com/HashLoad/horse)
+```
+install the horse
 ```
