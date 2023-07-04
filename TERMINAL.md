@@ -11,8 +11,14 @@ Install-Module -Name Terminal-Icons -Repository PSGallery
 ### config
 ```text
 code $PROFILE
-oh-my-posh --init --shell pwsh --config ~\ohmyposh.omp.json | Invoke-Expression
+
 Import-Module -Name Terminal-Icons
+oh-my-posh --init --shell pwsh --config ~\ohmyposh.omp.json | Invoke-Expression
+Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
+Set-PSReadlineKeyHandler -Key UpArrow -Function HistorySearchBackward
+Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward
+Set-PSReadLineOption -PredictionSource History
+Set-Alias g git
 ```
 ### ohmyposh.omp.json
 ```json
