@@ -13,3 +13,8 @@ install the boss Delphi IDE
 ```
 install the horse
 ```
+### HORSE WIZARD
+[https://github.com/HashLoad/horse-wizard](https://github.com/HashLoad/horse-wizard)
+```
+install the horse wizard (*.dpk)
+```
