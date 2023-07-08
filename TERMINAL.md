@@ -1,11 +1,15 @@
 ### fonts
 ```text
+oh-my-posh font install
+
 Caskaydia Cove Nerd Font
 https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/CascadiaCode.zip?WT.mc_id=-blog-scottha
 ```
 ### install 
 ```text
+Set-ExecutionPolicy Unrestricted
 winget install JanDeDobbeleer.OhMyPosh -s winget
+(Get-Command oh-my-posh).Source
 Install-Module -Name Terminal-Icons -Repository PSGallery
 ```
 ### config
@@ -30,8 +34,8 @@ Set-Alias g git
       "segments": [
         {
           "type": "session",
-          "background": "#6272a4",
           "foreground": "#ffffff",
+          "background": "#cc3802",
           "leading_diamond": "\ue0b6",
           "style": "diamond",
           "template": "{{ .UserName }} "
@@ -40,8 +44,8 @@ Set-Alias g git
           "type": "path",
           "style": "powerline",
           "powerline_symbol": "\ue0b0",
-          "background": "#bd93f9",
           "foreground": "#ffffff",
+          "background": "#047e84",
           "properties": {
             "style": "folder"
           },
@@ -65,17 +69,6 @@ Set-Alias g git
             "fetch_stash_count": true,
             "fetch_upstream_icon": true
           }
-        },
-        {
-          "type": "time",
-          "style": "diamond",
-          "background": "#ff79c6",
-          "foreground": "#ffffff",
-          "properties": {
-            "time_format": "15:04"
-          },
-          "template": " \u2665 {{ .CurrentDate | date .Format }} ",
-          "trailing_diamond": "\ue0b0"
         }
       ],
       "type": "prompt"
@@ -98,17 +91,6 @@ Set-Alias g git
           "foreground": "#ffffff",
           "background": "#6ca35e",
           "template": " \ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} "
-        },
-        {
-          "type": "sysinfo",
-          "style": "powerline",
-          "powerline_symbol": "",
-          "foreground": "#ffffff",
-          "background": "#8f43f3",
-          "template": "  {{ round .PhysicalPercentUsed .Precision }}% ",
-          "properties": {
-            "precision": 2
-          }
         }
       ],
       "type": "rprompt"
