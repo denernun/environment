@@ -130,3 +130,14 @@ C:\Users\dener\scoop\shims
 ```text
 Install-Module -Name Z -Force  -AllowClobber
 ```
+### zsh
+```text
+sudo apt install zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+nano .zshrc
+theme (af-magic)
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+nano .zshrc
+plugins (zsh-autosuggestions)
+```
+
