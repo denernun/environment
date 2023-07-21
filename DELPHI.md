@@ -40,3 +40,14 @@ boss install -g boss-ide
 install the horse wizard
 open horse_wizard.dpk
 ```
+### ANDROID
+[https://www.youtube.com/watch?v=3jWe6G69VzM](https://www.youtube.com/watch?v=3jWe6G69VzM)
+```text
+C:\Users\Public\Documents\Embarcadero\Studio\22.0\CatalogRepository\AndroidSDK-2525-22.0.47991.2819\cmdline-tools
+sdkmanager.bat --help
+sdkmanager.bat --list_installed
+sdkmanager.bat --list
+
+```
+
+
