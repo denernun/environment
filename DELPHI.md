@@ -47,7 +47,9 @@ C:\Users\Public\Documents\Embarcadero\Studio\22.0\CatalogRepository\AndroidSDK-2
 sdkmanager.bat --help
 sdkmanager.bat --list_installed
 sdkmanager.bat --list
-
 ```
-
+### PAServer
+```text 
+sudo apt install libcurl4-gnutls-dev build-essential
+```
 
