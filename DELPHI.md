@@ -51,5 +51,7 @@ sdkmanager.bat --list
 ### PAServer
 ```text 
 sudo apt install libcurl4-gnutls-dev build-essential
+![image](https://github.com/denernun/environment/assets/3607988/ce57fd2b-23e2-48f8-b1ca-b6fc86b18653)
+
 ```
 
