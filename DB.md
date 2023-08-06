@@ -15,10 +15,10 @@
 ```text
 # .\instsvc.exe i -n Firebird_4.0
 # .\isql.exe
-# connecto security4.fdb user SYSDBA;
+# connect security.fdb user SYSDBA;
 # create user SYSDBA password 'masterkey';
 # commit;
-# connect security4.fdb user SYSDBA password masterkey;
+# connect security.fdb user SYSDBA password masterkey;
 # select * from sec$users;
 ```
 ## Postgresql
