@@ -67,6 +67,10 @@ $ sudo snap install --classic certbot
 $ sudo ln -s /snap/bin/certbot /usr/bin/certbot
 $ sudo openssl dhparam -out /etc/nginx/dhparam.pem 4096
 ```
+**wildcard**
+```terminal
+sudo certbot certonly --manual -d *.domain.com.br -d domain.com.br --agree-tos --no-bootstrap --manual-public-ip-logging-ok --preferred-challenges dns-01 --server https://acme-v02.api.letsencrypt.org/directory
+```
 **renew**
 ```terminal
 $ sudo certbot renew --dry-run
