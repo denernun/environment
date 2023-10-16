@@ -118,12 +118,12 @@ USE 'demodb';
 CREATE USER 'demouser'@'localhost' IDENTIFIED BY 'demopassword';
 FLUSH PRIVILEGES;
 
-# permissions
-GRANT ALL PRIVILEGES ON demodb.* to demouser@localhost;
-FLUSH PRIVILEGES;
-
 #  password
 ALTER USER 'demouser'@'localhost' IDENTIFIED BY 'demopassword';
+FLUSH PRIVILEGES;
+
+# permissions
+GRANT ALL PRIVILEGES ON demodb.* to demouser@localhost;
 FLUSH PRIVILEGES;
 ```
 ## Redis
