@@ -114,12 +114,12 @@ DROP DATABASE 'demodb';
 SHOW DATABASES;
 USE 'demodb';
 
-# permissions
-GRANT ALL PRIVILEGES ON demodb.* to demouser@localhost;
-FLUSH PRIVILEGES;
-
 # user
 CREATE USER 'demouser'@'localhost' IDENTIFIED BY 'demopassword';
+FLUSH PRIVILEGES;
+
+# permissions
+GRANT ALL PRIVILEGES ON demodb.* to demouser@localhost;
 FLUSH PRIVILEGES;
 
 #  password
