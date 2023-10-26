@@ -11,7 +11,7 @@
   DatabaseAccess = Restrict /var/nginx/softclass/db
 ```
 ## Firebird 4.0
-**Linux**
+**Windows**
 ```text
 # .\instsvc.exe i -n Firebird_4.0
 # .\isql.exe
@@ -19,6 +19,17 @@
 # create user SYSDBA password 'masterkey';
 # commit;
 # connect security.fdb user SYSDBA password masterkey;
+# select * from sec$users;
+```
+## Firebird 5.0
+**Windows**
+```text
+# .\instsvc.exe i -n Firebird_5.0
+# .\isql.exe
+# connect security5.fdb user SYSDBA;
+# create user SYSDBA password 'masterkey';
+# commit;
+# connect security5.fdb user SYSDBA password masterkey;
 # select * from sec$users;
 ```
 ## Postgresql
