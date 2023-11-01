@@ -17,10 +17,15 @@
 # tar -xzvf FirebirdSS-2.5.9.27139-0.amd64.tar.gz
 # cd FirebirdSS-2.5.9.27139-0.amd64
 # sudo ./install.sh
-# sudo nano /opt/firebird/firebird.conf
+
+# sudo service firebird status
+# sudo service firebird stop
+# sudo service firebird start
 ```
 **Configuration**
 ```text
+# sudo nano /opt/firebird/firebird.conf
+
 ServerMode = Classic
 RemoteServicePort = 3060
 DefaultDBCachePages = 2048
@@ -34,8 +39,13 @@ AuthServer = Srp256, Legacy_Auth
 UserManager = Srp, Legacy_UserManager
 DatabaseAccess = Restrict /var/xxx
 ```
+**Aliases**
+```text
+# sudo nano /opt/firebird/database.conf
+
+BANCO = /path/of/file
+```
 **Replication**
 ```text
+
 ```
-
-
