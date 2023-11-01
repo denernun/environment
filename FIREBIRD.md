@@ -26,6 +26,9 @@
 ```text
 # sudo nano /opt/firebird/firebird.conf
 
+?? Wirecopression
+?? wirecrypt
+
 DefaultDBCachePages
   MemoryAvailable (Max 30%) / Connections / PageSize
   1.024.000.000 / 30 / 8192 = 4167
@@ -59,6 +62,12 @@ ALIAS_DATABASE = /path/of/file/file.fdb {
 ALIAS_DATABASE = /path/of/file/file.fdb
 ```
 **Replication**
+* [https://www.youtube.com/watch?v=COdWtRn4hgs](https://www.youtube.com/watch?v=COdWtRn4hgs)
+* [https://www.youtube.com/watch?v=OAeqTDz5OaM](https://www.youtube.com/watch?v=OAeqTDz5OaM)
+* [https://www.youtube.com/watch?v=hZmSW93W9r0](https://www.youtube.com/watch?v=hZmSW93W9r0)
+* [https://www.youtube.com/watch?v=VD_7wtuOXos](https://www.youtube.com/watch?v=VD_7wtuOXos)
 ```text
+# sudo nano /opt/firebird/firebird.conf
+
 
 ```
