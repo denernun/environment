@@ -26,29 +26,32 @@
 ```text
 # sudo nano /opt/firebird/firebird.conf
 
-?? Wirecopression
-?? wirecrypt
+ServerMode = Classic
+RemoteServicePort = 3060
+DatabaseAccess = Full
+RemoteAccess = true
+DataTypeCompatibility = 2.5
+DefaultDBCachePages = 768
+FileSystemCacheThreshold = 1M
+AuthServer = Legacy_Auth, Srp, Win_Sspi
+AuthClient = Legacy_Auth, Srp, Win_Sspi
+UserManager = Legacy_UserManager, Srp
+WireCrypt = Enabled 
+TempBlockSize = 1M
+TempCacheLimit = 64M
+LockMemSize = 30M
+LockHashSlots = 30011
 
-DefaultDBCachePages
+?? Wirecompression
+
+DefaultDBCachePages = 768
   MemoryAvailable (Max 30%) / Connections / PageSize
   1.024.000.000 / 30 / 8192 = 4167
 
-FileSystemCacheThreshold
+FileSystemCacheThreshold = 1M
   (PageSize * Connections) + 1
   (4167 * 30) + 1 = 125011
 
-ServerMode = Classic
-RemoteServicePort = 3060
-DefaultDBCachePages = 2048
-UseFileSystemCache = true
-TempCacheLimit = 1024M
-InlineSortThreshold = 16384
-ExtConnPoolSize = 64
-ExtConnPoolLifeTime = 3600
-DataTypeCompatibility = 2.5
-AuthServer = Srp256, Legacy_Auth
-UserManager = Srp, Legacy_UserManager
-DatabaseAccess = Restrict /var/xxx
 ```
 **Aliases**
 ```text
