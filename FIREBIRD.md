@@ -27,7 +27,7 @@
 # sudo nano /opt/firebird/firebird.conf
 
 DefaultDBCachePages
-  MemoryAvailable / Connections / PageSize
+  MemoryAvailable (Max 30%) / Connections / PageSize
   1.024.000.000 / 30 / 8192 = 4167
 
 FileSystemCacheThreshold
