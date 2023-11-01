@@ -56,7 +56,7 @@ ALIAS_DATABASE = /path/of/file/file.fdb {
 	DefaultDbCachePages = x
 }
 
-BANCO = /path/of/file
+ALIAS_DATABASE = /path/of/file/file.fdb
 ```
 **Replication**
 ```text
