@@ -26,6 +26,14 @@
 ```text
 # sudo nano /opt/firebird/firebird.conf
 
+DefaultDBCachePages
+  MemoryAvailable / Connections / PageSize
+  1.024.000.000 / 30 / 8192 = 4167
+
+FileSystemCacheThreshold
+  (PageSize * Connections) + 1
+  (4167 * 30) + 1 = 125011
+
 ServerMode = Classic
 RemoteServicePort = 3060
 DefaultDBCachePages = 2048
@@ -42,6 +50,11 @@ DatabaseAccess = Restrict /var/xxx
 **Aliases**
 ```text
 # sudo nano /opt/firebird/database.conf
+
+ALIAS_DATABASE = /path/of/file/file.fdb {
+	RemoteAccess = true
+	DefaultDbCachePages = x
+}
 
 BANCO = /path/of/file
 ```
