@@ -1,5 +1,9 @@
 # Environment Install
-
+## NODE
+```text
+Environment
+NODE_ENV=development
+```
 ## SSL
 ```text
 Download
@@ -32,7 +36,6 @@ D:\SVN
 ```text
 Path
 D:\UTIL
-D:\DLL
 ```
 ## HARBOUR
 ```text
