@@ -31,27 +31,37 @@ RemoteServicePort = 3060
 DatabaseAccess = Full
 RemoteAccess = true
 DataTypeCompatibility = 2.5
-DefaultDBCachePages = 768
-FileSystemCacheThreshold = 1M
-AuthServer = Legacy_Auth, Srp, Win_Sspi
-AuthClient = Legacy_Auth, Srp, Win_Sspi
-UserManager = Legacy_UserManager, Srp
+DefaultDBCachePages = 768 # MemoAvailable (1.024.000.000) (Max 30%) / Connections / PageSize
+FileSystemCacheThreshold = 1M # (PageSize * Connections) + 1
 WireCrypt = Enabled 
 TempBlockSize = 1M
 TempCacheLimit = 64M
 LockMemSize = 30M
 LockHashSlots = 30011
+AuthServer = Srp
+AuthClient = Srp
+UserManager = Srp
+```
+**Configuration Remote**
+```text
+# sudo nano /opt/firebird/firebird.conf
 
-?? Wirecompression
-
-DefaultDBCachePages = 768
-  MemoryAvailable (Max 30%) / Connections / PageSize
-  1.024.000.000 / 30 / 8192 = 4167
-
-FileSystemCacheThreshold = 1M
-  (PageSize * Connections) + 1
-  (4167 * 30) + 1 = 125011
-
+ServerMode = Super
+RemoteServicePort = 3060
+DatabaseAccess = Full
+RemoteAccess = true
+DataTypeCompatibility = 2.5
+DefaultDbCachePages = 100K
+FileSystemCacheThreshold = 2M
+TempBlockSize = 2M
+TempCacheLimit = 1000M
+TracePlugin = fbtrace
+WireCrypt = Enabled
+LockMemSize = 15M
+LockHashSlots = 30011
+AuthServer = Srp
+AuthClient = Srp
+UserManager = Srp
 ```
 **Aliases**
 ```text
