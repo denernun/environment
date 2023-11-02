@@ -47,7 +47,7 @@ UserManager = Srp, Win_Sspi
 # sudo nano /opt/firebird/firebird.conf
 
 ServerMode = Super
-RemoteServicePort = 3060
+RemoteServicePort = 3050
 DatabaseAccess = Full
 RemoteAccess = true
 DataTypeCompatibility = 2.5
