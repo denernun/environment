@@ -38,9 +38,9 @@ TempBlockSize = 1M
 TempCacheLimit = 64M
 LockMemSize = 30M
 LockHashSlots = 30011
-AuthServer = Srp
-AuthClient = Srp
-UserManager = Srp
+AuthServer = Srp, Win_Sspi
+AuthClient = Srp, Win_Sspi
+UserManager = Srp, Win_Sspi
 ```
 **Configuration Remote**
 ```text
@@ -59,9 +59,9 @@ TracePlugin = fbtrace
 WireCrypt = Enabled
 LockMemSize = 15M
 LockHashSlots = 30011
-AuthServer = Srp
-AuthClient = Srp
-UserManager = Srp
+AuthServer = Srp, Win_Sspi
+AuthClient = Srp, Win_Sspi
+UserManager = Srp, Win_Sspi
 ```
 **Aliases**
 ```text
