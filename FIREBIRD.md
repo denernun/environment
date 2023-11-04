@@ -19,6 +19,10 @@
 # sudo ./install.sh -path=/opt/firebird
 # sudo service firebird.opt_firebird5 start
 
+# /etc/sysctl.conf
+  vm.max_map_count = 256000
+# sysctl -p /etc/sysctl.conf 
+
 # sudo service firebird status
 # sudo service firebird stop
 # sudo service firebird start
