@@ -16,7 +16,8 @@
 # wget https://github.com/FirebirdSQL/firebird/releases/download/R2_5_9/FirebirdSS-2.5.9.27139-0.amd64.tar.gz
 # tar -xzvf FirebirdSS-2.5.9.27139-0.amd64.tar.gz
 # cd FirebirdSS-2.5.9.27139-0.amd64
-# sudo ./install.sh
+# sudo ./install.sh -path=/opt/firebird
+# sudo service firebird.opt_firebird5 start
 
 # sudo service firebird status
 # sudo service firebird stop
