@@ -69,7 +69,7 @@ $ sudo openssl dhparam -out /etc/nginx/dhparam.pem 4096
 ```
 **wildcard**
 ```terminal
-sudo certbot certonly --manual -d *.domain.com.br -d domain.com.br --agree-tos --no-bootstrap --manual-public-ip-logging-ok --preferred-challenges dns-01 --server https://acme-v02.api.letsencrypt.org/directory
+sudo certbot certonly --manual -d *.domain.com.br -d domain.com.br --agree-tos --preferred-challenges dns-01 --server https://acme-v02.api.letsencrypt.org/directory
 ```
 **renew**
 ```terminal
