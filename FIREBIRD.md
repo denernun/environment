@@ -8,6 +8,10 @@
 # commit;
 # connect security5.fdb user SYSDBA password masterkey;
 # select * from sec$users;
+
+# gsec -user SYSDBA 
+# gsec>add SYSDBA -pw masterkey 
+# gsec>quit
 ```
 **Linux**
 ```text
@@ -18,6 +22,10 @@
 # cd Firebird-5.0.0.1227-ReleaseCandidate1-linux-x64.tar.gz
 # sudo ./install.sh -path=/opt/firebird
 # sudo service firebird.opt_firebird5 start
+
+# gsec -user SYSDBA 
+# gsec>add SYSDBA -pw masterkey 
+# gsec>quit
 
 # /etc/sysctl.conf
   vm.max_map_count = 256000
