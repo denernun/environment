@@ -3,19 +3,19 @@
 ```text
 # .\instsvc.exe i -n Firebird_5.0
 # .\isql.exe
-# connect security.fdb user SYSDBA;
+# connect security5.fdb user SYSDBA;
 # create user SYSDBA password 'masterkey';
 # commit;
-# connect security.fdb user SYSDBA password masterkey;
+# connect security5.fdb user SYSDBA password masterkey;
 # select * from sec$users;
 ```
 **Linux**
 ```text
 # sudo apt update  
 # sudo apt upgrade
-# wget https://github.com/FirebirdSQL/firebird/releases/download/R2_5_9/FirebirdSS-2.5.9.27139-0.amd64.tar.gz
-# tar -xzvf FirebirdSS-2.5.9.27139-0.amd64.tar.gz
-# cd FirebirdSS-2.5.9.27139-0.amd64
+# wget https://github.com/FirebirdSQL/firebird/releases/download/v5.0.0-RC1/Firebird-5.0.0.1227-ReleaseCandidate1-linux-x64.tar.gz
+# tar -xzvf Firebird-5.0.0.1227-ReleaseCandidate1-linux-x64.tar.gz
+# cd Firebird-5.0.0.1227-ReleaseCandidate1-linux-x64.tar.gz
 # sudo ./install.sh -path=/opt/firebird
 # sudo service firebird.opt_firebird5 start
 
