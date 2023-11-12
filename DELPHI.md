@@ -43,15 +43,16 @@ open horse_wizard.dpk
 ### ANDROID
 [https://www.youtube.com/watch?v=3jWe6G69VzM](https://www.youtube.com/watch?v=3jWe6G69VzM)
 ```text
-C:\Users\Public\Documents\Embarcadero\Studio\22.0\CatalogRepository\AndroidSDK-2525-22.0.47991.2819\cmdline-tools
+C:\Users\Public\Documents\Embarcadero\Studio\22.0\CatalogRepository\AndroidSDK-2525-22.0.47991.2819\cmdline-tools\latest\bin
 sdkmanager.bat --help
 sdkmanager.bat --list_installed
 sdkmanager.bat --list
+sdkmanager.bat --install "build-tools;23.0.0" ou "build-tools;33.0.0"
+sdkmanager.bat --install "platforms;android-23" ou "platforms;android-33"
 ```
 ### PAServer
 ```text 
 sudo apt install libcurl4-gnutls-dev build-essential
 ![image](https://github.com/denernun/environment/assets/3607988/ce57fd2b-23e2-48f8-b1ca-b6fc86b18653)
-
 ```
 
