@@ -41,26 +41,9 @@ install the horse wizard
 open horse_wizard.dpk
 ```
 ### ANDROID
-[https://www.youtube.com/watch?v=3jWe6G69VzM](https://www.youtube.com/watch?v=3jWe6G69VzM)
+#### SDK MANAGER
 ```text
-
-NDK AndroidNDK-21-22.0.47991.2819
-	android-ndk-r21\toolchains\aarch64-linux-android-4.9\prebuilt\windows-x86_64\aarch64-linux-android\bin\ld.exe
-	android-ndk-r21\toolchains\aarch64-linux-android-4.9\prebuilt\windows-x86_64\aarch64-linux-android\bin\strip.exe
-	android-ndk-r21\prebuilt\android-arm64\gdbserver\gdbserver
-	android-ndk-r21\platforms\android-23
-	android-ndk-r21\platforms\android-23\arch-arm64\usr\lib
-	android-ndk-r21\platforms\android-23\arch-arm64\usr\lib
-
-SDK AndroidSDK-2525-22.0.47991.2819
-	build-tools\33.0.0\zipalign.exe
-	build-tools\33.0.0\lib\apksigner.jar
-	cmdline-tools\latest\bin\avdmanager.bat
-	platform-tools\Adb.exe
-	build-tools\33.0.0\aapt.exe
-	platforms\android-33
-
-SDKManager.bat e AVDManager.bat
+SDKManager.bat
 AndroidSDK-2525-22.0.47991.2819\cmdline-tools\latest\bin
 
 sdkmanager.bat --help
@@ -69,9 +52,30 @@ sdkmanager.bat --list
 sdkmanager.bat --install "build-tools;33.0.0"
 sdkmanager.bat --install "platforms;android-33"
 ```
+#### NDK
+```text
+AndroidNDK-21-22.0.47991.2819
+
+android-ndk-r21\toolchains\aarch64-linux-android-4.9\prebuilt\windows-x86_64\aarch64-linux-android\bin\ld.exe
+android-ndk-r21\toolchains\aarch64-linux-android-4.9\prebuilt\windows-x86_64\aarch64-linux-android\bin\strip.exe
+android-ndk-r21\prebuilt\android-arm64\gdbserver\gdbserver
+android-ndk-r21\platforms\android-23
+android-ndk-r21\platforms\android-23\arch-arm64\usr\lib
+android-ndk-r21\platforms\android-23\arch-arm64\usr\lib
+```
+#### SDK
+```text
+AndroidSDK-2525-22.0.47991.2819
+
+build-tools\33.0.0\zipalign.exe
+build-tools\33.0.0\lib\apksigner.jar
+cmdline-tools\latest\bin\avdmanager.bat
+platform-tools\Adb.exe
+build-tools\33.0.0\aapt.exe
+platforms\android-33
+```
 ### PAServer
 ```text 
 sudo apt install libcurl4-gnutls-dev build-essential
 ![image](https://github.com/denernun/environment/assets/3607988/ce57fd2b-23e2-48f8-b1ca-b6fc86b18653)
 ```
-
