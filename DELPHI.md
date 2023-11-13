@@ -43,7 +43,28 @@ open horse_wizard.dpk
 ### ANDROID
 [https://www.youtube.com/watch?v=3jWe6G69VzM](https://www.youtube.com/watch?v=3jWe6G69VzM)
 ```text
-C:\Users\Public\Documents\Embarcadero\Studio\22.0\CatalogRepository\AndroidSDK-2525-22.0.47991.2819\cmdline-tools\latest\bin
+
+NDK
+AndroidNDK-21-23.0.50491.5718\android-ndk-r21
+AndroidNDK-21-23.0.50491.5718\android-ndk-r21\toolchains\aarch64-linux-android-4.9\prebuilt\windows-x86_64\aarch64-linux-android\bin\ld.exe
+AndroidNDK-21-23.0.50491.5718\android-ndk-r21\toolchains\aarch64-linux-android-4.9\prebuilt\windows-x86_64\aarch64-linux-android\bin\strip.exe
+AndroidNDK-21-23.0.50491.5718\android-ndk-r21\prebuilt\android-arm64\gdbserver\gdbserver
+AndroidNDK-21-23.0.50491.5718\android-ndk-r21\platforms\android-23
+AndroidNDK-21-23.0.50491.5718\android-ndk-r21\platforms\android-23\arch-arm64\usr\lib
+AndroidNDK-21-23.0.50491.5718\android-ndk-r21\platforms\android-23\arch-arm64\usr\lib
+
+SDK
+AndroidSDK-2525-23.0.50491.5718
+AndroidSDK-2525-23.0.50491.5718\build-tools\33.0.0\zipalign.exe
+AndroidSDK-2525-23.0.50491.5718\build-tools\33.0.0\lib\apksigner.jar
+AndroidSDK-2525-23.0.50491.5718\cmdline-tools\latest\bin\avdmanager.bat
+AndroidSDK-2525-23.0.50491.5718\platform-tools\Adb.exe
+AndroidSDK-2525-23.0.50491.5718\build-tools\33.0.0\aapt.exe
+AndroidSDK-2525-23.0.50491.5718\platforms\android-33
+
+SDKManager e AVDManager
+AndroidSDK-2525-22.0.47991.2819\cmdline-tools\latest\bin
+
 sdkmanager.bat --help
 sdkmanager.bat --list_installed
 sdkmanager.bat --list
