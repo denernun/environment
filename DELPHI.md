@@ -44,23 +44,21 @@ open horse_wizard.dpk
 [https://www.youtube.com/watch?v=3jWe6G69VzM](https://www.youtube.com/watch?v=3jWe6G69VzM)
 ```text
 
-NDK
-AndroidNDK-21-22.0.47991.2819\android-ndk-r21
-AndroidNDK-21-22.0.47991.2819\android-ndk-r21\toolchains\aarch64-linux-android-4.9\prebuilt\windows-x86_64\aarch64-linux-android\bin\ld.exe
-AndroidNDK-21-22.0.47991.2819\android-ndk-r21\toolchains\aarch64-linux-android-4.9\prebuilt\windows-x86_64\aarch64-linux-android\bin\strip.exe
-AndroidNDK-21-22.0.47991.2819\android-ndk-r21\prebuilt\android-arm64\gdbserver\gdbserver
-AndroidNDK-21-22.0.47991.2819\android-ndk-r21\platforms\android-23
-AndroidNDK-21-22.0.47991.2819\android-ndk-r21\platforms\android-23\arch-arm64\usr\lib
-AndroidNDK-21-22.0.47991.2819\android-ndk-r21\platforms\android-23\arch-arm64\usr\lib
+NDK AndroidNDK-21-22.0.47991.2819\android-ndk-r21
+	android-ndk-r21\toolchains\aarch64-linux-android-4.9\prebuilt\windows-x86_64\aarch64-linux-android\bin\ld.exe
+	android-ndk-r21\toolchains\aarch64-linux-android-4.9\prebuilt\windows-x86_64\aarch64-linux-android\bin\strip.exe
+	android-ndk-r21\prebuilt\android-arm64\gdbserver\gdbserver
+	android-ndk-r21\platforms\android-23
+	android-ndk-r21\platforms\android-23\arch-arm64\usr\lib
+	android-ndk-r21\platforms\android-23\arch-arm64\usr\lib
 
-SDK
-AndroidSDK-2525-22.0.47991.2819
-AndroidSDK-2525-22.0.47991.2819\build-tools\33.0.0\zipalign.exe
-AndroidSDK-2525-22.0.47991.2819\build-tools\33.0.0\lib\apksigner.jar
-AndroidSDK-2525-22.0.47991.2819\cmdline-tools\latest\bin\avdmanager.bat
-AndroidSDK-2525-22.0.47991.2819\platform-tools\Adb.exe
-AndroidSDK-2525-22.0.47991.2819\build-tools\33.0.0\aapt.exe
-AndroidSDK-2525-22.0.47991.2819\platforms\android-33
+SDK AndroidSDK-2525-22.0.47991.2819
+	build-tools\33.0.0\zipalign.exe
+	build-tools\33.0.0\lib\apksigner.jar
+	cmdline-tools\latest\bin\avdmanager.bat
+	platform-tools\Adb.exe
+	build-tools\33.0.0\aapt.exe
+	platforms\android-33
 
 SDKManager.bat e AVDManager.bat
 AndroidSDK-2525-22.0.47991.2819\cmdline-tools\latest\bin
