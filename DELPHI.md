@@ -47,8 +47,8 @@ C:\Users\Public\Documents\Embarcadero\Studio\22.0\CatalogRepository\AndroidSDK-2
 sdkmanager.bat --help
 sdkmanager.bat --list_installed
 sdkmanager.bat --list
-sdkmanager.bat --install "build-tools;23.0.0" ou "build-tools;33.0.0"
-sdkmanager.bat --install "platforms;android-23" ou "platforms;android-33"
+sdkmanager.bat --install "build-tools;33.0.0"
+sdkmanager.bat --install "platforms;android-33"
 ```
 ### PAServer
 ```text 
