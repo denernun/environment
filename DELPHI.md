@@ -44,7 +44,7 @@ open horse_wizard.dpk
 [https://www.youtube.com/watch?v=3jWe6G69VzM](https://www.youtube.com/watch?v=3jWe6G69VzM)
 ```text
 
-NDK AndroidNDK-21-22.0.47991.2819\android-ndk-r21
+NDK AndroidNDK-21-22.0.47991.2819
 	android-ndk-r21\toolchains\aarch64-linux-android-4.9\prebuilt\windows-x86_64\aarch64-linux-android\bin\ld.exe
 	android-ndk-r21\toolchains\aarch64-linux-android-4.9\prebuilt\windows-x86_64\aarch64-linux-android\bin\strip.exe
 	android-ndk-r21\prebuilt\android-arm64\gdbserver\gdbserver
