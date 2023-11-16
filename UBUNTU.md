@@ -80,15 +80,3 @@ $ sudo certbot renew --dry-run
 ```terminal
 $ https://www.ssllabs.com/ssltest/
 ```
-## chromium
-```terminal
-$ sudo apt install chromium-bsu
-```
-## resize volume
-```terminal
-$ lsblk
-$ df -h
-$ sudo growpart /dev/xvda 1
-$ sudo resize2fs /dev/xvda1
-```       
-
