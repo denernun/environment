@@ -49,6 +49,12 @@ $ npm config edit
   msbuild_path=C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\MSBuild.exe
   msvs_version=2019
   python=C:\Users\dener\AppData\Local\Programs\Python\Python312\python.exe
+$ VCINSTALLDIR=C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC
+$ GYP_MSVS_VERSION=2019
 $ npm install --global node-gyp
 $ npm i --force
+
+$ cd "C:\Program Files\nodejs"
+$ cd node_modules\npm\node_modules\@npmcli\run-script
+$ npm install node-gyp@latest
 ```
