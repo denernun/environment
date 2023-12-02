@@ -44,6 +44,7 @@ npm i -g @angular/cli @loopback/cli @nestjs/cli cross-env dart-sass editorconfig
 # Windows Build Tools
 ```text
 $ choco install visualstudio2019buildtools visualstudio2019-workload-vctools
+
 $ npm config edit
   //registry.npmjs.org/:_authToken=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
   msbuild_path=C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\MSBuild.exe
@@ -57,4 +58,26 @@ $ npm i --force
 $ cd "C:\Program Files\nodejs"
 $ cd node_modules\npm\node_modules\@npmcli\run-script
 $ npm install node-gyp@latest
+
+$ project/binding.gyp
+  {
+    'targets': [
+      {
+        'target_name': 'bindings',
+        'sources': [ 'bindings.node' ],
+        'cflags!': [ '-fno-exceptions' ],
+        'cflags_cc!': [ '-fno-exceptions' ],
+        'conditions': [
+          ['OS=="mac"', {
+            'xcode_settings': {
+              'GCC_ENABLE_CPP_EXCEPTIONS': 'YES'
+            }
+          }]
+        ]
+      }
+    ]
+  }
+$ node-gyp rebuild
+
+
 ```
