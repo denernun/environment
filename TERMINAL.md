@@ -11,7 +11,8 @@ Set-ExecutionPolicy Unrestricted
 winget install JanDeDobbeleer.OhMyPosh -s winget
 (Get-Command oh-my-posh).Source
 Install-Module -Name Terminal-Icons -Repository PSGallery
-Install-Module PSReadLine -RequiredVersion 2.1.0
+https://www.powershellgallery.com/packages?q=PSReadLine
+Install-Module -Name PSReadLine -AllowPrerelease
 ```
 ### config
 ```text
@@ -20,9 +21,13 @@ code $PROFILE
 Import-Module -Name Terminal-Icons
 oh-my-posh --init --shell pwsh --config C:\Users\dener\OneDrive\ohmyposh.omp.json | Invoke-Expression
 
+Import-Module -Name Terminal-Icons
+oh-my-posh --init --shell pwsh --config C:\Users\dener\OneDrive\ohmyposh.omp.json | Invoke-Expression
+
 Import-Module PSReadLine
 Set-PSReadLineOption -EditMode Windows
 Set-PSReadLineOption -PredictionSource History
+Set-PSReadLineOption -PredictionViewStyle ListView
 Set-PSReadLineOption -Colors @{ InlinePrediction = '#8A0303'}
 Set-PSReadLineOption -Colors @{ InlinePrediction = '#2F7004'}
 Set-PSReadLineOption -Colors @{ InlinePrediction = "$([char]0x1b)[36;7;238m"}
