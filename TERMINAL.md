@@ -11,18 +11,35 @@ Set-ExecutionPolicy Unrestricted
 winget install JanDeDobbeleer.OhMyPosh -s winget
 (Get-Command oh-my-posh).Source
 Install-Module -Name Terminal-Icons -Repository PSGallery
+Install-Module PSReadLine -RequiredVersion 2.1.0
 ```
 ### config
 ```text
 code $PROFILE
 
 Import-Module -Name Terminal-Icons
-oh-my-posh --init --shell pwsh --config ~\ohmyposh.omp.json | Invoke-Expression
+oh-my-posh --init --shell pwsh --config C:\Users\dener\OneDrive\ohmyposh.omp.json | Invoke-Expression
+
+Import-Module PSReadLine
+Set-PSReadLineOption -EditMode Windows
+Set-PSReadLineOption -PredictionSource History
+Set-PSReadLineOption -Colors @{ InlinePrediction = '#8A0303'}
+Set-PSReadLineOption -Colors @{ InlinePrediction = '#2F7004'}
+Set-PSReadLineOption -Colors @{ InlinePrediction = "$([char]0x1b)[36;7;238m"}
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 Set-PSReadlineKeyHandler -Key UpArrow -Function HistorySearchBackward
 Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward
-Set-PSReadLineOption -PredictionSource History
+
 Set-Alias g git
+# Import the Chocolatey Profile that contains the necessary code to enable
+# tab-completions to function for `choco`.
+# Be aware that if you are missing these lines from your profile, tab completion
+# for `choco` will not function.
+# See https://ch0.co/tab-completion for details.
+$ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
+if (Test-Path($ChocolateyProfile)) {
+  Import-Module "$ChocolateyProfile"
+}
 ```
 ### ohmyposh.omp.json
 ```json
