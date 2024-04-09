@@ -49,8 +49,8 @@ AndroidSDK-2525-22.0.47991.2819\cmdline-tools\latest\bin
 sdkmanager.bat --help
 sdkmanager.bat --list_installed
 sdkmanager.bat --list
-sdkmanager.bat --install "build-tools;33.0.0"
-sdkmanager.bat --install "platforms;android-33"
+sdkmanager.bat --install "build-tools;34.0.0"
+sdkmanager.bat --install "platforms;android-34"
 ```
 #### NDK
 ```text
