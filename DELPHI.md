@@ -43,36 +43,16 @@ open horse_wizard.dpk
 ### ANDROID
 #### SDK MANAGER
 ```text
+cmdline-tools
+
 SDKManager.bat
-AndroidSDK-2525-22.0.47991.2819\cmdline-tools\latest\bin
 
 sdkmanager.bat --help
 sdkmanager.bat --list_installed
 sdkmanager.bat --list
-sdkmanager.bat --install "build-tools;34.0.0"
+sdkmanager.bat --install "platform-tools"
 sdkmanager.bat --install "platforms;android-34"
-```
-#### NDK
-```text
-AndroidNDK-21-22.0.47991.2819
-
-android-ndk-r21\toolchains\aarch64-linux-android-4.9\prebuilt\windows-x86_64\aarch64-linux-android\bin\ld.exe
-android-ndk-r21\toolchains\aarch64-linux-android-4.9\prebuilt\windows-x86_64\aarch64-linux-android\bin\strip.exe
-android-ndk-r21\prebuilt\android-arm64\gdbserver\gdbserver
-android-ndk-r21\platforms\android-23
-android-ndk-r21\platforms\android-23\arch-arm64\usr\lib
-android-ndk-r21\platforms\android-23\arch-arm64\usr\lib
-```
-#### SDK
-```text
-AndroidSDK-2525-22.0.47991.2819
-
-build-tools\33.0.0\zipalign.exe
-build-tools\33.0.0\lib\apksigner.jar
-cmdline-tools\latest\bin\avdmanager.bat
-platform-tools\Adb.exe
-build-tools\33.0.0\aapt.exe
-platforms\android-33
+sdkmanager.bat --install "build-tools;34.0.0"
 ```
 ### PAServer
 ```text 
