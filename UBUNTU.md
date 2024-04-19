@@ -37,21 +37,29 @@ $ pm2 set pm2-logrotate:compress false
 $ pm2 set pm2-logrotate:rotateInterval '* * * 1 0 0'
 ```
 ## amplify
+**install**
 ```terminal
-$ sudo apt install python3-setproctitle python3-lockfile python3-daemon python3-greenlet python3-gevent python3-ujson python3-rstr python3-pymysql -y
-$ sudo apt install python3-certifi python3-chardet python3-idna python3-netifaces python3-psutil python3-requests python3-urllib3
-$ sudo apt install python-psutil-doc python3-openssl python3-socks python-requests-doc
+$ curl -fsSL http://nginx.org/keys/nginx_signing.key | sudo gpg --dearmor -o /etc/apt/keyrings/nginx_signing.key
 $ sudo apt update & sudo apt upgrade -y
 $ curl -L -O https://github.com/nginxinc/nginx-amplify-agent/raw/master/packages/install.sh
 $ API_KEY='1145f635a3597c2d0960210ae1efcc1c' sh ./install.sh
-$ sudo service amplify-agent start
-$ sudo service amplify-agent stop
-$ sudo service amplify-agent restart
-$ sudo apt update && sudo apt install nginx-amplify-agent
+```
+**config**
+```terminal
 $ sudo nano /etc/amplify-agent/agent.conf
 [nginx]
 user = www-data
 configfile = /etc/nginx/nginx.conf
+```
+**update**
+```terminal
+$ sudo apt update && sudo apt install nginx-amplify-agent
+```
+**service**
+```terminal
+$ sudo service amplify-agent start
+$ sudo service amplify-agent stop
+$ sudo service amplify-agent restart
 ```
 ## certbot
 **site**
