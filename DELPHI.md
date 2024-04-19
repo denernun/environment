@@ -56,6 +56,6 @@ sdkmanager.bat --install "build-tools;34.0.0"
 ```
 ### PAServer
 ```text 
-sudo apt install libcurl4-gnutls-dev build-essential
+sudo apt install build-essential  libcurl4-gnutls-dev [joe wget p7zip-full curl zlib1g-dev]
 ![image](https://github.com/denernun/environment/assets/3607988/ce57fd2b-23e2-48f8-b1ca-b6fc86b18653)
 ```
