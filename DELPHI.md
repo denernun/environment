@@ -51,3 +51,13 @@ sudo systemctl stop xxx.service
 
 sudo journalctl -fxeu xxx.service
 ```
+#### KILL
+```text 
+sok-ps 		=> 	ps -ux | grep socket
+sok-kill	=>	sudo pkill socket.service
+sok-listen	=>	sudo lsof -i -P -n | grep LISTEN
+sok-tail 	=>	sudo tail -f /var/log/syslog | grep socket
+sok-start	=> 	sudo service socket start
+sok-stop	=> 	sudo service socket stop
+sok-status	=>  sudo journalctl -fxeu socket.service
+```
