@@ -4,15 +4,14 @@
 # install
 curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/postgresql.gpg
 echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" | sudo tee /etc/apt/sources.list.d/pgdg.list
-sudo apt update && sudo apt upgrade -y && sudo apt install postgresql-12 postgresql-client-12 -y
-sudo apt update && sudo apt upgrade -y && sudo apt install postgresql-15 postgresql-client-15 -y
+sudo apt update && sudo apt upgrade -y && sudo apt install postgresql-1x postgresql-client-1x -y
 
 # access
-sudo nano /etc/postgresql/15/main/postgresql.conf
+sudo nano /etc/postgresql/1x/main/postgresql.conf
 listen_addresses = '*'
 
 # access
-sudo nano /etc/postgresql/15/main/pg_hba.conf
+sudo nano /etc/postgresql/1x/main/pg_hba.conf
 
 @versao 12
 host all all 0.0.0.0/0 md5
