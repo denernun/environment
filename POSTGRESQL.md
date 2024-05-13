@@ -39,3 +39,10 @@ $ alter user postgres with password '<password>';
 $ pg_dump -h localhost -p 5432 -U postgres -d <dbname> -v -Fc -b -f /tmp/<dbname>.backup
 # pg_restore -h localhost -p 5432 -U postgres -v -c -C -Fc -d <dbname> /tmp/<dbname>.backup
 ```
+**PSQL**
+```text
+$ \l
+$ \c
+$ \dt
+```
+
