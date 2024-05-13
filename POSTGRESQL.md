@@ -45,4 +45,11 @@ $ \l
 $ \c
 $ \dt
 ```
+**Remove**
+```text
+$ sudo apt-get --purge remove postgresql postgresql-*
+$ dpkg -l | grep postgres
+$ sudo apt-get --purge remove postgresql postgresql-doc postgresql-common
+```
+
 
