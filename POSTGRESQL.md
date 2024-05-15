@@ -51,5 +51,8 @@ $ sudo apt-get --purge remove postgresql postgresql-*
 $ dpkg -l | grep postgres
 $ sudo apt-get --purge remove postgresql postgresql-doc postgresql-common
 ```
-
+**Drop**
+```text
+$ SELECT pg_terminate_backend(pg_stat_activity.pid) FROM pg_stat_activity WHERE pg_stat_activity.datname = 'sys';
+```
 
