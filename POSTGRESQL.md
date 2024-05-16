@@ -55,4 +55,39 @@ $ sudo apt-get --purge remove postgresql postgresql-doc postgresql-common
 ```text
 $ SELECT pg_terminate_backend(pg_stat_activity.pid) FROM pg_stat_activity WHERE pg_stat_activity.datname = 'sys';
 ```
+**Pool**
+```text
+$ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+$ sudo wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo gpg --dearmor -o /etc/apt/keyrings/ACCC4CF8.asc
+$ sudo apt update
+$ sudo apt install pgbouncer -y
+$ sudo systemctl reload pgbouncer.service
+
+$ sudo nano /etc/pgbouncer/pgbouncer.ini
+  [databases]
+  * = host=localhost port=5432
+  [pgbouncer]
+  logfile = /var/log/postgresql/pgbouncer.log
+  pidfile = /var/run/postgresql/pgbouncer.pid
+  #user = postgres
+  listen_addr = localhost
+  listen_port = 6432
+  unix_socket_dir = /var/run/postgresql
+  auth_type = hba
+  auth_hba_file = /etc/pgbouncer/pb_hba.conf
+
+$ sudo nano /etc/pgbouncer/pb_hba.conf
+  host all all 127.0.0.1/32 scram-sha-256
+  host all all ::1/128 scram-sha-256
+
+$ psql select usename,passwd FROM pg_shadow;
+$ sudo nano /etc/pgbouncer/userlist.txt
+  "postgres" "scram-sha-256"
+
+$ sudo psql -h localhost -U pgbouncer -d pgbouncer -p 6432
+```
+**Monitor**
+```text
+pg_top -C -I -W -h localhost -p 5432 -U postgres
+```
 
