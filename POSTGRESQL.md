@@ -62,29 +62,24 @@ $ sudo wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | su
 $ sudo apt update
 $ sudo apt install pgbouncer -y
 $ sudo systemctl reload pgbouncer.service
-
 $ sudo nano /etc/pgbouncer/pgbouncer.ini
   [databases]
   * = host=localhost port=5432
   [pgbouncer]
+  listen_addr = *
+  listen_port = 6432
+  auth_type = md5
+  auth_file = /etc/pgbouncer/userlist.txt
+  unix_socket_dir = /var/run/postgresql
   logfile = /var/log/postgresql/pgbouncer.log
   pidfile = /var/run/postgresql/pgbouncer.pid
-  #user = postgres
-  listen_addr = localhost
-  listen_port = 6432
-  unix_socket_dir = /var/run/postgresql
-  auth_type = hba
-  auth_hba_file = /etc/pgbouncer/pb_hba.conf
-
-$ sudo nano /etc/pgbouncer/pb_hba.conf
-  host all all 127.0.0.1/32 scram-sha-256
-  host all all ::1/128 scram-sha-256
-
-$ psql select usename,passwd FROM pg_shadow;
-$ sudo nano /etc/pgbouncer/userlist.txt
-  "postgres" "scram-sha-256"
-
-$ sudo psql -h localhost -U pgbouncer -d pgbouncer -p 6432
+  admin_users = stats_users = postgres
+  stats_users = postgres
+  pool_mode = session
+  max_client_conn = 100
+  reserve_pool_size = 10
+  application_name_add_host = 1
+  ignore_startup_parameters = extra_float_digits
 ```
 **Monitor**
 ```text
