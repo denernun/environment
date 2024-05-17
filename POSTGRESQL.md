@@ -87,4 +87,27 @@ $ sudo nano /etc/pgbouncer/pgbouncer.ini
 ```text
 pg_top -C -I -W -h localhost -p 5432 -U postgres
 ```
+**PGTune**
+```text
+# DB Version: 16
+# OS Type: linux
+# DB Type: desktop
+# Total Memory (RAM): 4 GB
+# CPUs num: 2
+# Connections num: 200
+# Data Storage: ssd
 
+max_connections = 200
+shared_buffers = 256MB
+effective_cache_size = 1GB
+maintenance_work_mem = 256MB
+checkpoint_completion_target = 0.9
+wal_buffers = 7864kB
+default_statistics_target = 100
+random_page_cost = 1.1
+effective_io_concurrency = 200
+work_mem = 546kB
+huge_pages = off
+min_wal_size = 100MB
+max_wal_size = 2GB
+```
