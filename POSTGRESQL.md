@@ -62,6 +62,8 @@ $ sudo wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | su
 $ sudo apt update
 $ sudo apt install pgbouncer -y
 $ sudo systemctl reload pgbouncer.service
+$ sudo nano /etc/pgbouncer/userlist.txt
+$ "postgres" "<password>"
 $ sudo nano /etc/pgbouncer/pgbouncer.ini
   [databases]
   * = host=localhost port=5432
