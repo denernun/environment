@@ -1,7 +1,5 @@
 ## environment
 ```terminal
-$ sudo timedatectl set-timezone America/Sao_Paulo
-
 $ sudo nano /etc/environment
   TMPDIR=/tmp
 ```
@@ -9,7 +7,7 @@ $ sudo nano /etc/environment
 **install**
 ```terminal
 $ sudo apt update && sudo apt upgrade
-$ sudo apt install nginx
+$ sudo apt install nginx php-fpm php-mysql
 $ sudo systemctl start nginx
 $ sudo systemctl status nginx
 ```
@@ -78,11 +76,21 @@ $ sudo openssl dhparam -out /etc/nginx/dhparam.pem 4096
 ```
 **wildcard**
 ```terminal
-sudo certbot certonly --manual -d *.domain.com.br -d domain.com.br --agree-tos --preferred-challenges dns-01 --server https://acme-v02.api.letsencrypt.org/directory
+$ sudo apt install python3-certbot-dns-route53
+$ sudo nano ~/.aws/credentials
+  [default]
+  aws_access_key_id = YOUR_ACCESS_KEY_ID
+  aws_secret_access_key = YOUR_SECRET_ACCESS_KEY
+$ sudo chmod 600 ~/.aws/credentials
+$ sudo certbot certonly --dns-route53 -d '*.domain.com.br' -m denernun@gmail.com --agree-tos --server https://acme-v02.api.letsencrypt.org/directory
 ```
 **renew**
 ```terminal
 $ sudo certbot renew --dry-run
+
+$ sudo certbot renew --dns-route53 --dry-run
+$ sudo crontab -e
+  0 0,12 * * * /usr/bin/certbot renew --quiet --dns-route53 >> /var/log/letsencrypt/renew.log 2>&1
 ```
 **validation**
 ```terminal
