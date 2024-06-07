@@ -37,6 +37,13 @@ $ pm2 set pm2-logrotate:rotateInterval '* * * 1 0 0'
 ## amplify
 **install**
 ```terminal
+$ sudo apt install build-essential libssl-dev libffi-dev zlib1g-dev
+$ wget https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tgz
+$ tar -xvf Python-2.7.18.tgz
+$ cd Python-2.7.18
+$ ./configure
+  make
+  sudo make install
 $ curl -fsSL http://nginx.org/keys/nginx_signing.key | sudo gpg --dearmor -o /etc/apt/keyrings/nginx_signing.key
 $ sudo apt update & sudo apt upgrade -y
 $ curl -L -O https://github.com/nginxinc/nginx-amplify-agent/raw/master/packages/install.sh
