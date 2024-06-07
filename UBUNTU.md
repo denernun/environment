@@ -78,6 +78,8 @@ $ sudo apt update && sudo apt upgrade -y
 $ sudo snap install core
 $ sudo snap refresh core
 $ sudo snap install --classic certbot
+$ sudo snap set certbot trust-plugin-with-root=ok
+$ sudo snap install certbot-dns-route53
 $ sudo ln -s /snap/bin/certbot /usr/bin/certbot
 $ sudo openssl dhparam -out /etc/nginx/dhparam.pem 4096
 ```
