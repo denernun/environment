@@ -96,3 +96,12 @@ $ sudo crontab -e
 ```terminal
 $ https://www.ssllabs.com/ssltest/
 ```
+**root**
+```terminal
+$ sudo adduser ubuntu
+$ sudo usermod -aG sudo ubuntu
+$ sudo apt update
+$ sudo mkdir -p ~ubuntu/.ssh
+$ sudo cp ~administrador/.ssh/authorized_keys ~ubuntu/.ssh/
+$ sudo chown -R ubuntu:ubuntu ~ubuntu/.ssh
+```
