@@ -6,14 +6,14 @@ $ sudo nano /etc/environment
 ## nginx
 **install**
 ```terminal
-$ sudo apt update && sudo apt upgrade
+$ sudo apt update && sudo apt upgrade -y
 $ sudo apt install nginx
 $ sudo systemctl start nginx
 $ sudo systemctl status nginx
 
-$ sudo add-apt-repository ppa:ondrej/php
-$ sudo apt update
-$ sudo apt install php7.4 php7.4-fpm php7.4-mysql php7.4-cli php7.4-curl php7.4-json php7.4-cgi php7.4-mbstring php-mysql -y
+$ sudo add-apt-repository ppa:ondrej/nginx
+$ sudo apt update && sudo apt upgrade -y
+$ sudo apt install php7.4 php7.4-fpm php7.4-common php7.4-mysql php7.4-cli php7.4-curl php7.4-json php7.4-cgi php7.4-mbstring php7.4-xml php7.4-zip -y
 $ sudo systemctl start php7.4-fpm
 $ sudo systemctl enable php7.4-fpm
 ```
