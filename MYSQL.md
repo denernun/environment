@@ -2,8 +2,9 @@
 **Linux**
 ```text
 # install
-$ sudo apt update && apt upgrade -y
-$ sudo apt-get install mysql-server
+$ sudo apt update
+$ sudo apt upgrade -y
+$ sudo apt install mysql-server
 $ sudo systemctl start mysql
 $ sudo systemctl enable mysql
 $ sudo mysql_secure_installation utility
@@ -11,7 +12,7 @@ $ sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
   bind-address = 0.0.0.0
 
 # shell
-sudo mysql -u root -p
+$ sudo mysql -u root -p
 
 # database
 CREATE DATABASE <demodb>;
