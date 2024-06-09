@@ -49,24 +49,11 @@ $ https://certbot.eff.org/lets-encrypt
 ```terminal
 $ sudo snap install --classic certbot
 $ sudo snap set certbot trust-plugin-with-root=ok
-$ sudo snap install certbot-dns-route53
 $ sudo openssl dhparam -out /etc/nginx/dhparam.pem 4096
 ```
 **wildcard**
 ```terminal
 $ sudo certbot certonly --manual -d *.domain.com.br -d domain.com.br --agree-tos --preferred-challenges dns-01 --server https://acme-v02.api.letsencrypt.org/directory
-
-$ sudo apt install python3-certbot-dns-route53
-$ sudo nano ~/.aws/credentials
-  [default]
-  aws_access_key_id = YOUR_ACCESS_KEY_ID
-  aws_secret_access_key = YOUR_SECRET_ACCESS_KEY
-$ sudo nano ~/.aws/config
-  [default]
-  region = sa-east-1
-  output = json
-$ sudo chmod 600 ~/.aws/credentials
-$ sudo certbot certonly --dns-route53 -d '*.domain.com.br' -m denernun@gmail.com --agree-tos --server https://acme-v02.api.letsencrypt.org/directory
 ```
 **renew**
 ```terminal
