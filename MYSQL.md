@@ -2,11 +2,12 @@
 **Linux**
 ```text
 # install
-$ sudo apt update
-$ sudo apt upgrade -y
+$ sudo apt update && sudo apt upgrade -y
 $ sudo apt install mysql-server
-$ sudo systemctl start mysql
 $ sudo systemctl enable mysql
+$ sudo systemctl start mysql
+
+# security
 $ sudo mysql_secure_installation utility
 $ sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
   bind-address = 0.0.0.0
