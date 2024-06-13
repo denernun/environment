@@ -61,3 +61,8 @@ sok-start	=> 	sudo service socket start
 sok-stop	=> 	sudo service socket stop
 sok-status	=>  sudo journalctl -fxeu socket.service
 ```
+#### DICAS
+```text 
+CnPack Wizard Access Vilation
+[https://www.andrecelestino.com/solucao-para-o-access-violation-no-rad-studio-causado-pelo-cnpack/](https://www.andrecelestino.com/solucao-para-o-access-violation-no-rad-studio-causado-pelo-cnpack/)
+```
