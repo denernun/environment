@@ -87,6 +87,11 @@ ALIAS_DATABASE = /path/of/file/file.fdb {
 
 ALIAS_DATABASE = /path/of/file/file.fdb
 ```
+**IBSurgeon**
+* [https://ib-aid.com/en/articles/how-to-install-firebird-3-0-and-4-0-on-linux](https://ib-aid.com/en/articles/how-to-install-firebird-3-0-and-4-0-on-linux)
+* [https://ib-aid.com/en/articles/23-more-ways-to-speed-up-firebird](https://ib-aid.com/en/articles/23-more-ways-to-speed-up-firebird)
+* [https://ib-aid.com/en/simple-insert-update-delete-test-for-firebird](https://ib-aid.com/en/simple-insert-update-delete-test-for-firebird)
+
 **Replication**
 * [https://www.youtube.com/watch?v=COdWtRn4hgs](https://www.youtube.com/watch?v=COdWtRn4hgs)
 * [https://www.youtube.com/watch?v=OAeqTDz5OaM](https://www.youtube.com/watch?v=OAeqTDz5OaM)
