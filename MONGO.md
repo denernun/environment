@@ -17,14 +17,15 @@ ss -altnp | grep :27
 ```
 **config**
 ```text
-mongo
-use admin
-db.createUser({
-  user: "admin",
-  pwd: "Abc@010203@2021",
-  roles: [{ role: "userAdminAnyDatabase", db: "admin" }]
-})
-exit
+mongosh
+
+use database
+show dbs
+show users
+
+db.createUser({user: "admin", pwd: "xxx", roles: [{ role: "dbOwner", db: "database" }]})
+db.updateUser("admin", { pwd: "xxx" })
+db.updateUser("admin", { roles: [{ role: "dbOwner", db: "database" }] })
 ```
 **remove**
 ```text
