@@ -1,18 +1,8 @@
 ## MONGO
 **install**
 ```text
-$ sudo apt-cache policy libssl1.1
-$ sudo -i
-$ wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2_amd64.deb
-$ sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2_amd64.deb
-
-$ sudo apt install gnupg curl
-
-$ curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg --dearmor
-$ echo "deb [signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
-
 $ curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | sudo gpg -o /etc/apt/trusted.gpg.d/mongo.gpg --dearmor 
-$ echo "deb [arch=amd64,arm64] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb.list
+$ echo "deb [arch=amd64,arm64] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb.list
 
 $ sudo apt update
 $ sudo apt install -y mongodb-org
@@ -26,7 +16,14 @@ ss -altnp | grep :27
 ```
 **config**
 ```text
-$ 
+mongo
+use admin
+db.createUser({
+  user: "admin",
+  pwd: "Abc@010203@2021",
+  roles: [{ role: "userAdminAnyDatabase", db: "admin" }]
+})
+exit
 ```
 **remove**
 ```text
