@@ -2,8 +2,8 @@
 **install**
 ```text
 
-$ wget -qO - https://www.mongodb.org/static/pgp/server-7.0.asc | sudo gpg --dearmor -o /usr/share/keyrings/mongodb-server-7.0.gpg
-$ echo "deb [signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
+$ wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo gpg --dearmor -o /usr/share/keyrings/mongodb-server-5.0.gpg
+$ echo "deb [signed-by=/usr/share/keyrings/mongodb-server-5.0.gpg] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list
 
 $ sudo apt update
 $ sudo apt install -y mongodb-org
@@ -30,7 +30,9 @@ db.updateUser("admin", { roles: [{ role: "dbOwner", db: "database" }] })
 **remove**
 ```text
 $ sudo systemctl stop mongod
+$ sudo systemctl disable mongod
 $ sudo apt remove --purge --auto-remove mongodb-org
 $ sudo rm -rf /var/lib/mongodb
+$ sudo rm /etc/apt/sources.list.d/mongodb-org-8.0.list
 ```
 
