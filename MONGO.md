@@ -1,7 +1,6 @@
 ## MONGO
 **install**
 ```text
-
 $ wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo gpg --dearmor -o /usr/share/keyrings/mongodb-server-4.4.gpg
 $ echo "deb [signed-by=/usr/share/keyrings/mongodb-server-4.4.gpg] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
 
@@ -15,7 +14,20 @@ $ sudo systemctl status mongod
 sudo apt install net-tools
 ss -altnp | grep :27
 ```
-**config**
+**access**
+```text
+$ sudo nano /etc/mongod.conf
+
+net:
+  port: 27017
+  binfIp: 0.0.0.0
+
+security:
+  authorization: enabled  
+```text
+**users**
+```
+**users**
 ```text
 mongo
 
@@ -23,6 +35,10 @@ use database
 show dbs
 show users
 
+# cria o usuario admin
+db.createUser({user: "admin", pwd: "xxx", roles: [{ role: "userAdminAnyDatabase", db: "admin" }]})
+
+# cria o usuario do banco
 db.createUser({user: "admin", pwd: "xxx", roles: [{ role: "dbOwner", db: "database" }]})
 db.updateUser("admin", { pwd: "xxx" })
 db.updateUser("admin", { roles: [{ role: "dbOwner", db: "database" }] })
