@@ -38,5 +38,12 @@ FLUSH PRIVILEGES;
 # permissions
 GRANT ALL PRIVILEGES ON <demodb>.* to demouser@localhost;
 FLUSH PRIVILEGES;
+
+# remove
+sudo apt-get remove --purge mysql*
+sudo apt-get purge mysql*
+sudo apt-get autoremove
+sudo apt-get autoclean
+sudo apt-get remove dbconfig-mysql
 ```
 
