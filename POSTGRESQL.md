@@ -19,6 +19,10 @@ $ sudo nano /etc/postgresql/16/main/pg_hba.conf
 $ sudo service postgresql start
 $ sudo service postgresql stop
 $ sudo service postgresql restart
+
+sudo ufw status
+sudo ufw allow 5432
+
 ```
 **Console**
 ```text
