@@ -11,14 +11,12 @@ SDKManager.bat
 .\sdkmanager.bat --install "platform-tools"
 .\sdkmanager.bat --install "platforms;android-34"
 .\sdkmanager.bat --install "build-tools;34.0.0"
-.\sdkmanager.bat --install "system-images;android-19;google_apis;x86" (KitKat 4.4)
 .\sdkmanager.bat --install "system-images;android-27;google_apis;x86" (Oreo 8.1)
 .\sdkmanager.bat --install "emulator"
 
 AVDManager.bat
 
-.\avdmanager.bat create avd -k "system-images;android-19;google_apis;x86" -n Nexus10 -d "Nexus 10"
-.\avdmanager.bat create avd -k "system-images;android-27;google_apis;x86" -n Nexus10 -d "Nexus 10"
+.\avdmanager.bat create avd -k "system-images;android-27;google_apis;x86" -n Pixel6-Oreo-8.1 -d "pixel_6"
 ```
 ### LINUX
 #### PAServer
