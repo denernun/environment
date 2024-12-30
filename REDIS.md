@@ -9,6 +9,8 @@ sudo systemctl start redis-server
 sudo systemctl enable redis-server
 
 sudo nano /etc/redis/redis.conf
-#bind 127.0.0.1 ::1
+bind 127.0.0.1 ::1
 protected-mode no
+requirepass password
+user default on >password ~* &* +@all
 ```
