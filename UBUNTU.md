@@ -57,11 +57,18 @@ $ sudo certbot certonly --manual -d *.domain.com.br -d domain.com.br --agree-tos
 ```
 **renew**
 ```terminal
-$ sudo certbot renew --dry-run
+$ renew.sh
 
-$ sudo certbot renew --dns-route53 --dry-run
-$ sudo crontab -e
-  0 0,12 * * * /usr/bin/certbot renew --quiet --dns-route53 >> /var/log/letsencrypt/renew.log 2>&1
+#!/bin/bash
+# Renova todos os certificados
+sudo service nginx stop
+sudo certbot renew
+sudo service nginx start
+# Reinicia o Nginx
+sudo systemctl reload nginx
+
+$ crontab -e (todo 1 dia do mes as 3:00 da manha)
+# 0 3 1 * * /etc/letsencrypt/renew.sh
 ```
 **validation**
 ```terminal
