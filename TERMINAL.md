@@ -408,7 +408,8 @@ if (Test-Path($ChocolateyProfile)) {
     "theme": "dark",
     "themes": [],
     "wordDelimiters": " ./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}~?\u2502"
-}```
+}
+```
 ### scoop
 ```text
 PowerShell Admin
