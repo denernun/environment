@@ -17,6 +17,9 @@ SDKManager.bat
 AVDManager.bat
 
 .\avdmanager.bat create avd -k "system-images;android-27;google_apis;x86" -n Pixel6-Oreo-8.1 -d "pixel_6"
+
+.\emulator.exe -avd Pixel6-Oreo-8.1
+
 ```
 ### LINUX
 #### PAServer
@@ -66,9 +69,4 @@ sok-tail 	=>	sudo tail -f /var/log/syslog | grep socket
 sok-start	=> 	sudo service socket start
 sok-stop	=> 	sudo service socket stop
 sok-status	=>  sudo journalctl -fxeu socket.service
-```
-#### DICAS
-```text 
-CnPack Wizard Access Vilation
-[https://www.andrecelestino.com/solucao-para-o-access-violation-no-rad-studio-causado-pelo-cnpack/](https://www.andrecelestino.com/solucao-para-o-access-violation-no-rad-studio-causado-pelo-cnpack/)
 ```
