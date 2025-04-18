@@ -9,15 +9,14 @@ SDKManager.bat
 .\sdkmanager.bat --list_installed
 .\sdkmanager.bat --list
 .\sdkmanager.bat --install "platform-tools"
-.\sdkmanager.bat --install "platforms;android-34"
-.\sdkmanager.bat --install "build-tools;34.0.0"
-.\sdkmanager.bat --install "system-images;android-27;google_apis;x86" (Oreo 8.1)
+.\sdkmanager.bat --install "platforms;android-35"
+.\sdkmanager.bat --install "build-tools;35.0.0"
 .\sdkmanager.bat --install "emulator"
 
 AVDManager.bat
 
+.\sdkmanager.bat --install "system-images;android-27;google_apis;x86"
 .\avdmanager.bat create avd -k "system-images;android-27;google_apis;x86" -n Pixel6-Oreo-8.1 -d "pixel_6"
-
 .\emulator.exe -avd Pixel6-Oreo-8.1
 
 ```
