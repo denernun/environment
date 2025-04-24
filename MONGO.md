@@ -29,6 +29,8 @@ security:
 ```text
 mongosh
 
+mongo -u "admin" -p "xxx" --authenticationDatabase admin
+
 use database
 show dbs
 show users
