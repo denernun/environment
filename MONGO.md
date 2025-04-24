@@ -30,7 +30,7 @@ security:
 mongosh -u "admin" -p "xxx" --authenticationDatabase admin
 
 show dbs
-use admin
+use <database>
 show users
 
 # cria o usuario admin
