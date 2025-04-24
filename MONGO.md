@@ -24,8 +24,6 @@ net:
 
 security:
   authorization: enabled  
-```text
-**users**
 ```
 **users**
 ```text
