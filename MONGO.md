@@ -27,34 +27,17 @@ security:
 ```
 **users**
 ```text
-mongosh
+mongosh -u "admin" -p "xxx" --authenticationDatabase admin
 
-mongo -u "admin" -p "xxx" --authenticationDatabase admin
-
-use database
 show dbs
+use admin
 show users
 
 # cria o usuario admin
 db.createUser({user: "admin", pwd: "xxx", roles: [{ role: "root", db: "admin" }]})
 
-db.createUser(
-  {
-    user: "superadmin",
-    pwd: "suaSenhaSegura",
-    roles: [
-      { role: "userAdminAnyDatabase", db: "admin" },
-      { role: "dbAdminAnyDatabase", db: "admin" },
-      { role: "readWriteAnyDatabase", db: "admin" },
-      { role: "clusterAdmin", db: "admin" }
-    ]
-  }
-)
-
 # cria o usuario do banco
-db.createUser({user: "admin", pwd: "xxx", roles: [{ role: "dbOwner", db: "database" }]})
-db.updateUser("admin", { pwd: "xxx" })
-db.updateUser("admin", { roles: [{ role: "dbOwner", db: "database" }] })
+db.createUser({user: "admin", pwd: "xxx", roles: [{ role: "dbOwner", db: "<database>" }]})
 ```
 **remove**
 ```text
