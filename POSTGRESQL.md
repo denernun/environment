@@ -47,6 +47,7 @@ $ \dt
 $ sudo apt-get --purge remove postgresql postgresql-*
 $ dpkg -l | grep postgres
 $ sudo apt-get --purge remove postgresql postgresql-doc postgresql-common
+$ sudo apt autoremove
 
 $ sudo systemctl disable postgresql
 $ sudo apt-get purge postgresql-
