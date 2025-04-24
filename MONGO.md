@@ -27,7 +27,7 @@ security:
 ```
 **users**
 ```text
-mongo
+mongosh
 
 use database
 show dbs
