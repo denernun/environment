@@ -35,6 +35,7 @@ show users
 
 # cria o usuario admin
 db.createUser({user: "admin", pwd: "xxx", roles: [{ role: "root", db: "admin" }]})
+db.updateUser("admin",{ pwd: "xxx" })
 
 # cria o usuario do banco
 db.createUser({user: "admin", pwd: "xxx", roles: [{ role: "dbOwner", db: "<database>" }]})
