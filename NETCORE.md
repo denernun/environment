@@ -1,6 +1,6 @@
 ## netcore
 **sdk**
-```terminal
+```bash
 $ sudo wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
 $ sudo dpkg -i packages-microsoft-prod.deb
 $ sudo apt-get update
@@ -9,7 +9,7 @@ $ sudo apt-get update
 $ sudo apt-get install dotnet-sdk-3.1
 ```
 **service systemd**
-```terminal
+```bash
 [Unit]
 Description=xxx
 
@@ -30,7 +30,7 @@ Environment=DOTNET_PRINT_TELEMETRY_MESSAGE=false
 WantedBy=multi-user.target    
 ```
 **service systemd install**
-```terminal
+```bash
 /etc/systemd/system/xxx.service
 sudo systemctl daemon-reload
 sudo systemctl enable xxx.service
