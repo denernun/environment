@@ -1,29 +1,91 @@
 ## MONGO
 **install**
-```text
-$ wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | sudo gpg --dearmor -o /usr/share/keyrings/mongodb-server-6.0.gpg
-$ echo "deb [ arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/mongodb-server-6.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
+```bash
+#!/bin/bash
 
-$ sudo apt update
-$ sudo apt install -y mongodb-org
+set -e
 
-$ sudo systemctl enable mongod
-$ sudo systemctl start mongod
-$ sudo systemctl status mongod
+echo "Iniciando a instalação segura do MongoDB 6.0..."
 
-sudo apt install net-tools
-ss -altnp | grep :27
-```
-**access**
-```text
-$ sudo nano /etc/mongod.conf
+# Define a versão do MongoDB
+MONGODB_VERSION="6.0"
 
-net:
-  port: 27017
-  binfIp: 0.0.0.0
+# Define o codinome do Ubuntu
+UBUNTU_CODENAME=$(lsb_release -cs)
 
-security:
-  authorization: enabled  
+echo "Versão do MongoDB: $MONGODB_VERSION"
+echo "Codinome do Ubuntu: $UBUNTU_CODENAME"
+
+# Verifica se o curl está instalado
+if ! command -v curl &> /dev/null; then
+    echo "Erro: curl não está instalado. Instalando..."
+    sudo apt update
+    sudo apt install -y curl
+fi
+
+# Importa a chave GPG do MongoDB
+echo "Importando a chave GPG do MongoDB..."
+curl -fsSL https://www.mongodb.org/static/pgp/server-${MONGODB_VERSION}.asc | sudo gpg --dearmor -o /usr/share/keyrings/mongodb-server-${MONGODB_VERSION}.gpg
+
+# Adiciona o repositório MongoDB à lista de fontes do APT
+echo "Adicionando o repositório MongoDB à lista de fontes do APT..."
+echo "deb [ arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/mongodb-server-${MONGODB_VERSION}.gpg ] https://repo.mongodb.org/apt/ubuntu ${UBUNTU_CODENAME}/mongodb-org/${MONGODB_VERSION} multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-${MONGODB_VERSION}.list
+
+# Atualiza a lista de pacotes
+echo "Atualizando a lista de pacotes..."
+sudo apt update
+
+# Instala o MongoDB sem interação
+echo "Instalando o MongoDB..."
+sudo apt install -y mongodb-org
+
+# Habilita e inicia o serviço mongod
+echo "Habilitando e iniciando o serviço mongod..."
+sudo systemctl enable mongod
+sudo systemctl start mongod
+
+# Verifica o status do serviço mongod
+echo "Verificando o status do serviço mongod..."
+sudo systemctl status mongod
+
+# Verifica se o MongoDB está escutando na porta padrão
+echo "Verificando se o MongoDB está escutando na porta 27017..."
+if ss -altnp | grep -q ":27017"; then
+    echo "MongoDB está escutando na porta 27017."
+else
+    echo "Aviso: MongoDB não parece estar escutando na porta 27017. Verifique os logs do serviço."
+fi
+
+# Configura o acesso remoto e habilita a autorização
+echo "Configurando o acesso remoto e habilitando a autorização no mongod.conf..."
+sudo sed -i "s/^#net:/net:/" /etc/mongod.conf
+sudo sed -i "s/^#  port: 27017/  port: 27017/" /etc/mongod.conf
+sudo sed -i "s/^#  bindIp: 127.0.0.1,::1/  bindIp: 0.0.0.0/" /etc/mongod.conf
+sudo sed -i "s/^#security:/security:/" /etc/mongod.conf
+sudo sed -i "s/^#  authorization: disabled/  authorization: enabled/" /etc/mongod.conf
+
+# Gera uma senha forte para o administrador
+ADMIN_PASSWORD=$(openssl rand -base64 16)
+echo "Gerando uma senha forte para o usuário admin: $ADMIN_PASSWORD"
+
+# Cria o usuário administrador no banco de dados 'admin'
+echo "Criando o usuário administrador..."
+echo "
+use admin
+db.createUser({
+  user: \"admin\",
+  pwd: \"${ADMIN_PASSWORD}\",
+  roles: [ { role: \"root\", db: \"admin\" } ]
+})
+" | mongosh --eval -
+
+echo "MongoDB instalado, configurado para acesso remoto (em todas as interfaces) e autorização habilitada."
+echo "Credenciais do administrador:"
+echo "  Usuário: admin"
+echo "  Senha: $ADMIN_PASSWORD"
+echo "Lembre-se de configurar um FIREWALL para restringir o acesso à porta 27017 apenas das fontes desejadas."
+
+exit 0
 ```
 **users**
 ```text
@@ -36,8 +98,6 @@ show users
 # cria o usuario admin
 db.createUser({user: "admin", pwd: "xxx", roles: [{ role: "root", db: "admin" }]})
 db.updateUser("admin",{ pwd: "xxx" })
-
-# cria o usuario do banco
 db.createUser({user: "admin", pwd: "xxx", roles: [{ role: "dbOwner", db: "<database>" }]})
 ```
 **remove**
