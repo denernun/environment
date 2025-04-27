@@ -57,12 +57,21 @@ else
 fi
 
 # Configura o acesso remoto e habilita a autorização
-echo "Configurando o acesso remoto e habilitando a autorização no mongod.conf..."
-sudo sed -i "s/^#net:/net:/" /etc/mongod.conf
-sudo sed -i "s/^#  port: 27017/  port: 27017/" /etc/mongod.conf
-sudo sed -i "s/^#  bindIp: 127.0.0.1,::1/  bindIp: 0.0.0.0/" /etc/mongod.conf
-sudo sed -i "s/^#security:/security:/" /etc/mongod.conf
-sudo sed -i "s/^#  authorization: disabled/  authorization: enabled/" /etc/mongod.conf
+cat <<EOF | sudo tee /etc/mongod.conf
+storage:
+  dbPath: /var/lib/mongodb
+systemLog:
+  destination: file
+  logAppend: true
+  path: /var/log/mongodb/mongod.log
+net:
+  port: 27017
+  bindIp: 127.0.0.1
+processManagement:
+  timeZoneInfo: /usr/share/zoneinfo
+security:
+  authorization: enabled
+EOF
 
 # Gera uma senha forte para o administrador
 ADMIN_PASSWORD=$(openssl rand -base64 16)
