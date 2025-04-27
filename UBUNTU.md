@@ -1,10 +1,5 @@
 ## environment
-```terminal
-$ sudo nano /etc/environment
-  TMPDIR=/tmp
-```
 ## nginx
-**install**
 ```terminal
 $ sudo apt update && sudo apt upgrade -y
 $ sudo apt install nginx
