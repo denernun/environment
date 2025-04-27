@@ -74,6 +74,11 @@ security:
   authorization: enabled
 EOF
 
+# Habilita e inicia o serviço mongod
+echo "Restantando o serviço mongod..."
+sudo systemctl stop mongod
+sudo systemctl start mongod
+
 # Gera uma senha forte para o administrador
 ADMIN_PASSWORD=$(openssl rand -base64 16)
 echo "Gerando uma senha forte para o usuário admin: $ADMIN_PASSWORD"
