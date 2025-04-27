@@ -21,9 +21,6 @@ code $PROFILE
 Import-Module -Name Terminal-Icons
 oh-my-posh --init --shell pwsh --config C:\Users\dener\OneDrive\ohmyposh.omp.json | Invoke-Expression
 
-Import-Module -Name Terminal-Icons
-oh-my-posh --init --shell pwsh --config C:\Users\dener\OneDrive\ohmyposh.omp.json | Invoke-Expression
-
 Import-Module PSReadLine
 Set-PSReadLineOption -EditMode Windows
 Set-PSReadLineOption -PredictionSource History
@@ -34,17 +31,6 @@ Set-PSReadLineOption -Colors @{ InlinePrediction = "$([char]0x1b)[36;7;238m"}
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 Set-PSReadlineKeyHandler -Key UpArrow -Function HistorySearchBackward
 Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward
-
-Set-Alias g git
-# Import the Chocolatey Profile that contains the necessary code to enable
-# tab-completions to function for `choco`.
-# Be aware that if you are missing these lines from your profile, tab completion
-# for `choco` will not function.
-# See https://ch0.co/tab-completion for details.
-$ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
-if (Test-Path($ChocolateyProfile)) {
-  Import-Module "$ChocolateyProfile"
-}
 ```
 ### ohmyposh.omp.json
 ```json
@@ -104,28 +90,6 @@ if (Test-Path($ChocolateyProfile)) {
       "type": "rprompt",
       "alignment": "right",
       "segments": [
-        {
-          "properties": {
-            "cache_duration": "none"
-          },
-          "template": " \ue753 {{ .Full }} ",
-          "foreground": "#ffffff",
-          "powerline_symbol": "\ue0b0",
-          "background": "#dd0031",
-          "type": "angular",
-          "style": "powerline"
-        },
-        {
-          "properties": {
-            "cache_duration": "none"
-          },
-          "template": " \ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
-          "foreground": "#ffffff",
-          "powerline_symbol": "\ue0b0",
-          "background": "#6ca35e",
-          "type": "node",
-          "style": "powerline"
-        }
       ]
     }
   ],
@@ -200,20 +164,21 @@ if (Test-Path($ChocolateyProfile)) {
         {
             "command": 
             {
-                "action": "newTab",
-                "index": 0
+                "action": "closeTab"
             },
-            "id": "User.newTab.7975BEED"
+            "id": "User.closeTab.0"
         },
         {
             "command": 
             {
-                "action": "closeTab"
+                "action": "newTab",
+                "index": 0
             },
-            "id": "User.closeTab.0"
+            "id": "User.newTab.7975BEED"
         }
     ],
     "alwaysShowNotificationIcon": false,
+    "compatibility.allowHeadless": true,
     "confirmCloseAllTabs": false,
     "copyFormatting": "none",
     "copyOnSelect": true,
@@ -226,12 +191,12 @@ if (Test-Path($ChocolateyProfile)) {
     "keybindings": 
     [
         {
-            "id": "User.find",
-            "keys": "ctrl+shift+f"
-        },
-        {
             "id": "User.paste",
             "keys": "ctrl+v"
+        },
+        {
+            "id": "User.find",
+            "keys": "ctrl+shift+f"
         },
         {
             "id": "User.openSettings.6CD791B",
@@ -280,6 +245,7 @@ if (Test-Path($ChocolateyProfile)) {
         {
             "colorScheme": "Tango Dark",
             "elevate": true,
+            "experimental.rightClickContextMenu": true,
             "font": 
             {
                 "face": "MesloLGM NF",
@@ -327,6 +293,11 @@ if (Test-Path($ChocolateyProfile)) {
                 "hidden": true,
                 "name": "Developer PowerShell for VS 2019",
                 "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": true,
+                "name": "Windows PowerShell"
             }
         ]
     },
@@ -407,29 +378,7 @@ if (Test-Path($ChocolateyProfile)) {
     "tabWidthMode": "titleLength",
     "theme": "dark",
     "themes": [],
+    "windowingBehavior": "useNew",
     "wordDelimiters": " ./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}~?\u2502"
 }
 ```
-### scoop
-```text
-PowerShell Admin
-irm get.scoop.sh -outfile 'install.ps1'
-.\install.ps1 -RunAsAdmin
-Path
-C:\Users\dener\scoop\shims
-```
-### z
-```text
-Install-Module -Name Z -Force  -AllowClobber
-```
-### zsh
-```text
-sudo apt install zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-nano .zshrc
-theme (af-magic)
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-nano .zshrc
-plugins (zsh-autosuggestions)
-```
-
