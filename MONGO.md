@@ -87,8 +87,63 @@ echo "Lembre-se de configurar um FIREWALL para restringir o acesso à porta 2701
 
 exit 0
 ```
+**uninstall**
+```bash
+#!/bin/bash
+
+set -e
+
+echo "Iniciando a remoção completa do MongoDB..."
+
+# Define a versão do MongoDB (ajuste se necessário)
+MONGODB_VERSION="6.0"
+
+# Define o nome do arquivo da lista de fontes
+MONGODB_LIST_FILE="/etc/apt/sources.list.d/mongodb-org-${MONGODB_VERSION}.list"
+
+# 1. Para o serviço mongod
+echo "Parando o serviço mongod..."
+sudo systemctl stop mongod || true # Ignora erro se o serviço já estiver parado
+
+# 2. Desativa o serviço para não iniciar na inicialização
+echo "Desativando o serviço mongod..."
+sudo systemctl disable mongod || true # Ignora erro se já estiver desativado
+
+# 3. Remove os pacotes mongodb-org e suas dependências com purge
+echo "Removendo os pacotes mongodb-org com purge..."
+sudo apt remove --purge --auto-remove mongodb-org -y
+
+# 4. Remove quaisquer outros pacotes relacionados ao mongodb-org (com curinga) com purge
+echo "Removendo outros pacotes relacionados ao mongodb-org com purge..."
+sudo apt-get purge mongodb-org* -y
+
+# 5. Remove os diretórios de log e dados
+echo "Removendo os diretórios de log e dados..."
+sudo rm -rf /var/log/mongodb
+sudo rm -rf /var/lib/mongodb
+
+# 6. Remove o arquivo da lista de fontes do APT
+echo "Removendo o arquivo da lista de fontes do APT..."
+if [ -f "$MONGODB_LIST_FILE" ]; then
+    sudo rm "$MONGODB_LIST_FILE"
+else
+    echo "Arquivo da lista de fontes '$MONGODB_LIST_FILE' não encontrado."
+fi
+
+# 7. Remove a chave GPG do MongoDB
+echo "Removendo a chave GPG do MongoDB..."
+sudo apt-key del --keyring /etc/apt/trusted.gpg.d/mongodb-server-${MONGODB_VERSION}.gpg "$(curl -fsSL https://www.mongodb.org/static/pgp/server-${MONGODB_VERSION}.asc | gpg --fingerprint | grep uid | awk '{print $5}')" || true
+
+# 8. Atualiza a lista de pacotes
+echo "Atualizando a lista de pacotes..."
+sudo apt update
+
+echo "Remoção completa do MongoDB concluída."
+
+exit 0
+```
 **users**
-```text
+```bash
 mongosh -u "admin" -p "xxx" --authenticationDatabase admin
 
 show dbs
@@ -100,14 +155,3 @@ db.createUser({user: "admin", pwd: "xxx", roles: [{ role: "root", db: "admin" }]
 db.updateUser("admin",{ pwd: "xxx" })
 db.createUser({user: "admin", pwd: "xxx", roles: [{ role: "dbOwner", db: "<database>" }]})
 ```
-**remove**
-```text
-$ sudo systemctl stop mongod
-$ sudo systemctl disable mongod
-$ sudo apt remove --purge --auto-remove mongodb-org
-$ sudo apt-get purge mongodb-org*
-$ sudo rm -r /var/log/mongodb /var/lib/mongodb
-$ sudo rm -rf /var/lib/mongodb
-$ sudo rm /etc/apt/sources.list.d/mongodb-org-8.0.list
-```
-
