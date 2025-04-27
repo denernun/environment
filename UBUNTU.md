@@ -9,10 +9,23 @@ $ sudo ./nginx.sh
 
 set -e
 
-echo "Atualizando a lista de pacotes..."
-sudo apt update
+echo "*******************************************************"
+echo "update"
+echo "*******************************************************"
 
-echo "Instalando Nginx..."
+sudo apt update && apt upgrade -y
+
+echo "*******************************************************"
+echo "certbot"
+echo "*******************************************************"
+
+sudo snap install --classic certbot
+sudo snap set certbot trust-plugin-with-root=ok
+
+echo "*******************************************************"
+echo "nginx"
+echo "*******************************************************"
+
 sudo apt install nginx -y
 
 echo "Iniciando o serviço Nginx..."
@@ -23,6 +36,10 @@ sudo systemctl status nginx
 
 echo "Gerando arquivo dhparam.pem (isso pode levar alguns minutos)..."
 sudo openssl dhparam -out /etc/nginx/dhparam.pem 4096
+
+echo "*******************************************************"
+echo "nginx general.conf"
+echo "*******************************************************"
 
 echo "Criando a configuração do servidor virtual general.conf..."
 cat <<EOF | sudo tee /etc/nginx/general.conf
@@ -64,6 +81,10 @@ location ~* \.(?:svgz?|ttf|ttc|otf|eot|woff2?)$ {
 }
 EOF
 
+echo "*******************************************************"
+echo "nginx options.conf"
+echo "*******************************************************"
+
 cat <<EOF | sudo tee /etc/nginx/options.conf
 ssl_session_timeout 1d;
 ssl_session_cache shared:SSL:10m;
@@ -82,6 +103,10 @@ ssl_stapling_verify on;
 resolver 8.8.8.8 8.8.4.4 valid=60s;
 resolver_timeout 2s;
 EOF
+
+echo "*******************************************************"
+echo "nginx proxy.conf"
+echo "*******************************************************"
 
 cat <<EOF | sudo tee /etc/nginx/proxy.conf
 proxy_http_version                  1.1;
@@ -104,6 +129,10 @@ proxy_send_timeout                  90;
 proxy_read_timeout                  90;
 proxy_buffers                       32 4k;
 EOF
+
+echo "*******************************************************"
+echo "nginx nginx.conf"
+echo "*******************************************************"
 
 cat <<EOF | sudo tee /etc/nginx/nginx.conf
 user www-data;
@@ -195,17 +224,9 @@ EOF
 echo "Reiniciando o serviço Nginx..."
 sudo systemctl reload nginx
 
-exit 0
-```
-## node
-```bash
-$ sudo nano node.sh
-$ sudo chmod +x node.sh
-$ sudo ./node.sh
-
-#!/bin/bash
-
-set -e # Sai do script imediatamente se um comando falhar
+echo "*******************************************************"
+echo "nodejs"
+echo "*******************************************************"
 
 NODE_MAJOR=${1:-22} # Usa a versão 22 por padrão, mas permite especificar como argumento
 
@@ -228,17 +249,9 @@ echo "Instalação concluída!"
 echo "Node.js versão: $(node -v)"
 echo "npm versão: $(npm -v)"
 
-exit 0
-```
-## pm2
-```bash
-$ sudo nano pm2.sh
-$ sudo chmod +x pm2.sh
-$ sudo ./pm2.sh
-
-#!/bin/bash
-
-set -e
+echo "*******************************************************"
+echo "pm2"
+echo "*******************************************************"
 
 echo "Iniciando a instalação e configuração do PM2 e PM2 Logrotate..."
 
@@ -260,12 +273,6 @@ echo "PM2 e PM2 Logrotate instalados e configurados com sucesso!"
 echo "Verifique a configuração com os comandos 'pm2 show pm2-logrotate' e 'pm2 logs'."
 
 exit 0
-```
-## certbot
-```terminal
-$ sudo snap install --classic certbot
-$ sudo snap set certbot trust-plugin-with-root=ok
-$ sudo openssl dhparam -out /etc/nginx/dhparam.pem 4096
 ```
 **wildcard**
 ```terminal
