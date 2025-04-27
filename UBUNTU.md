@@ -1,10 +1,6 @@
 ## environment
-## nginx
+## install
 ```bash
-$ sudo nano nginx.sh
-$ sudo chmod +x nginx.sh
-$ sudo ./nginx.sh
-
 #!/bin/bash
 
 set -e
