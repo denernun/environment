@@ -21,6 +21,9 @@ sudo systemctl start nginx
 echo "Verificando o status do Nginx..."
 sudo systemctl status nginx
 
+echo "Gerando arquivo dhparam.pem (isso pode levar alguns minutos)..."
+sudo openssl dhparam -out /etc/nginx/dhparam.pem 4096
+
 echo "Criando a configuração do servidor virtual general.conf..."
 cat <<EOF | sudo tee /etc/nginx/general.conf
 add_header X-Frame-Options "SAMEORIGIN" always;
