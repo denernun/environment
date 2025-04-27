@@ -33,13 +33,15 @@ echo "Gerando uma senha forte para o Redis: $REDIS_PASSWORD"
 # Modifica o arquivo de configuração para vincular ao localhost e manter protected-mode ativo
 echo "Configurando bind para localhost e mantendo protected-mode ativo..."
 sudo sed -i "s/^bind .*/bind 127.0.0.1 ::1/" /etc/redis/redis.conf
-sudo sed -i "s/^protected-mode .*/protected-mode yes/" /etc/redis/redis.conf
+sudo sed -i "s/^protected-mode .*/protected-mode no/" /etc/redis/redis.conf
 
 # Adiciona a configuração ACL ao arquivo de configuração
 echo "Adicionando configuração ACL ao arquivo redis.conf..."
 sudo tee -a /etc/redis/redis.conf <<EOF
 
 # Configuração ACL
+# $REDIS_PASSWORD
+#
 user default on >$REDIS_PASSWORD allcommands allkeys
 
 EOF
