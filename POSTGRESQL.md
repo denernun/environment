@@ -12,8 +12,8 @@ $ sudo nano /etc/postgresql/16/main/postgresql.conf
 
 # access
 $ sudo nano /etc/postgresql/16/main/pg_hba.conf
-  host all all 0.0.0.0/0 scram-sha-256
-  host all all ::0/0 scram-sha-256
+  host    all     all     0.0.0.0/0       scram-sha-256
+  host    all     all     ::0/0           scram-sha-256
 
 # services
 $ sudo service postgresql start
