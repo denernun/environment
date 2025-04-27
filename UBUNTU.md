@@ -358,3 +358,47 @@ $ crontab -e (todo 1 dia do mes as 3:00 da manha)
 ```terminal
 $ https://www.ssllabs.com/ssltest/
 ```
+**erros**
+```bash
+#!/bin/bash
+
+set -e
+
+echo "Limpando chaves obsoletas do apt..."
+
+# Remove chave antiga da Ubuntu (se existir)
+if [ -f /etc/apt/trusted.gpg.d/ubuntu-key-871920D1991BC93C.gpg ]; then
+    sudo rm /etc/apt/trusted.gpg.d/ubuntu-key-871920D1991BC93C.gpg
+    echo "Chave obsoleta da Ubuntu removida."
+fi
+
+# Remove chave antiga do PostgreSQL PGDG (se existir)
+if [ -f /etc/apt/trusted.gpg.d/postgresql-key-7FCC7D46ACCC4CF8.gpg ]; then
+    sudo rm /etc/apt/trusted.gpg.d/postgresql-key-7FCC7D46ACCC4CF8.gpg
+    echo "Chave obsoleta do PostgreSQL PGDG removida."
+fi
+
+echo "Adicionando chaves usando o método atualizado (diretório trusted.gpg.d)..."
+
+# Adiciona a chave da Ubuntu
+wget -qO- "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x871920D1991BC93C&options=mr" | \
+    sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/ubuntu-key-871920D1991BC93C.gpg
+sudo chmod 644 /etc/apt/trusted.gpg.d/ubuntu-key-871920D1991BC93C.gpg
+echo "Chave da Ubuntu adicionada ao trusted.gpg.d."
+
+# Adiciona a chave do PostgreSQL PGDG
+wget -qO- https://www.postgresql.org/media/keys/ACCC4CF8.asc | \
+    sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/postgresql-key-7FCC7D46ACCC4CF8.gpg
+sudo chmod 644 /etc/apt/trusted.gpg.d/postgresql-key-7FCC7D46ACCC4CF8.gpg
+echo "Chave do PostgreSQL PGDG adicionada ao trusted.gpg.d."
+
+echo "Atualizando a lista de pacotes..."
+sudo apt update
+
+echo "Processo de limpeza e atualização das chaves concluído."
+
+exit 0
+```
+
+
+
