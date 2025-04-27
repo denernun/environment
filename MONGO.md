@@ -45,13 +45,24 @@ sudo systemctl enable mongod
 sudo systemctl start mongod
 sudo systemctl status mongod
 
-# Verifica se o MongoDB está escutando na porta padrão
-echo "Verificando se o MongoDB está escutando na porta 27017..."
-if ss -altnp | grep ":27017"; then
-    echo "MongoDB está escutando na porta 27017."
-else
-    echo "Aviso: MongoDB não parece estar escutando na porta 27017. Verifique os logs do serviço."
-fi
+# Aguarda um pouco para o MongoDB iniciar
+echo "Aguardando alguns segundos para o MongoDB iniciar..."
+sleep 10
+
+# Gera uma senha forte para o administrador
+ADMIN_PASSWORD=$(openssl rand -base64 16)
+echo "Gerando uma senha forte para o usuário admin: $ADMIN_PASSWORD"
+
+# Cria o usuário administrador NO INÍCIO, ANTES de habilitar a autorização
+echo "Criando o usuário administrador inicialmente..."
+echo "
+use admin
+db.createUser({
+  user: \"admin\",
+  pwd: \"${ADMIN_PASSWORD}\",
+  roles: [ { role: \"root\", db: \"admin\" } ]
+})
+" | mongosh --eval
 
 # Configura o acesso remoto e habilita a autorização
 echo "Configura o acesso remoto e habilita a autorização"
@@ -64,31 +75,16 @@ systemLog:
   path: /var/log/mongodb/mongod.log
 net:
   port: 27017
-  bindIp: 127.0.0.1
+  bindIp: 0.0.0.0 # Alterado para permitir acesso de todas as interfaces
 processManagement:
   timeZoneInfo: /usr/share/zoneinfo
 security:
   authorization: enabled
 EOF
 
-# Habilita e inicia o serviço mongod
-echo "Restantando o serviço mongod..."
+# Restarta o serviço mongod para aplicar as configurações de segurança
+echo "Restartando o serviço mongod para aplicar as configurações de segurança..."
 sudo systemctl restart mongod
-
-# Gera uma senha forte para o administrador
-ADMIN_PASSWORD=$(openssl rand -base64 16)
-echo "Gerando uma senha forte para o usuário admin: $ADMIN_PASSWORD"
-
-# Cria o usuário administrador no banco de dados 'admin'
-echo "Criando o usuário administrador..."
-echo "
-use admin
-db.createUser({
-  user: \"admin\",
-  pwd: \"${ADMIN_PASSWORD}\",
-  roles: [ { role: \"root\", db: \"admin\" } ]
-})
-" | mongosh --eval
 
 echo "MongoDB instalado, configurado para acesso remoto (em todas as interfaces) e autorização habilitada."
 echo "Credenciais do administrador:"
