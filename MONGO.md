@@ -43,9 +43,6 @@ sudo apt install -y mongodb-org
 echo "Habilitando e iniciando o serviço mongod..."
 sudo systemctl enable mongod
 sudo systemctl start mongod
-
-# Verifica o status do serviço mongod
-echo "Verificando o status do serviço mongod..."
 sudo systemctl status mongod
 
 # Verifica se o MongoDB está escutando na porta padrão
@@ -76,8 +73,7 @@ EOF
 
 # Habilita e inicia o serviço mongod
 echo "Restantando o serviço mongod..."
-sudo systemctl stop mongod
-sudo systemctl start mongod
+sudo systemctl restart mongod
 
 # Gera uma senha forte para o administrador
 ADMIN_PASSWORD=$(openssl rand -base64 16)
@@ -92,7 +88,7 @@ db.createUser({
   pwd: \"${ADMIN_PASSWORD}\",
   roles: [ { role: \"root\", db: \"admin\" } ]
 })
-" | mongosh --eval -
+" | mongosh --eval
 
 echo "MongoDB instalado, configurado para acesso remoto (em todas as interfaces) e autorização habilitada."
 echo "Credenciais do administrador:"
