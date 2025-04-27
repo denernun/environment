@@ -50,13 +50,14 @@ sudo systemctl status mongod
 
 # Verifica se o MongoDB está escutando na porta padrão
 echo "Verificando se o MongoDB está escutando na porta 27017..."
-if ss -altnp | grep -q ":27017"; then
+if ss -altnp | grep ":27017"; then
     echo "MongoDB está escutando na porta 27017."
 else
     echo "Aviso: MongoDB não parece estar escutando na porta 27017. Verifique os logs do serviço."
 fi
 
 # Configura o acesso remoto e habilita a autorização
+echo "Configura o acesso remoto e habilita a autorização"
 cat <<EOF | sudo tee /etc/mongod.conf
 storage:
   dbPath: /var/lib/mongodb
