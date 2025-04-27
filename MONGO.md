@@ -23,9 +23,10 @@ if ! command -v curl &> /dev/null; then
     sudo apt install -y curl
 fi
 
-# Importa a chave GPG do MongoDB
+# Importa a chave GPG do MongoDB e salva diretamente em trusted.gpg.d
 echo "Importando a chave GPG do MongoDB..."
-curl -fsSL https://www.mongodb.org/static/pgp/server-${MONGODB_VERSION}.asc | sudo gpg --dearmor -o /usr/share/keyrings/mongodb-server-${MONGODB_VERSION}.gpg
+curl -fsSL https://www.mongodb.org/static/pgp/server-${MONGODB_VERSION}.asc | sudo tee /etc/apt/trusted.gpg.d/mongodb-server-${MONGODB_VERSION}.gpg
+chmod 644 /etc/apt/trusted.gpg.d/mongodb-server-${MONGODB_VERSION}.gpg
 
 # Adiciona o repositório MongoDB à lista de fontes do APT
 echo "Adicionando o repositório MongoDB à lista de fontes do APT..."
