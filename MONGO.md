@@ -91,6 +91,7 @@ echo "Credenciais do administrador:"
 echo "  Usuário: admin"
 echo "  Senha: $ADMIN_PASSWORD"
 echo "Lembre-se de configurar um FIREWALL para restringir o acesso à porta 27017 apenas das fontes desejadas."
+echo "mongosh -u \"admin\" -p \"$ADMIN_PASSWORD\" --authenticationDatabase admin"
 
 exit 0
 ```
