@@ -40,8 +40,6 @@ echo "Adicionando configuração ACL ao arquivo redis.conf..."
 sudo tee -a /etc/redis/redis.conf <<EOF
 
 # Configuração ACL
-# $REDIS_PASSWORD
-#
 user default on >$REDIS_PASSWORD allcommands allkeys
 
 EOF
