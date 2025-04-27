@@ -44,7 +44,6 @@ sudo apt install -y mongodb-org
 echo "Habilitando e iniciando o serviço mongod..."
 sudo systemctl enable mongod
 sudo systemctl start mongod
-sudo systemctl status mongod
 
 # Aguarda um pouco para o MongoDB iniciar
 echo "Aguardando alguns segundos para o MongoDB iniciar..."
