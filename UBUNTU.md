@@ -1,6 +1,10 @@
 ## environment
 ## nginx
 ```bash
+$ sudo nano nginx.sh
+$ sudo chmod +x nginx.sh
+$ sudo ./nginx.sh
+
 #!/bin/bash
 
 set -e
@@ -185,18 +189,17 @@ http {
 }
 EOF
 
+echo "Reiniciando o serviço Nginx..."
+sudo systemctl reload nginx
+
 exit 0
-```
-## nginx php
-```bash
-$ sudo add-apt-repository ppa:ondrej/nginx
-$ sudo apt update && sudo apt upgrade -y
-$ sudo apt install php7.4 php7.4-fpm php7.4-common php7.4-mysql php7.4-cli php7.4-curl php7.4-json php7.4-cgi php7.4-mbstring php7.4-xml php7.4-zip -y
-$ sudo systemctl start php7.4-fpm
-$ sudo systemctl enable php7.4-fpm
 ```
 ## node
 ```bash
+$ sudo nano node.sh
+$ sudo chmod +x node.sh
+$ sudo ./node.sh
+
 #!/bin/bash
 
 set -e # Sai do script imediatamente se um comando falhar
@@ -226,6 +229,10 @@ exit 0
 ```
 ## pm2
 ```bash
+$ sudo nano pm2.sh
+$ sudo chmod +x pm2.sh
+$ sudo ./pm2.sh
+
 #!/bin/bash
 
 set -e
@@ -252,11 +259,6 @@ echo "Verifique a configuração com os comandos 'pm2 show pm2-logrotate' e 'pm2
 exit 0
 ```
 ## certbot
-**site**
-```terminal
-$ https://certbot.eff.org/lets-encrypt
-```
-**install**
 ```terminal
 $ sudo snap install --classic certbot
 $ sudo snap set certbot trust-plugin-with-root=ok
@@ -264,6 +266,20 @@ $ sudo openssl dhparam -out /etc/nginx/dhparam.pem 4096
 ```
 **wildcard**
 ```terminal
+$ sudo apt update && apt install -y python3-certbot-dns-route53 -y
+
+$ AWS uses permission route53:ChangeResourceRecordSets
+
+$ ~/.aws/credentials:
+  [default]
+  aws_access_key_id = SEU_ACCESS_KEY_ID
+  aws_secret_access_key = SEU_SECRET_ACCESS_KEY
+
+$ ~/.aws/config:
+  [default]
+  region = sa-east-1
+
+$ sudo certbot --dns-route53 --dns-route53-hosted-zone-id="???" -d "*.domain.com.br" -d "domain.com.br" --agree-tos --server https://acme-v02.api.letsencrypt.org/directory --email denernun@gmail.com
 $ sudo certbot certonly --manual -d *.domain.com.br -d domain.com.br --agree-tos --preferred-challenges dns-01 --server https://acme-v02.api.letsencrypt.org/directory
 ```
 **renew**
