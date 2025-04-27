@@ -1,17 +1,13 @@
 **windows**
 ```store
-install windows subsystem for linux
+
+![image](https://github.com/user-attachments/assets/381cea18-83f0-4c67-9adc-a26f4b8e89f9)
+
 ```
 ```terminal
 # wsl --list
-# wsl --set-version <Distro> 2
-# wsl --set-default-version 2
 # wsl --list --verbose
-# wsl --user <Username>
+# wsl --set-default-version 2
+# wsl --install <Distro>
 # wsl --unregister <Distro>
-```
-**linux**
-```terminal
-$ sudo apt update && sudo apt -y upgrade
-$ sudo apt autoremove
 ```
