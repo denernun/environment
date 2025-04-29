@@ -5,10 +5,10 @@
 
 set -e
 
-echo "Iniciando a instalação segura do MongoDB 6.0..."
+echo "Iniciando a instalação segura do MongoDB 7.0..."
 
 # Define a versão do MongoDB
-MONGODB_VERSION="6.0"
+MONGODB_VERSION="7.0"
 
 # Define o codinome do Ubuntu
 UBUNTU_CODENAME=$(lsb_release -cs)
