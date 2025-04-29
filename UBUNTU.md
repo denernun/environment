@@ -254,6 +254,7 @@ echo "Iniciando a instalação e configuração do PM2 e PM2 Logrotate..."
 # Instala o PM2 globalmente sem interação
 echo "Instalando PM2 globalmente..."
 sudo npm install pm2@latest -g --yes
+sudo pm2 startup systemd -u ubuntu --hp /home/ubuntu
 
 # Instala o plugin PM2 Logrotate sem interação
 echo "Instalando o plugin PM2 Logrotate..."
