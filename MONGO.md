@@ -5,7 +5,7 @@
 
 set -e
 
-echo "Iniciando a instalação segura do MongoDB 7.0..."
+echo "Iniciando a instalação segura do MongoDB..."
 
 # Define a versão do MongoDB
 MONGODB_VERSION="6.0"
@@ -25,12 +25,12 @@ fi
 
 # Importa a chave GPG do MongoDB e salva diretamente em trusted.gpg.d
 echo "Importando a chave GPG do MongoDB..."
-curl -fsSL https://www.mongodb.org/static/pgp/server-${MONGODB_VERSION}.asc | sudo tee /etc/apt/trusted.gpg.d/mongodb-server-${MONGODB_VERSION}.gpg
+wget -qO - https://www.mongodb.org/static/pgp/server-${MONGODB_VERSION}.asc | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/mongodb-server-${MONGODB_VERSION}.gpg
 chmod 644 /etc/apt/trusted.gpg.d/mongodb-server-${MONGODB_VERSION}.gpg
 
 # Adiciona o repositório MongoDB à lista de fontes do APT
 echo "Adicionando o repositório MongoDB à lista de fontes do APT..."
-echo "deb [ arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/mongodb-server-${MONGODB_VERSION}.gpg ] https://repo.mongodb.org/apt/ubuntu ${UBUNTU_CODENAME}/mongodb-org/${MONGODB_VERSION} multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-${MONGODB_VERSION}.list
+echo "deb [ arch=amd64,arm64 signed-by=/etc/apt/trusted.gpg.d/mongodb-server-${MONGODB_VERSION}.gpg ] https://repo.mongodb.org/apt/ubuntu ${UBUNTU_CODENAME}/mongodb-org/${MONGODB_VERSION} multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-${MONGODB_VERSION}.list
 
 # Atualiza a lista de pacotes
 echo "Atualizando a lista de pacotes..."
