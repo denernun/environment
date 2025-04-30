@@ -8,7 +8,7 @@ set -e
 echo "Iniciando a instalação segura do MongoDB 7.0..."
 
 # Define a versão do MongoDB
-MONGODB_VERSION="7.0"
+MONGODB_VERSION="6.0"
 
 # Define o codinome do Ubuntu
 UBUNTU_CODENAME=$(lsb_release -cs)
@@ -104,7 +104,7 @@ set -e
 echo "Iniciando a remoção completa do MongoDB..."
 
 # Define a versão do MongoDB (ajuste se necessário)
-MONGODB_VERSION="6.0"
+MONGODB_VERSION="7.0"
 
 # Define o nome do arquivo da lista de fontes
 MONGODB_LIST_FILE="/etc/apt/sources.list.d/mongodb-org-${MONGODB_VERSION}.list"
