@@ -330,22 +330,24 @@ configfile = /etc/nginx/nginx.conf
 stub_status = /stub_status
 ```
 **wildcard**
-```terminal
+```bash
 $ sudo apt update && apt install -y python3-certbot-dns-route53 -y
 
-$ AWS uses permission route53:ChangeResourceRecordSets
+$ create a user route53-user
+$ add permission AmazonRoute53FullAccess
+# create accesskey Application running on an AWS compute service
 
-$ ~/.aws/credentials:
+$ /root/.aws/credentials:
   [default]
   aws_access_key_id = SEU_ACCESS_KEY_ID
   aws_secret_access_key = SEU_SECRET_ACCESS_KEY
 
-$ ~/.aws/config:
+$ /root/.aws/config:
   [default]
   region = sa-east-1
 
-$ sudo certbot --dns-route53 --dns-route53-hosted-zone-id="???" -d "*.domain.com.br" -d "domain.com.br" --agree-tos --server https://acme-v02.api.letsencrypt.org/directory --email denernun@gmail.com
-$ sudo certbot certonly --manual -d *.domain.com.br -d domain.com.br --agree-tos --preferred-challenges dns-01 --server https://acme-v02.api.letsencrypt.org/directory
+#!/bin/bash
+sudo certbot certonly --dns-route53 -d "*.domain.com.br" -d "domain.com.br" --email email@gmail.com
 ```
 **renew**
 ```terminal
