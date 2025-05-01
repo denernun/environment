@@ -74,13 +74,13 @@ sudo pm2 startup systemd -u ubuntu --hp /home/ubuntu
 
 # Instala o plugin PM2 Logrotate sem interação
 echo "Instalando o plugin PM2 Logrotate..."
-pm2 install pm2-logrotate --silent
+sudo pm2 install pm2-logrotate --silent
 
 # Define a configuração do PM2 Logrotate sem interação
 echo "Configurando o PM2 Logrotate..."
-pm2 set pm2-logrotate:max_size 10M
-pm2 set pm2-logrotate:compress false
-pm2 set pm2-logrotate:rotateInterval '* * * 1 0 0'
+sudo pm2 set pm2-logrotate:max_size 10M
+sudo pm2 set pm2-logrotate:compress false
+sudo pm2 set pm2-logrotate:rotateInterval '* * * 1 0 0'
 
 echo "PM2 e PM2 Logrotate instalados e configurados com sucesso!"
 echo "Verifique a configuração com os comandos 'pm2 show pm2-logrotate' e 'pm2 logs'."
