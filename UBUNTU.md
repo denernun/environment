@@ -9,7 +9,7 @@ echo "*******************************************************"
 echo "update"
 echo "*******************************************************"
 
-sudo apt update && apt upgrade -y
+sudo apt update && sudo apt upgrade -y
 
 echo "*******************************************************"
 echo "certbot"
