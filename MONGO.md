@@ -26,7 +26,7 @@ fi
 # Importa a chave GPG do MongoDB e salva diretamente em trusted.gpg.d
 echo "Importando a chave GPG do MongoDB..."
 wget -qO - https://www.mongodb.org/static/pgp/server-${MONGODB_VERSION}.asc | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/mongodb-server-${MONGODB_VERSION}.gpg
-chmod 644 /etc/apt/trusted.gpg.d/mongodb-server-${MONGODB_VERSION}.gpg
+sudo chmod 644 /etc/apt/trusted.gpg.d/mongodb-server-${MONGODB_VERSION}.gpg
 
 # Adiciona o repositório MongoDB à lista de fontes do APT
 echo "Adicionando o repositório MongoDB à lista de fontes do APT..."
