@@ -16,14 +16,18 @@ After=network.target
 User=ubuntu
 Group=ubuntu
 WorkingDirectory=/home/ubuntu
+
+Environment=GENERIC_TIMEZONE=America/Sao Paulo
+
 Environment=NODE_ENV=production
-Environment=N8N_HOST=localhost
+Environment=N8N_HOST=n8n.erpclass.com.br
 Environment=N8N_PORT=5678
-Environment=N8N_PROTOCOL=http
+Environment=N8N_PROTOCOL=https
 Environment=N8N_ENCRYPTION_KEY=797642d8-add1-4d6e-8e1f-92c96c47d51d
 Environment=N8N_SECURE_COOKIE=false
 Environment=N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
 Environment=N8N_RUNNERS_ENABLED=true
+
 # Environment=DB_TYPE=postgres
 # Environment=DB_POSTGRESQL_HOST=localhost
 # Environment=DB_POSTGRESQL_PORT=5432
