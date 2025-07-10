@@ -14,77 +14,59 @@
 # gsec>quit
 ```
 **Linux**
+
+[Download](https://github.com/FirebirdSQL/snapshots/releases/tag/snapshot-v5.0-release)
 ```text
 # sudo apt update
 # sudo apt upgrade
+# sudo apt install libtommath1 -y
 # wget https://github.com/FirebirdSQL/snapshots/releases/download/snapshot-v5.0-release/Firebird-5.0.3.1679-88943f3-linux-x64.tar.gz
 # tar -xzvf Firebird-5.0.3.1679-88943f3-linux-x64.tar.gz
 # cd Firebird-5.0.3.1679-88943f3-linux-x64.tar.gz
 # sudo ./install.sh
+# sudo mkdir /data
+# sudo chown firebird:firebird /data
+# sudo nano /opt/firebird/firebird.conf
+
+colar no final do arquivo a configuracao
+
+executar após a alteracao no arquivo anterior
+# sudo service firebird restart
+
+copiar e mover os arquivos
+# sudo mv *.fdb /data
+# sudo chown firebird:firebird /data/*
+
+comandos para ver o status, parar e iniciar o servico
 # sudo service firebird status
 # sudo service firebird stop
 # sudo service firebird start
-
-# gsec -user SYSDBA 
-# gsec>add SYSDBA -pw masterkey 
-# gsec>quit
-
-# /etc/sysctl.conf
-  vm.max_map_count = 256000
-# sysctl -p /etc/sysctl.conf 
 ```
-**Configuration**
 ```text
-# sudo nano /opt/firebird/firebird.conf
-
-ServerMode = Classic
-RemoteServicePort = 3060
-DatabaseAccess = Full
-RemoteAccess = true
-DataTypeCompatibility = 2.5
-DefaultDBCachePages = 768 # MemoAvailable (1.024.000.000) (Max 30%) / Connections / PageSize
-FileSystemCacheThreshold = 1M # (PageSize * Connections) + 1
-WireCrypt = Enabled 
-TempBlockSize = 1M
-TempCacheLimit = 64M
-LockMemSize = 30M
-LockHashSlots = 30011
-AuthServer = Srp, Win_Sspi
-AuthClient = Srp, Win_Sspi
-UserManager = Srp, Win_Sspi
-```
-**Configuration Remote**
-```text
-# sudo nano /opt/firebird/firebird.conf
-
 ServerMode = Super
+RemoteServicePort = 3060
+RemoteAuxPort = 3061
+DefaultDbCachePages = 50K # pages (SuperServer) - increase pages in databases.conf, not here
+LockMemSize = 20M # bytes (SuperServer)
+LockHashSlots = 40099 # slots
+MaxUnflushedWrites = -1 # default for posix (non-Windows)
+MaxUnflushedWriteTime = -1 # default for posix (non-Windows)
+ParallelWorkers = 1 # default parallel threads
+MaxParallelWorkers = 64 # parallel threads for sweep, backup, restore
+MaxStatementCacheSize=10M
+OuterJoinConversion = true
+OptimizeForFirstRows = false
+UseFileSystemCache = true
+TempCacheLimit = 256M
 RemoteServicePort = 3050
-DatabaseAccess = Full
-RemoteAccess = true
-DataTypeCompatibility = 2.5
-DefaultDbCachePages = 100K
-FileSystemCacheThreshold = 2M
-TempBlockSize = 2M
-TempCacheLimit = 1000M
-TracePlugin = fbtrace
+InlineSortThreshold = 16384 # use REFETCH plan for big sortings
+ExtConnPoolSize = 64 # external connections pool size
+ExtConnPoolLifeTime = 3600 # seconds
 WireCrypt = Enabled
-LockMemSize = 15M
-LockHashSlots = 30011
-AuthServer = Srp, Win_Sspi
-AuthClient = Srp, Win_Sspi
-UserManager = Srp, Win_Sspi
+AuthServer = Srp256, Legacy_Auth
+UserManager = Srp, Legacy_UserManager
 ```
-**Aliases**
-```text
-# sudo nano /opt/firebird/database.conf
 
-ALIAS_DATABASE = /path/of/file/file.fdb {
-	RemoteAccess = true
-	DefaultDbCachePages = x
-}
-
-ALIAS_DATABASE = /path/of/file/file.fdb
-```
 **IBSurgeon Calculator**
 * [https://cc.ib-aid.com/democalc.html](https://cc.ib-aid.com/democalc.html)
 
