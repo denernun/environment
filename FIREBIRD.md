@@ -43,27 +43,10 @@ comandos para ver o status, parar e iniciar o servico
 # sudo service firebird start
 ```
 ```text
-ServerMode = Super
+ServerMode = SuperClassic
 RemoteServicePort = 3060
 RemoteAuxPort = 3061
-DefaultDbCachePages = 50K # pages (SuperServer) - increase pages in databases.conf, not here
-LockMemSize = 20M # bytes (SuperServer)
-LockHashSlots = 40099 # slots
-MaxUnflushedWrites = -1 # default for posix (non-Windows)
-MaxUnflushedWriteTime = -1 # default for posix (non-Windows)
-ParallelWorkers = 1 # default parallel threads
-MaxParallelWorkers = 64 # parallel threads for sweep, backup, restore
-MaxStatementCacheSize=10M
-OuterJoinConversion = true
-OptimizeForFirstRows = false
-UseFileSystemCache = true
-TempCacheLimit = 256M
-InlineSortThreshold = 16384 # use REFETCH plan for big sortings
-ExtConnPoolSize = 64 # external connections pool size
-ExtConnPoolLifeTime = 3600 # seconds
-WireCrypt = Enabled
-AuthServer = Srp256, Legacy_Auth
-UserManager = Srp, Legacy_UserManager
+TcpNoNagle = 1
 ```
 
 **IBSurgeon Calculator**
