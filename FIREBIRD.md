@@ -58,7 +58,6 @@ OuterJoinConversion = true
 OptimizeForFirstRows = false
 UseFileSystemCache = true
 TempCacheLimit = 256M
-RemoteServicePort = 3050
 InlineSortThreshold = 16384 # use REFETCH plan for big sortings
 ExtConnPoolSize = 64 # external connections pool size
 ExtConnPoolLifeTime = 3600 # seconds
