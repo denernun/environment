@@ -164,6 +164,8 @@ $ /root/.aws/config:
 
 #!/bin/bash
 sudo certbot certonly --dns-route53 -d "*.domain.com.br" -d "domain.com.br" --email email@gmail.com
+
+sudo certbot certonly --nginx -d "*.domain.com.br" --email email@gmail.com
 ```
 **renew**
 ```terminal
