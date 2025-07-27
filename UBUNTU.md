@@ -166,14 +166,13 @@ sudo certbot certonly --dns-route53 -d "*.domain.com.br" --email email@gmail.com
 ```
 **renew**
 ```terminal
-$ renew.sh
+$ sudo nano /etc/letsencrypt/renew.sh
+$ sudo chmod +x /etc/letsencrypt/renew.sh
 
 #!/bin/bash
-# Renova todos os certificados
 sudo service nginx stop
 sudo certbot renew
 sudo service nginx start
-# Reinicia o Nginx
 sudo systemctl reload nginx
 
 $ crontab -e (todo 1 dia do mes as 3:00 da manha)
