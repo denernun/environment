@@ -148,8 +148,6 @@ stub_status = /stub_status
 ```
 **wildcard**
 ```bash
-$ sudo apt update && apt install -y python3-certbot-dns-route53 -y
-
 $ create a user route53-user
 $ add permission AmazonRoute53FullAccess
 # create accesskey Application running on an AWS compute service
@@ -164,9 +162,7 @@ $ /root/.aws/config:
   region = sa-east-1
 
 #!/bin/bash
-sudo certbot certonly --dns-route53 -d "*.domain.com.br" -d "domain.com.br" --email email@gmail.com
-
-sudo certbot certonly --nginx -d "*.domain.com.br" --email email@gmail.com
+sudo certbot certonly --dns-route53 -d "*.domain.com.br" --email email@gmail.com
 ```
 **renew**
 ```terminal
