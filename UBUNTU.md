@@ -17,6 +17,7 @@ echo "*******************************************************"
 
 sudo snap install --classic certbot
 sudo snap set certbot trust-plugin-with-root=ok
+sudo apt update && sudo apt install -y python3-certbot-dns-route53 -y
 
 echo "*******************************************************"
 echo "nginx"
