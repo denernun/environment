@@ -19,7 +19,21 @@ sudo snap install --classic certbot
 sudo snap set certbot trust-plugin-with-root=ok
 sudo apt update && sudo apt install -y python3-certbot-dns-route53 -y
 
+echo "Adicionando script para renovacao do certificado"
+sudo tee -a /etc/letsencrypt/renew.sh <<EOF
+#!/bin/bash
+sudo service nginx stop
+sudo certbot renew
+sudo service nginx start
+sudo systemctl reload nginx
+EOF
+sudo chmod +x /etc/letsencrypt/renew.sh
 
+echo "Adicionando script para rodar no crontab"
+sudo tee -a /var/spool/cron/crontabs/ubuntu <<EOF
+0 3 1 * * /etc/letsencrypt/renew.sh
+EOF
+sudo systemctl restart cron
 
 echo "*******************************************************"
 echo "nginx"
