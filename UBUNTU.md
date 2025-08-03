@@ -19,6 +19,8 @@ sudo snap install --classic certbot
 sudo snap set certbot trust-plugin-with-root=ok
 sudo apt update && sudo apt install -y python3-certbot-dns-route53 -y
 
+
+
 echo "*******************************************************"
 echo "nginx"
 echo "*******************************************************"
@@ -36,6 +38,22 @@ sudo openssl dhparam -out /etc/nginx/dhparam.pem 4096
 
 echo "Reiniciando o serviço Nginx..."
 sudo systemctl reload nginx
+
+LOGROTATE_FILE="/etc/logrotate.d/nginx"
+
+sed -i \
+    -e 's/daily/size 100M/g' \
+    -e 's/rotate 14/rotate 0/g' \
+    "$LOGROTATE_FILE"
+
+if grep -q "size 100M" "$LOGROTATE_FILE" && grep -q "rotate 0" "$LOGROTATE_FILE"; then
+    echo "Substituições aplicadas com sucesso!"
+    echo "- 'daily' foi substituído por 'size 100M'"
+    echo "- 'rotate 14' foi substituído por 'rotate 0'"
+else
+    echo "Aviso: Nem todas as substituições podem ter sido aplicadas."
+    echo "Verifique o arquivo manualmente."
+fi
 
 echo "*******************************************************"
 echo "nodejs"
