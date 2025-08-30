@@ -37,24 +37,5 @@ D:\SVN
 Path
 D:\UTIL
 ```
-## HARBOUR
-```text
-Environment
-HB_INSTALL=D:\HARBOUR
-HB_ARCHITECTURE=w32
-HB_COMPILER=bcc32
-HB_GT_LIB=gtwin
 
-Path
-D:\HARBOUR\BIN
-D:\BCC\BIN
-```
-## PYTHON
-```text
-Download
-https://www.python.org/downloads/
-
-Environment
-PYTHON=C:\Users\dener\AppData\Local\Programs\Python\Python311
-```
 
