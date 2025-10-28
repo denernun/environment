@@ -46,7 +46,10 @@ comandos para ver o status, parar e iniciar o servico
 ServerMode = SuperClassic
 RemoteServicePort = 3060
 RemoteAuxPort = 3061
-TcpNoNagle = 1
+AuthServer=Srp256,Srp,Legacy_auth 
+AuthClient=Srp256,Srp,Legacy_auth 
+UserManager=Srp,Legacy_UserManager 
+WireCrypt=Enabled
 ```
 
 **IBSurgeon Calculator**
