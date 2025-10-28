@@ -20,7 +20,7 @@
 # sudo apt update
 # sudo apt upgrade
 # sudo apt install libtommath1 -y
-# wget https://github.com/FirebirdSQL/snapshots/releases/download/snapshot-v5.0-release/Firebird-5.0.3.1679-88943f3-linux-x64.tar.gz
+# wget https://github.com/FirebirdSQL/firebird/releases/download/v5.0.3/Firebird-5.0.3.1683-0-linux-x64.tar.gz
 # tar -xzvf Firebird-5.0.3.1679-88943f3-linux-x64.tar.gz
 # cd Firebird-5.0.3.1679-88943f3-linux-x64.tar.gz
 # sudo ./install.sh
