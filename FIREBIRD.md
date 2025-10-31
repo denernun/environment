@@ -17,9 +17,7 @@
 
 [Download](https://github.com/FirebirdSQL/snapshots/releases/tag/snapshot-v5.0-release)
 ```text
-# sudo apt update
-# sudo apt upgrade
-# sudo apt install libtommath1 -y
+# sudo apt update && sudo apt upgrade -y && sudo apt install libtommath1 -y
 # wget https://github.com/FirebirdSQL/firebird/releases/download/v5.0.3/Firebird-5.0.3.1683-0-linux-x64.tar.gz
 # tar -xzvf Firebird-5.0.3.1683-0-linux-x64.tar.gz
 # cd Firebird-5.0.3.1683-0-linux-x64.tar.gz
@@ -37,19 +35,50 @@ copiar e mover os arquivos
 # sudo mv *.fdb /data
 # sudo chown firebird:firebird /data/*
 
-comandos para ver o status, parar e iniciar o servico
+verificar o status do servico
 # sudo service firebird status
-# sudo service firebird stop
-# sudo service firebird start
 ```
 ```text
+# ============================================================
+# Configuração Firebird 5.0.3 para ERPClass
+# Otimizada para performance e segurança
+# ============================================================
+
+# Modo do servidor (SuperClassic recomendado para ERPClass)
 ServerMode = SuperClassic
+
+# Portas de comunicação
 RemoteServicePort = 3060
 RemoteAuxPort = 3061
-AuthServer=Srp256,Srp,Legacy_auth 
-AuthClient=Srp256,Srp,Legacy_auth 
-UserManager=Srp,Legacy_UserManager 
-WireCrypt=Enabled
+
+# Configurações de autenticação
+AuthServer = Srp256,Srp,Legacy_auth
+AuthClient = Srp256,Srp,Legacy_auth
+UserManager = Srp,Legacy_UserManager
+
+# Segurança de conexão
+WireCrypt = Enabled
+
+# Diretórios
+DatabaseAccess = Full
+ExternalFileAccess = Full
+
+# Performance
+DefaultDbCachePages = 2048
+TempCacheLimit = 67108864
+
+# Configurações de rede
+RemoteBindAddress = 0.0.0.0
+TcpNoDelay = 1
+
+# Logs
+AuditTraceConfigFile =
+MaxUserTraceLogSize = 10485760
+
+# Configurações específicas para ERPClass
+LockMemSize = 1048576
+LockHashSlots = 22111
+EventMemSize = 65536
 ```
 
 **IBSurgeon Calculator**
