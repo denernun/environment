@@ -171,13 +171,6 @@ echo "Para autenticar, use o comando 'AUTH default $REDIS_PASSWORD' no redis-cli
 
 exit 0
 ```
-**amplify**
-```text
-[nginx]
-user = www-data
-configfile = /etc/nginx/nginx.conf
-stub_status = /stub_status
-```
 **wildcard**
 ```bash
 $ create a user route53-user
