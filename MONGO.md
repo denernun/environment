@@ -105,52 +105,47 @@ exit 0
 
 set -e
 
-echo "Iniciando a remoção completa do MongoDB..."
+echo "*******************************************************"
+echo "Desinstalação do MongoDB"
+echo "*******************************************************"
 
-# Define a versão do MongoDB (ajuste se necessário)
-MONGODB_VERSION="6.0"
+# Para e desabilita o serviço
+echo "Parando e desabilitando o serviço mongod..."
+sudo systemctl stop mongod || true
+sudo systemctl disable mongod || true
 
-# Define o nome do arquivo da lista de fontes
-MONGODB_LIST_FILE="/etc/apt/sources.list.d/mongodb-org-${MONGODB_VERSION}.list"
+# Remove os pacotes do MongoDB
+echo "Removendo pacotes do MongoDB..."
+sudo apt purge -y mongodb-org mongodb-org-server mongodb-org-mongos \
+    mongodb-org-shell mongodb-org-tools mongodb-org-database \
+    mongodb-org-database-tools-extra mongodb-mongosh || true
+sudo apt autoremove -y
 
-# 1. Para o serviço mongod
-echo "Parando o serviço mongod..."
-sudo systemctl stop mongod || true # Ignora erro se o serviço já estiver parado
+# Remove repositórios e chaves GPG
+echo "Removendo repositórios e chaves GPG..."
+sudo rm -f /etc/apt/sources.list.d/mongodb-org-*.list
+sudo rm -f /usr/share/keyrings/mongodb-server-*.gpg
 
-# 2. Desativa o serviço para não iniciar na inicialização
-echo "Desativando o serviço mongod..."
-sudo systemctl disable mongod || true # Ignora erro se já estiver desativado
-
-# 3. Remove os pacotes mongodb-org e suas dependências com purge
-echo "Removendo os pacotes mongodb-org com purge..."
-sudo apt remove --purge --auto-remove mongodb-org -y
-
-# 4. Remove quaisquer outros pacotes relacionados ao mongodb-org (com curinga) com purge
-echo "Removendo outros pacotes relacionados ao mongodb-org com purge..."
-sudo apt-get purge mongodb-org* -y
-
-# 5. Remove os diretórios de log e dados
-echo "Removendo os diretórios de log e dados..."
-sudo rm -rf /var/log/mongodb
+# Remove dados e logs
+echo "Removendo dados e logs do MongoDB..."
 sudo rm -rf /var/lib/mongodb
+sudo rm -rf /var/log/mongodb
 
-# 6. Remove o arquivo da lista de fontes do APT
-echo "Removendo o arquivo da lista de fontes do APT..."
-if [ -f "$MONGODB_LIST_FILE" ]; then
-    sudo rm "$MONGODB_LIST_FILE"
-else
-    echo "Arquivo da lista de fontes '$MONGODB_LIST_FILE' não encontrado."
-fi
+# Remove arquivo de configuração
+echo "Removendo arquivo de configuração..."
+sudo rm -f /etc/mongod.conf
 
-# 7. Remove a chave GPG do MongoDB
-echo "Removendo a chave GPG do MongoDB..."
-sudo apt-key del --keyring /etc/apt/trusted.gpg.d/mongodb-server-${MONGODB_VERSION}.gpg "$(curl -fsSL https://www.mongodb.org/static/pgp/server-${MONGODB_VERSION}.asc | gpg --fingerprint | grep uid | awk '{print $5}')" || true
+# Remove usuário e grupo do sistema
+echo "Removendo usuário e grupo mongodb do sistema..."
+sudo userdel -r mongodb 2>/dev/null || true
+sudo groupdel mongodb 2>/dev/null || true
 
-# 8. Atualiza a lista de pacotes
+# Atualiza a lista de pacotes
 echo "Atualizando a lista de pacotes..."
 sudo apt update
 
-echo "Remoção completa do MongoDB concluída."
+echo ""
+echo "MongoDB desinstalado com sucesso."
 
 exit 0
 ```
