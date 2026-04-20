@@ -105,7 +105,56 @@ exit 0
 ```
 **uninstall**
 ```shell
+#!/bin/bash
 
+set -e
+
+echo "*******************************************************"
+echo "Desinstalação do RabbitMQ"
+echo "*******************************************************"
+
+# Para e desabilita o serviço
+echo "Parando e desabilitando o serviço rabbitmq-server..."
+sudo systemctl stop rabbitmq-server || true
+sudo systemctl disable rabbitmq-server || true
+
+# Remove os pacotes do RabbitMQ e Erlang
+echo "Removendo pacotes do RabbitMQ e Erlang..."
+sudo apt purge -y rabbitmq-server \
+    erlang-base erlang-asn1 erlang-crypto erlang-eldap erlang-ftp \
+    erlang-inets erlang-mnesia erlang-os-mon erlang-parsetools \
+    erlang-public-key erlang-runtime-tools erlang-snmp erlang-ssl \
+    erlang-syntax-tools erlang-tftp erlang-tools erlang-xmerl || true
+sudo apt autoremove -y
+
+# Remove repositórios e chaves GPG
+echo "Removendo repositórios e chaves GPG..."
+sudo rm -f /etc/apt/sources.list.d/rabbitmq.list
+sudo rm -f /usr/share/keyrings/rabbitmq-erlang.gpg
+sudo rm -f /usr/share/keyrings/rabbitmq-server.gpg
+
+# Remove dados e logs
+echo "Removendo dados e logs do RabbitMQ..."
+sudo rm -rf /var/lib/rabbitmq
+sudo rm -rf /var/log/rabbitmq
+
+# Remove arquivos de configuração
+echo "Removendo arquivos de configuração..."
+sudo rm -rf /etc/rabbitmq
+
+# Remove usuário e grupo do sistema
+echo "Removendo usuário e grupo rabbitmq do sistema..."
+sudo userdel -r rabbitmq 2>/dev/null || true
+sudo groupdel rabbitmq 2>/dev/null || true
+
+# Atualiza a lista de pacotes
+echo "Atualizando a lista de pacotes..."
+sudo apt update
+
+echo ""
+echo "RabbitMQ desinstalado com sucesso."
+
+exit 0
 ```
 **comandos**
 ```shell
