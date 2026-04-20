@@ -8,7 +8,7 @@ set -e
 echo "Iniciando a instalação segura do MongoDB..."
 
 # Define a versão do MongoDB
-MONGODB_VERSION="8.0"
+MONGODB_VERSION="7.0"
 
 # Define o codinome do Ubuntu
 UBUNTU_CODENAME=$(lsb_release -cs)
@@ -23,13 +23,18 @@ if ! command -v curl &> /dev/null; then
     sudo apt install -y curl
 fi
 
-# Importa a chave GPG do MongoDB e salva diretamente em trusted.gpg.d
+# Remove repositórios e chaves MongoDB antigos para evitar conflitos
+echo "Removendo repositórios MongoDB antigos..."
+sudo rm -f /etc/apt/sources.list.d/mongodb-org-*.list
+sudo rm -f /usr/share/keyrings/mongodb-server-*.gpg
+
+# Importa a chave GPG do MongoDB
 echo "Importando a chave GPG do MongoDB..."
 curl -fsSL https://www.mongodb.org/static/pgp/server-${MONGODB_VERSION}.asc | sudo gpg -o /usr/share/keyrings/mongodb-server-${MONGODB_VERSION}.gpg --dearmor
 
 # Adiciona o repositório MongoDB à lista de fontes do APT
 echo "Adicionando o repositório MongoDB à lista de fontes do APT..."
-echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-${MONGODB_VERSION}.gpg ] https://repo.mongodb.org/apt/ubuntu noble/mongodb-org/${MONGODB_VERSION} multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-${MONGODB_VERSION}.list
+echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-${MONGODB_VERSION}.gpg ] https://repo.mongodb.org/apt/ubuntu ${UBUNTU_CODENAME}/mongodb-org/${MONGODB_VERSION} multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-${MONGODB_VERSION}.list
 
 # Atualiza a lista de pacotes
 echo "Atualizando a lista de pacotes..."
