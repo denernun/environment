@@ -1,3 +1,5 @@
+## RABBITMQ
+**install**
 ```shell
 #!/bin/bash
 
@@ -100,4 +102,12 @@ echo "  AMQP: amqp://admin:${ADMIN_PASSWORD}@<ip-do-servidor>:5672"
 echo "Lembre-se de configurar um FIREWALL para restringir o acesso às portas 5672 e 15672."
 
 exit 0
+```
+**uninstall**
+```shell
+
+```
+**comandos**
+```shell
+
 ```
